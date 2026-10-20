@@ -28,10 +28,9 @@ def expand_php(text,rs,title):
     text=re.sub(r'<\?php\s+echo\s+\$page_title\s*;?\s*\?>',html.escape(title),text,flags=re.I)
     text=re.sub(r'<\?=\s*\$page_title\s*\?>',html.escape(title),text,flags=re.I)
     def cat(m):
-        c=m.group(1); items=''.join(f'<li><a href="{html.escape(r[1])}.html">{html.escape(r[2])}</a></li>' for r in rs if r[0]==c)
+        c=m.group(1); items=''.join(f'<li><a href="{html.escape(r[1])}.php">{html.escape(r[2])}</a></li>' for r in rs if r[0]==c)
         return '<ul class="top-links">'+items+'</ul>'
     text=re.sub(r'<\?php\s+cat_prev\(["\']([^"\']+)["\']\);?\s*\?>',cat,text,flags=re.I)
-    # index.php contains the definition of cat_prev itself; remove that definition block.
     text=re.sub(r'<\?php\s*function\s+cat_prev\s*\(.*?\}\s*\?>','',text,flags=re.S|re.I)
     return text
 
@@ -39,27 +38,32 @@ def body(text,rs,title):
     text=re.sub(r'^\s*<\?php\s+include\(["\']header\.php["\']\);\s*\?>\s*','',text,flags=re.I)
     text=re.sub(r'\s*<\?php\s+include\(["\']footer\.php["\']\);\s*\?>\s*$','',text,flags=re.I)
     text=expand_php(text,rs,title)
-    text=re.sub(r'(?i)(href=["\'][^"\']*?)\.php([?#][^"\']*)?(["\'])',lambda m:m.group(1)+'.html'+(m.group(2) or '')+m.group(3),text)
     return None if ('<?php' in text or '<?=' in text) else text.strip()
 
 def related(rs,cat,prefix):
-    its=[f'<li><a href="{prefix}{html.escape(r[1])}.html">{html.escape(r[2])}</a></li>' for r in rs if r[0]==cat]
+    its=[f'<li><a href="{prefix}{html.escape(r[1])}.php">{html.escape(r[2])}</a></li>' for r in rs if r[0]==cat]
     return '<h2>関連ページ</h2><ul class="top-links">'+''.join(its)+'</ul>' if its else ''
 
 def render(rel,stem,b,rs,script,is_index=False):
     cat,label,title=meta(rs,stem); depth=len(rel.parts)-1; root='../'*depth
-    canonical=SITE+'/' if is_index else SITE+'/'+str(rel.with_suffix('.php')).replace('\\','/')
+    canonical=SITE+'/' if is_index else SITE+'/'+str(rel).replace('\\','/')
     full='でんきメモ | 高圧受電設備、保護継電器、測定器、電気主任技術者、電気管理技術者の知識' if is_index else title+' - でんきメモ'
-    logo=f'<h1><a href="{root}index.html">でんきメモ</a></h1>' if is_index else f'<div class="site-title"><a href="{root}index.html">でんきメモ</a></div>'
+    logo=f'<h1><a href="{root}">でんきメモ</a></h1>' if is_index else f'<div class="site-title"><a href="{root}">でんきメモ</a></div>'
     h1='' if is_index else f'<h1 class="article-title">{html.escape(title)}</h1>'
     icon=f'{SITE}/icon/{stem}.jpg'
-    return f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="stylesheet" href="{root}style.css"><title>{html.escape(full)}</title><link rel="canonical" href="{canonical}"><meta name="twitter:card" content="summary"><meta property="og:url" content="{canonical}"><meta property="og:title" content="{html.escape(title)}"><meta property="og:image" content="{icon}"><script async src="https://www.googletagmanager.com/gtag/js?id={GA}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','{GA}');</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADS}" crossorigin="anonymous"></script>{script}</head><body><div class="wrapper"><header>{logo}<p>電気管理技術者の備忘録</p></header><div class="site-search"><form action="{root}search.html" method="get"><input type="search" name="q" placeholder="記事を検索"><button type="submit">検索</button></form></div><main>{h1}{b}{related(rs,cat,root)}</main><div class="return"><a href="{root}index.html">TOPに戻る</a></div></div></body></html>'''
+    return f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="stylesheet" href="{root}style.css"><title>{html.escape(full)}</title><link rel="canonical" href="{canonical}"><meta name="twitter:card" content="summary"><meta property="og:url" content="{canonical}"><meta property="og:title" content="{html.escape(title)}"><meta property="og:image" content="{icon}"><script async src="https://www.googletagmanager.com/gtag/js?id={GA}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','{GA}');</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADS}" crossorigin="anonymous"></script>{script}</head><body><div class="wrapper"><header>{logo}<p>電気管理技術者の備忘録</p></header><div class="site-search"><form action="{root}search" method="get"><input type="search" name="q" placeholder="記事を検索"><button type="submit">検索</button></form></div><main>{h1}{b}{related(rs,cat,root)}</main><div class="return"><a href="{root}">TOPに戻る</a></div></div></body></html>'''
 
 def make_search(out,rs):
-    data=[{'url':r[1]+'.html','title':r[3],'label':r[2]} for r in rs]
+    data=[{'url':r[1]+'.php','title':r[3],'label':r[2]} for r in rs]
     (out/'search-index.json').write_text(json.dumps(data,ensure_ascii=False),encoding='utf-8')
-    page='''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="style.css"><title>サイト内検索 - でんきメモ</title></head><body><div class="wrapper"><header><div class="site-title"><a href="index.html">でんきメモ</a></div></header><main><h1 class="article-title">サイト内検索</h1><form id="f"><input id="q" type="search" placeholder="検索語"><button>検索</button></form><p id="n"></p><ul id="r" class="top-links"></ul></main></div><script>let D=[];fetch('search-index.json').then(r=>r.json()).then(x=>{D=x;go()});function go(){let q=(new URLSearchParams(location.search).get('q')||document.querySelector('#q').value||'').trim().toLowerCase();document.querySelector('#q').value=q;if(!q)return;let a=D.filter(x=>(x.title+' '+x.label).toLowerCase().includes(q));document.querySelector('#n').textContent=a.length+'件';document.querySelector('#r').innerHTML=a.map(x=>'<li><a href="'+x.url+'">'+x.label+'</a></li>').join('')}document.querySelector('#f').onsubmit=e=>{e.preventDefault();history.replaceState(null,'','?q='+encodeURIComponent(document.querySelector('#q').value));go()}</script></body></html>'''
+    page='''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="style.css"><title>サイト内検索 - でんきメモ</title><link rel="canonical" href="https://memo-labo.com/search"></head><body><div class="wrapper"><header><div class="site-title"><a href="/">でんきメモ</a></div></header><main><h1 class="article-title">サイト内検索</h1><form id="f"><input id="q" type="search" placeholder="検索語"><button>検索</button></form><p id="n"></p><ul id="r" class="top-links"></ul></main></div><script>let D=[];fetch('/search-index.json').then(r=>r.json()).then(x=>{D=x;go()});function go(){let q=(new URLSearchParams(location.search).get('q')||document.querySelector('#q').value||'').trim().toLowerCase();document.querySelector('#q').value=q;if(!q)return;let a=D.filter(x=>(x.title+' '+x.label).toLowerCase().includes(q));document.querySelector('#n').textContent=a.length+'件';document.querySelector('#r').innerHTML=a.map(x=>'<li><a href="/'+x.url+'">'+x.label+'</a></li>').join('')}document.querySelector('#f').onsubmit=e=>{e.preventDefault();history.replaceState(null,'','?q='+encodeURIComponent(document.querySelector('#q').value));go()}</script></body></html>'''
     (out/'search.html').write_text(page,encoding='utf-8')
+
+def make_worker(out):
+    # Cloudflare Pages advanced-mode Worker. Public URLs stay /foo.php while
+    # the static asset on disk is /foo.html. This avoids an SEO-visible URL migration.
+    worker='''export default {\n  async fetch(request, env) {\n    const url = new URL(request.url);\n    let path = url.pathname;\n\n    // Clean historical PATH_INFO such as /ctd.php/1000 -> /ctd.php.\n    const badPathInfo = path.match(/^(.*\\.php)\\/.+$/i);\n    if (badPathInfo) {\n      url.pathname = badPathInfo[1];\n      return Response.redirect(url.toString(), 301);\n    }\n\n    // Keep the browser/search-engine URL unchanged; only rewrite internally.\n    if (/\\.php$/i.test(path)) {\n      url.pathname = path.replace(/\\.php$/i, '.html');\n      return env.ASSETS.fetch(new Request(url, request));\n    }\n    if (path === '/search' || path === '/search/') {\n      url.pathname = '/search.html';\n      return env.ASSETS.fetch(new Request(url, request));\n    }\n    return env.ASSETS.fetch(request);\n  }\n};\n'''
+    (out/'_worker.js').write_text(worker,encoding='utf-8')
 
 def main(src,out):
     src,out=Path(src),Path(out)
@@ -74,7 +78,7 @@ def main(src,out):
         rel=p.relative_to(src); stem=p.stem; _,_,title=meta(rs,stem); b=body(read_text(p),rs,title)
         if b is None:skipped.append(str(rel));continue
         q=(out/rel).with_suffix('.html');q.parent.mkdir(parents=True,exist_ok=True);q.write_text(render(rel,stem,b,rs,script,rel==Path('index.php')),encoding='utf-8');built.append(str(rel))
-    make_search(out,rs)
+    make_search(out,rs); make_worker(out)
     (out/'BUILD_REPORT.txt').write_text(f'built={len(built)}\nskipped_dynamic={len(skipped)}\n\nSKIPPED\n'+'\n'.join(skipped),encoding='utf-8')
     print('built',len(built),'skipped',len(skipped))
 if __name__=='__main__':
