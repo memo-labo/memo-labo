@@ -1,0 +1,16 @@
+# macOS / Windows
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# WebDAV metadata from the old host
+.DAV/
+**/.DAV/
+
+# Local/generated build output
+dist/
+
+# Archives and temporary files
+*.zip
+*.tmp
+*.bak
