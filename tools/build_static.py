@@ -3,7 +3,7 @@ from pathlib import Path
 import csv, html, json, re, shutil, sys
 
 SITE='https://memo-labo.com'; GA='G-R90T9GG6PR'; ADS='ca-pub-8063230043817903'
-EXCLUDE={'header.php','header2.php','footer.php','functions.php','script.php','search.php','random.php','sitemap.php','count.php'}
+EXCLUDE={'header.php','header2.php','footer.php','functions.php','script.php','search.php','random.php','sitemap.php','count.php','link.php'}
 
 def read_text(p):
     for enc in ('utf-8-sig','utf-8','cp932'):
@@ -37,12 +37,16 @@ def expand_php(text,rs,title):
         c=m.group(1); items=''.join(f'<li><a href="{html.escape(r[1])}.php">{html.escape(r[2])}</a></li>' for r in rs if r[0]==c)
         return '<ul class="top-links">'+items+'</ul>'
     text=re.sub(r'<\?php\s+cat_prev\(["\']([^"\']+)["\']\);?\s*\?>',cat,text,flags=re.I)
-    text=re.sub(r'<\?php\s*function\s+cat_prev\s*\(.*?\}\s*\?>','',text,flags=re.S|re.I)
+    # Remove the legacy cat_prev() function block after calls have been expanded.
+    text=re.sub(r'<\?php\s*function\s+cat_prev\s*\([^)]*\)\s*\{.*?fclose\s*\(\s*\$f\s*\)\s*;.*?\}\s*\?>','',text,flags=re.S|re.I)
     return text
 
-def body(text,rs,title):
+def body(text,rs,title,src,rel):
     text=re.sub(r'^\s*<\?php\s+include\(["\']header\.php["\']\);\s*\?>\s*','',text,flags=re.I)
     text=re.sub(r'\s*<\?php\s+include\(["\']footer\.php["\']\);\s*\?>\s*$','',text,flags=re.I)
+    # The three index pages include the same static link.php block. Inline it at build time.
+    link=read_text(src/'link.php') if (src/'link.php').exists() else ''
+    text=re.sub(r'<\?php\s+include\(["\'](?:\.\./)?link\.php["\']\);\s*\?>',lambda m:link,text,flags=re.I)
     text=expand_php(text,rs,title)
     return None if ('<?php' in text or '<?=' in text) else text.strip()
 
@@ -65,7 +69,7 @@ def render(rel,stem,b,rs,script,is_index=False):
     icon=f'{icon_base}/{stem}.jpg'
     extra_script=script if not section else ''
     search='' if section else f'<div class="site-search"><form action="{root}search" method="get"><input type="search" name="q" placeholder="記事を検索"><button type="submit">検索</button></form></div>'
-    return f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="stylesheet" href="{root}style.css"><title>{html.escape(full)}</title><link rel="canonical" href="{canonical}"><meta name="twitter:card" content="summary"><meta property="og:url" content="{canonical}"><meta property="og:title" content="{html.escape(title)}"><meta property="og:image" content="{icon}"><script async src="https://www.googletagmanager.com/gtag/js?id={GA}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','{GA}');</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADS}" crossorigin="anonymous"></script>{extra_script}</head><body><div class="wrapper"><header>{logo}{tagline}</header>{search}<main>{h1}{b}{related(rs,cat,root)}</main><div class="return"><a href="{root}">TOPに戻る</a></div></div></body></html>'''
+    return f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="stylesheet" href="{root}style.css"><title>{html.escape(full)}</title><link rel="canonical" href="{canonical}"><meta name="twitter:card" content="summary"><meta property="og:url" content="{canonical}"><meta property="og:title" content="{html.escape(title)}"><meta property="og:image" content="{icon}"><script async src="https://www.googletagmanager.com/gtag/js?id={GA}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','{GA}');</script><script async src="https://pagead2.googlesyndication.com/pagead/js?client={ADS}" crossorigin="anonymous"></script>{extra_script}</head><body><div class="wrapper"><header>{logo}{tagline}</header>{search}<main>{h1}{b}{'' if is_index else related(rs,cat,root)}</main><div class="return"><a href="{root}">TOPに戻る</a></div></div></body></html>'''
 
 def make_search(out,src):
     rs=read_rows(src/'data.csv')
@@ -84,7 +88,7 @@ def main(src,out):
     built=[]; skipped=[]
     for p in src.rglob('*.php'):
         if '.DAV' in p.parts or p.name in EXCLUDE:continue
-        rel=p.relative_to(src); rs=rows_for(src,rel); stem=p.stem; _,_,title=meta(rs,stem); b=body(read_text(p),rs,title)
+        rel=p.relative_to(src); rs=rows_for(src,rel); stem=p.stem; _,_,title=meta(rs,stem); b=body(read_text(p),rs,title,src,rel)
         if b is None:skipped.append(str(rel));continue
         q=(out/rel).with_suffix('.html');q.parent.mkdir(parents=True,exist_ok=True);q.write_text(render(rel,stem,b,rs,script,p.name=='index.php'),encoding='utf-8');built.append(str(rel))
     make_search(out,src)
