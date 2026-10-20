@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="574.61737mm"
+   height="305.4487mm"
+   viewBox="0 0 574.61737 305.4487"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="protect1.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs2">
+    <marker
+       inkscape:stockid="TriangleOutM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutM"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1172"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="scale(0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1030"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="SquareM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker1413"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1411"
+         d="M -5,-5 V 5 H 5 V -5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="scale(0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="SquareL"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker1385"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1383"
+         d="M -5,-5 V 5 H 5 V -5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="scale(0.8)" />
+    </marker>
+    <marker
+       inkscape:stockid="SquareM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="SquareM"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1100"
+         d="M -5,-5 V 5 H 5 V -5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="scale(0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="SquareL"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="SquareL"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1097"
+         d="M -5,-5 V 5 H 5 V -5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="scale(0.8)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker1413-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="SquareM">
+      <path
+         transform="scale(0.4)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M -5,-5 V 5 H 5 V -5 Z"
+         id="path1411-9" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="SquareM-7"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="SquareM">
+      <path
+         transform="scale(0.4)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M -5,-5 V 5 H 5 V -5 Z"
+         id="path1100-4" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="TriangleOutM-7"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path1172-4" />
+    </marker>
+    <clipPath
+       id="clipEmfPath1"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="path3608"
+         d="M 0,0 H 749.6 V 280.8 H 0 Z" />
+    </clipPath>
+    <pattern
+       y="0"
+       x="0"
+       height="6"
+       width="6"
+       patternUnits="userSpaceOnUse"
+       id="EMFhbasepattern" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.30908235"
+     inkscape:cx="1019.1459"
+     inkscape:cy="820.16977"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:pagecheckerboard="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="レイヤー 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(368.61122,42.771296)">
+    <rect
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       y="89.775116"
+       x="-368.08203"
+       height="73.576279"
+       width="158.87891"
+       id="rect956-1"
+       style="fill:#00ffff;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal" />
+    <path
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       id="rect956"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       d="m -209.20316,38.655838 v 51.09502 h -158.87889 v -51.09502"
+       sodipodi:nodetypes="cccc" />
+    <path
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       id="path974"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       d="m -235.47825,79.061108 h -103.24226 a 51.666127,51.84566 0 0 0 51.62079,49.683922 51.666127,51.84566 0 0 0 51.62147,-49.683922 z" />
+    <path
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       id="path974-3"
+       style="fill:#00ffff;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       d="m -238.23105,93.728558 h -97.73666 a 51.666126,51.845659 0 0 0 48.86833,35.016472 51.666126,51.845659 0 0 0 48.86833,-35.016472 z" />
+    <path
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker1413);paint-order:normal;stop-color:#000000;stop-opacity:1"
+       d="M -286.82372,112.3979 V -24.850372 h 176.11246"
+       id="path1006"
+       sodipodi:nodetypes="ccc" />
+    <path
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#SquareM);paint-order:normal;stop-color:#000000;stop-opacity:1"
+       d="M -212.26022,125.12658 V 17.209578 H -110.836"
+       id="path1008" />
+    <path
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       style="fill:none;stroke:#000000;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -141.5035,17.190668 v 36.98043"
+       id="path2717" />
+    <path
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       style="fill:none;stroke:#000000;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -151.43345,54.308948 h 20.15337"
+       id="path2719" />
+    <path
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       id="path2719-1"
+       d="m -147.42234,59.298378 h 12.13116"
+       style="fill:none;stroke:#000000;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       style="fill:none;stroke:#000000;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -143.70474,64.483458 h 4.69595"
+       id="path2719-1-7" />
+    <rect
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       style="fill:#00ffff;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       id="rect956-1-4"
+       width="158.87891"
+       height="176.10405"
+       x="-53.722481"
+       y="86.044189" />
+    <path
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       id="rect2922"
+       style="fill:#00ffff;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       d="M 11.307784,156.97394 V 62.689608 h 35.16466 v 94.284332 c -1.70105,7.30188 10.18091,26.11337 6.51808,32.58077 -6.3766,11.25905 -11.28143,-18.17706 -11.28143,-4.87823 0,3.62093 3.26796,18.9916 -1.95697,20.5292 -6.39729,1.8826 -6.44653,-13.71252 -6.44653,-16.87053 0,-0.73003 -1.70421,-5.92436 -1.95698,-5.58964 -4.53251,6.00224 4.05725,21.35707 -4.37443,25.61069 -1.80987,0.91305 -4.48969,-3.42215 -4.71977,-4.37007 -0.62702,-2.58327 -1.96511,-20.8885 -2.99304,-21.34224 -0.82799,-0.3655 -0.80581,5.85166 -0.80581,6.30103 0,3.43446 2.01329,10.6587 -2.64768,11.68743 -6.3389502,1.39907 -2.31276,-15.59551 -4.60466,-18.29335 -1.8309902,-2.1553 -2.1140302,10.65877 -4.1442002,10.06134 -4.83134,-1.42177 -2.13716,-17.13562 -1.49651,-20.5292 0.97793,-5.18014 5.8235002,-9.94139 5.7452702,-14.8972 z"
+       sodipodi:nodetypes="cccc" />
+    <path
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       sodipodi:nodetypes="cccc"
+       d="m 105.15639,34.924918 v 51.09502 H -53.722496 v -51.09502"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       id="rect956-4" />
+    <rect
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       id="rect2925"
+       width="35.164635"
+       height="34.527512"
+       x="11.307791"
+       y="62.689594" />
+    <path
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       id="path1006-7"
+       d="M 27.535834,127.75999 V -28.581292 H 203.25696"
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker1413-2);paint-order:normal;stop-color:#000000;stop-opacity:1"
+       sodipodi:nodetypes="ccc" />
+    <path
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       id="path1008-3"
+       d="M 102.82203,121.39566 V 13.478658 h 100.70151"
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#SquareM-7);paint-order:normal;stop-color:#000000;stop-opacity:1" />
+    <path
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       id="path2717-9"
+       d="m 172.85605,13.459748 v 36.98043"
+       style="fill:none;stroke:#000000;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       id="path2719-5"
+       d="m 162.9261,50.578028 h 20.15337"
+       style="fill:none;stroke:#000000;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       style="fill:none;stroke:#000000;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 166.93721,55.567458 h 12.13116"
+       id="path2719-1-4" />
+    <path
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       id="path2719-1-7-1"
+       d="m 170.65481,60.752538 h 4.69595"
+       style="fill:none;stroke:#000000;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM);stop-color:#000000;stop-opacity:1"
+       d="M 11.307784,62.689608 -20.857036,6.9785083"
+       id="path2939" />
+    <path
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       id="path2939-2"
+       d="M 46.472404,62.689598 78.637224,6.9784983"
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-7);stop-color:#000000;stop-opacity:1" />
+    <text
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-miterlimit:4;stroke-dasharray:none"
+       x="-42.889046"
+       y="-6.8759575"
+       id="text3166"><tspan
+         sodipodi:role="line"
+         id="tspan3164"
+         x="-42.889046"
+         y="-6.8759575"
+         style="stroke-width:1.05833;stroke-miterlimit:4;stroke-dasharray:none">絶縁ひも</tspan></text>
+    <text
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       id="text3166-1"
+       y="-6.5325127"
+       x="58.617302"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-miterlimit:4;stroke-dasharray:none"
+       xml:space="preserve"><tspan
+         style="stroke-width:1.05833;stroke-miterlimit:4;stroke-dasharray:none"
+         y="-6.5325127"
+         x="58.617302"
+         id="tspan3164-5"
+         sodipodi:role="line">絶縁ひも</tspan></text>
+    <text
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+       x="112.43249"
+       y="163.78799"
+       id="text3166-1-3"><tspan
+         sodipodi:role="line"
+         id="tspan3164-5-1"
+         x="112.43249"
+         y="163.78799"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1">水槽</tspan><tspan
+         sodipodi:role="line"
+         x="112.43249"
+         y="177.77959"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+         id="tspan3342">内側金属貼り</tspan></text>
+    <text
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       id="text3166-8"
+       y="70.630127"
+       x="-127.68232"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-miterlimit:4;stroke-dasharray:none"
+       xml:space="preserve"><tspan
+         style="stroke-width:1.05833;stroke-miterlimit:4;stroke-dasharray:none"
+         y="70.630127"
+         x="-127.68232"
+         id="tspan3164-4"
+         sodipodi:role="line">接地</tspan></text>
+    <text
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-miterlimit:4;stroke-dasharray:none"
+       x="185.2943"
+       y="68.814713"
+       id="text3166-8-5"><tspan
+         sodipodi:role="line"
+         id="tspan3164-4-8"
+         x="185.2943"
+         y="68.814713"
+         style="stroke-width:1.05833;stroke-miterlimit:4;stroke-dasharray:none">接地</tspan></text>
+    <text
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       id="text3166-1-3-2"
+       y="125.44257"
+       x="-202.25932"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+         y="125.44257"
+         x="-202.25932"
+         id="tspan3164-5-1-1"
+         sodipodi:role="line">水槽</tspan><tspan
+         id="tspan3342-9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+         y="139.43417"
+         x="-202.25932"
+         sodipodi:role="line">内側金属貼り</tspan></text>
+    <text
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       transform="translate(49.873909,-156.55553)"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+       x="-202.25932"
+       y="125.44257"
+       id="text3166-1-3-2-3"><tspan
+         sodipodi:role="line"
+         x="-202.25932"
+         y="125.44257"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+         id="tspan3342-9-5">試験電圧</tspan></text>
+    <text
+       inkscape:export-ydpi="53.043999"
+       inkscape:export-xdpi="53.043999"
+       inkscape:export-filename="C:\Users\info\Desktop\rect956-1.png"
+       id="text3166-1-3-2-3-2"
+       y="125.44257"
+       x="-202.25932"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+       xml:space="preserve"
+       transform="translate(363.99579,-159.65628)"><tspan
+         id="tspan3342-9-5-7"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+         y="125.44257"
+         x="-202.25932"
+         sodipodi:role="line">試験電圧</tspan></text>
+  </g>
+</svg>

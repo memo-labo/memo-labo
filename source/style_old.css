@@ -1,0 +1,201 @@
+@charset "utf-8";
+
+ul {
+  padding: 0px 0px 0px 4px;
+  margin: 0;
+}
+
+.ad1{
+  margin:40px auto;
+  text-align:center;
+}
+
+h2{
+  letter-spacing:1.5px;
+}
+li {
+  margin: 5px 0px;
+}
+
+li {
+  list-style-type: none;
+  position: relative;
+  padding-left: 0.8em;
+  }
+li:before {
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0.8em;
+  content: "";
+  /*
+  background: #aaa;
+  */
+  background: #000;
+  }
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: #4865b2;
+  font-weight: bold;
+}
+a:visited {
+  color: #4865b2;
+}
+a:hover {
+  color: #184f80;
+  text-decoration: underline;
+}
+a:active {
+  color: #4865b2;
+}
+
+.sub {
+  line-height: 18px;
+  text-align: center;
+}
+
+input {
+  width: 100px;
+  margin: 6px;
+  padding: 5px;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.img1 {
+  max-width: 500px;
+}
+
+img{
+  max-width:100%;
+}
+
+@media screen and (max-width: 640px) {
+  img{
+    width:100%;
+  }
+}
+
+@media screen and (min-width: 641px) {
+  .news{
+    border-radius:6px;
+    background-color:#ff0000;
+    color:#ffffff;
+    padding:3px 4px;
+    font-size:17px;
+  }
+  
+  body {
+    line-height: 40px;
+    font-size: 20px;
+/*
+    font-family:"Noto Sans JP", -apple-system, blinkmacsystemfont, "Segoe UI", "Hiragino Kaku Gothic ProN", "BIZ UDPGothic", meiryo, sans-serif;
+*/
+    font-family: -apple-system, blinkMacSystemFont,
+ "Helvetica Neue",
+ "Segoe UI",
+ "Hiragino Kaku Gothic ProN",
+ Meiryo,
+ sans-serif;
+
+ color:rgb(34, 34, 34);
+    word-break: break-all;
+  }
+
+  .point {
+    background-color: #ffeec0;
+    padding: 0px 5px;
+  }
+
+  .image_small {
+    width: 350px;
+  }
+
+  .wrapper {
+    width: 100%;
+    max-width: 950px;
+    margin: 20px auto;
+    background-color: #fff;
+  }
+
+  
+  h1 {
+    font-size: 28px;
+    text-align: center;
+    margin: 15px 0px 12px 0px;
+    font-weight:bold;
+    }
+
+  h1 a{
+      font-weight:bold;
+      text-decoration:none;
+      color:#000;
+    }
+
+
+  h2 {
+    background: #f7f7f7;
+    padding: 20px;
+    border-left: 9px solid #4865b2;
+    line-height: 32px;
+    font-size: 24px;
+    margin: 18px 0px 18px 0px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  
+  .news{
+    border-radius:6px;
+    background-color:#ff0000;
+    color:#ffffff;
+    padding:3px 4px;
+    font-size:14px;
+  }
+
+  body {
+    line-height: 32px;
+    font-family: -apple-system, blinkMacSystemFont,
+      /* Macの欧文はSan Francisco (OS X 10.11以降) */ "Helvetica Neue",
+      /* Macの欧文 (OS X 10.10以前) */ "Segoe UI",
+      /* Windowsの欧文 */ "Hiragino Kaku Gothic ProN",
+      /* Macのヒラギノ */ Meiryo, /* Windowsのメイリオ */ sans-serif;
+    color: #333;
+  }
+
+  h1 {
+    font-size: 28px;
+    text-align: center;
+    margin: 15px 0px 12px 0px;
+    font-weight:bold;
+    }
+
+  h1 a{
+      font-weight:bold;
+      text-decoration:none;
+      color:#000;
+    }
+
+    h2 {
+    background: #f7f7f7;
+    padding: 11px;
+    border-left: 9px solid #4865b2;
+    line-height: 26px;
+    font-size: 17px;
+    margin: 12px 0px;
+  }
+
+}

@@ -1,0 +1,38 @@
+# ----------------------------------------
+# 404エラーページ
+# ----------------------------------------
+ErrorDocument 404 /404.php
+
+
+# ----------------------------------------
+# キャッシュ制御
+# ----------------------------------------
+<Files ~ "\.(css|js|html|jpg|png)$">
+    Header set Pragma no-cache
+    Header set Cache-Control no-cache
+</Files>
+
+
+# ----------------------------------------
+# URL正規化
+# https://memo-labo.com/ に統一
+# ----------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # wwwあり → wwwなし
+    # http → https
+    RewriteCond %{HTTP_HOST} ^www\.memo-labo\.com$ [NC,OR]
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^(.*)$ https://memo-labo.com/$1 [R=301,L]
+</IfModule>
+
+Redirect 301 /ocr_gimon2.php /ocr_gimon.php
+Redirect 301 /ocr3.php /ocr_gimon.php
+Redirect 301 /ocr_shiken2.php /ocr_gimon.php
+Redirect 301 /ocr_shiken.php /ocr.php
+Redirect 301 /j2.php /ocr_gimon.php
+Redirect 301 /uvr-ocr.php /ocr_v.php
+Redirect 301 /dgr2.php /dgr.php
+Redirect 301 /vt-tr.php /dgr.php
+Redirect 301 /qa9.php /koutei.php
