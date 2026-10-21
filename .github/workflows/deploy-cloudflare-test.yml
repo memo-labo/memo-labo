@@ -1,6 +1,9 @@
-name: Deploy memo-labo test to Cloudflare
+name: Deploy memo-labo to Cloudflare
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
