@@ -40,17 +40,5 @@ fclose($f);
 
 </div>
 
-
-<a
-    class="twitter-fixed"
-    href="https://twitter.com/den_study"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Twitterを開く"
->
-    <img src="images/twitter.png" alt="Twitter">
-</a>
-
-
 </body>
 </html>
