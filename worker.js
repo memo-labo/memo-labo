@@ -13,6 +13,14 @@ const LEGACY_REDIRECTS = new Map([
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+
+    // Keep one canonical public origin for SEO.
+    if (url.hostname === "www.memo-labo.com" || url.protocol !== "https:") {
+      url.protocol = "https:";
+      url.hostname = "memo-labo.com";
+      return Response.redirect(url.toString(), 301);
+    }
+
     const path = url.pathname;
 
     // Preserve the redirects that already exist on the Lolipop site.
