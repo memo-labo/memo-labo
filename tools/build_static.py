@@ -48,9 +48,13 @@ def body(text,rs,title,src,rel):
     text=expand_php(text,rs,title)
     return None if ('<?php' in text or '<?=' in text) else text.strip()
 
-def related(rs,cat,prefix):
-    its=[f'<li><a href="{prefix}{html.escape(r[1])}.php">{html.escape(r[2])}</a></li>' for r in rs if r[0]==cat]
-    return '<h2>関連ページ</h2><ul class="top-links">'+''.join(its)+'</ul>' if its else ''
+def related(rs,cat,prefix,current_stem):
+    its=[]
+    for r in rs:
+        if r[0]!=cat or r[1]==current_stem:continue
+        label=(r[3] or r[2]).strip()
+        its.append(f'<li><a href="{prefix}{html.escape(r[1])}.php">{html.escape(label)}</a></li>')
+    return '<nav class="related-pages" aria-label="関連記事"><h2>関連記事</h2><ul class="top-links">'+''.join(its)+'</ul></nav>' if its else ''
 
 def page_description(b,fallback):
     text=re.sub(r'<(?:script|style)\b.*?</(?:script|style)>',' ',b,flags=re.S|re.I)
@@ -95,7 +99,7 @@ def render(rel,stem,b,rs,script,is_index=False):
     structured=json_ld(canonical,index_title if is_index else title,site_title,is_index,is_root,section)
     extra_script=script if not section else ''
     search='' if section else f'<div class="site-search"><form action="{root}search" method="get"><input type="search" name="q" placeholder="記事を検索"><button type="submit">検索</button></form></div>'
-    return f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="stylesheet" href="{root}style.css"><title>{html.escape(full)}</title><meta name="description" content="{html.escape(description)}"><link rel="canonical" href="{canonical}"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="{html.escape(og_title)}"><meta name="twitter:description" content="{html.escape(description)}"><meta property="og:type" content="{'website' if is_index else 'article'}"><meta property="og:site_name" content="{html.escape(site_title)}"><meta property="og:url" content="{canonical}"><meta property="og:title" content="{html.escape(og_title)}"><meta property="og:description" content="{html.escape(description)}"><meta property="og:locale" content="ja_JP">{image_meta}{structured}<script async src="https://www.googletagmanager.com/gtag/js?id={GA}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','{GA}');</script><script async src="https://pagead2.googlesyndication.com/pagead/js?client={ADS}" crossorigin="anonymous"></script>{extra_script}</head><body><div class="wrapper"><header>{logo}{tagline}</header>{search}<main>{h1}{b}{'' if is_index else related(rs,cat,root)}</main><div class="return"><a href="{root}">TOPに戻る</a></div></div></body></html>'''
+    return f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="stylesheet" href="{root}style.css"><title>{html.escape(full)}</title><meta name="description" content="{html.escape(description)}"><link rel="canonical" href="{canonical}"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="{html.escape(og_title)}"><meta name="twitter:description" content="{html.escape(description)}"><meta property="og:type" content="{'website' if is_index else 'article'}"><meta property="og:site_name" content="{html.escape(site_title)}"><meta property="og:url" content="{canonical}"><meta property="og:title" content="{html.escape(og_title)}"><meta property="og:description" content="{html.escape(description)}"><meta property="og:locale" content="ja_JP">{image_meta}{structured}<script async src="https://www.googletagmanager.com/gtag/js?id={GA}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','{GA}');</script><script async src="https://pagead2.googlesyndication.com/pagead/js?client={ADS}" crossorigin="anonymous"></script>{extra_script}</head><body><div class="wrapper"><header>{logo}{tagline}</header>{search}<main>{h1}{b}{'' if is_index else related(rs,cat,root,stem)}</main><div class="return"><a href="{root}">TOPに戻る</a></div></div></body></html>'''
 
 def make_search(out,src):
     rs=read_rows(src/'data.csv')
