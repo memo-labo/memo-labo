@@ -60,11 +60,13 @@ def page_description(b,fallback):
     if len(text)<30:return fallback
     return text[:155].rstrip(' 、。・,')+'…' if len(text)>155 else text
 
-def json_ld(canonical,title,site_title,is_index):
-    if is_index:
+def json_ld(canonical,title,site_title,is_index,is_root):
+    if is_root:
         data={'@context':'https://schema.org','@type':'WebSite','name':site_title,'url':canonical,'inLanguage':'ja'}
+    elif is_index:
+        data={'@context':'https://schema.org','@type':'CollectionPage','name':title,'url':canonical,'isPartOf':{'@type':'WebSite','name':'でんきメモ','url':SITE+'/'},'inLanguage':'ja'}
     else:
-        data={'@context':'https://schema.org','@type':'WebPage','name':title,'url':canonical,'isPartOf':{'@type':'WebSite','name':site_title,'url':SITE+'/'},'inLanguage':'ja'}
+        data={'@context':'https://schema.org','@type':'WebPage','name':title,'url':canonical,'isPartOf':{'@type':'WebSite','name':'でんきメモ','url':SITE+'/'},'inLanguage':'ja'}
     return '<script type="application/ld+json">'+json.dumps(data,ensure_ascii=False,separators=(',',':')).replace('</','<\\/')+'</script>'
 
 def render(rel,stem,b,rs,script,is_index=False):
@@ -74,7 +76,8 @@ def render(rel,stem,b,rs,script,is_index=False):
     elif section=='b': site_title='ビルメンメモ'; index_title='ビルメンメモ | 設備、水道、ビル管理'; tagline=''
     else: site_title='でんきメモ'; index_title='でんきメモ | 高圧受電設備、保護継電器、測定器、電気主任技術者、電気管理技術者の知識'; tagline='<p>電気管理技術者の備忘録</p>'
     canonical=SITE+'/'+str(rel).replace('\\','/')
-    if rel==Path('index.php'): canonical=SITE+'/'
+    is_root=rel==Path('index.php')
+    if is_root: canonical=SITE+'/'
     full=index_title if is_index else title+' - '+site_title
     og_title=index_title if is_index else title
     description=index_title if is_index else page_description(b,full)
@@ -83,7 +86,7 @@ def render(rel,stem,b,rs,script,is_index=False):
     icon_base=f'{SITE}/{section}/icon' if section in ('j','b') else f'{SITE}/icon'
     image_url=f'{icon_base}/{stem}.jpg'
     image_meta='' if is_index else f'<meta property="og:image" content="{image_url}"><meta name="twitter:image" content="{image_url}">'
-    structured=json_ld(canonical,index_title if is_index else title,site_title,is_index)
+    structured=json_ld(canonical,index_title if is_index else title,site_title,is_index,is_root)
     extra_script=script if not section else ''
     search='' if section else f'<div class="site-search"><form action="{root}search" method="get"><input type="search" name="q" placeholder="記事を検索"><button type="submit">検索</button></form></div>'
     return f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="stylesheet" href="{root}style.css"><title>{html.escape(full)}</title><meta name="description" content="{html.escape(description)}"><link rel="canonical" href="{canonical}"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="{html.escape(og_title)}"><meta name="twitter:description" content="{html.escape(description)}"><meta property="og:type" content="{'website' if is_index else 'article'}"><meta property="og:site_name" content="{html.escape(site_title)}"><meta property="og:url" content="{canonical}"><meta property="og:title" content="{html.escape(og_title)}"><meta property="og:description" content="{html.escape(description)}">{image_meta}{structured}<script async src="https://www.googletagmanager.com/gtag/js?id={GA}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','{GA}');</script><script async src="https://pagead2.googlesyndication.com/pagead/js?client={ADS}" crossorigin="anonymous"></script>{extra_script}</head><body><div class="wrapper"><header>{logo}{tagline}</header>{search}<main>{h1}{b}{'' if is_index else related(rs,cat,root)}</main><div class="return"><a href="{root}">TOPに戻る</a></div></div></body></html>'''
