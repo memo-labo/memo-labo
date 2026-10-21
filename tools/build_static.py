@@ -62,13 +62,14 @@ def render(rel,stem,b,rs,script,is_index=False):
     if rel==Path('index.php'): canonical=SITE+'/'
     full=index_title if is_index else title+' - '+site_title
     og_title=index_title if is_index else title
+    description=index_title if is_index else full
     logo=f'<h1><a href="{root}">{site_title}</a></h1>' if is_index else f'<div class="site-title"><a href="{root}">{site_title}</a></div>'
     h1='' if is_index else f'<h1 class="article-title">{html.escape(title)}</h1>'
     icon_base=f'{SITE}/{section}/icon' if section in ('j','b') else f'{SITE}/icon'
     image_meta='' if is_index else f'<meta property="og:image" content="{icon_base}/{stem}.jpg">'
     extra_script=script if not section else ''
     search='' if section else f'<div class="site-search"><form action="{root}search" method="get"><input type="search" name="q" placeholder="記事を検索"><button type="submit">検索</button></form></div>'
-    return f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="stylesheet" href="{root}style.css"><title>{html.escape(full)}</title><link rel="canonical" href="{canonical}"><meta name="twitter:card" content="summary"><meta property="og:url" content="{canonical}"><meta property="og:title" content="{html.escape(og_title)}">{image_meta}<script async src="https://www.googletagmanager.com/gtag/js?id={GA}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','{GA}');</script><script async src="https://pagead2.googlesyndication.com/pagead/js?client={ADS}" crossorigin="anonymous"></script>{extra_script}</head><body><div class="wrapper"><header>{logo}{tagline}</header>{search}<main>{h1}{b}{'' if is_index else related(rs,cat,root)}</main><div class="return"><a href="{root}">TOPに戻る</a></div></div></body></html>'''
+    return f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="stylesheet" href="{root}style.css"><title>{html.escape(full)}</title><meta name="description" content="{html.escape(description)}"><link rel="canonical" href="{canonical}"><meta name="twitter:card" content="summary"><meta property="og:type" content="{'website' if is_index else 'article'}"><meta property="og:site_name" content="{html.escape(site_title)}"><meta property="og:url" content="{canonical}"><meta property="og:title" content="{html.escape(og_title)}"><meta property="og:description" content="{html.escape(description)}">{image_meta}<script async src="https://www.googletagmanager.com/gtag/js?id={GA}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','{GA}');</script><script async src="https://pagead2.googlesyndication.com/pagead/js?client={ADS}" crossorigin="anonymous"></script>{extra_script}</head><body><div class="wrapper"><header>{logo}{tagline}</header>{search}<main>{h1}{b}{'' if is_index else related(rs,cat,root)}</main><div class="return"><a href="{root}">TOPに戻る</a></div></div></body></html>'''
 
 def make_search(out,src):
     rs=read_rows(src/'data.csv')
@@ -84,8 +85,7 @@ def make_seo_files(out,built):
         if rel==Path('index.php'): url=SITE+'/'
         else: url=SITE+'/'+s.replace('\\','/')
         urls.append(url)
-    urls.append(SITE+'/search')
-    xml='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join(f'  <url><loc>{html.escape(u)}</loc></url>\n' for u in urls if u!=SITE+'/search')+'</urlset>\n'
+    xml='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join(f'  <url><loc>{html.escape(u)}</loc></url>\n' for u in urls)+'</urlset>\n'
     (out/'sitemap.xml').write_text(xml,encoding='utf-8')
     (out/'robots.txt').write_text(f'User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n',encoding='utf-8')
 
