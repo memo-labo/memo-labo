@@ -79,7 +79,7 @@ def json_ld(canonical,title,site_title,is_index,is_root,section):
         data={'@context':'https://schema.org','@graph':[page,breadcrumb]}
     return '<script type="application/ld+json">'+json.dumps(data,ensure_ascii=False,separators=(',',':')).replace('</','<\\/')+'</script>'
 
-def render(rel,stem,b,rs,script,is_index=False):
+def render(rel,stem,b,rs,script,src,is_index=False):
     cat,label,title=meta(rs,stem); depth=len(rel.parts)-1; root='../'*depth
     section=rel.parts[0] if depth else ''
     if section=='j': site_title='電気工事士メモ'; index_title='電気工事士・電気施工管理メモ'; tagline=''
@@ -94,9 +94,11 @@ def render(rel,stem,b,rs,script,is_index=False):
     description=index_title if is_index else page_description(b,full)
     logo=f'<h1><a href="{root}">{site_title}</a></h1>' if is_index else f'<div class="site-title"><a href="{root}">{site_title}</a></div>'
     h1='' if is_index else f'<h1 class="article-title">{html.escape(title)}</h1>'
-    icon_base=f'{SITE}/{section}/icon' if section in ('j','b') else f'{SITE}/icon'
-    image_url=f'{icon_base}/{stem}.jpg'
-    image_meta='' if is_index else f'<meta property="og:image" content="{image_url}"><meta name="twitter:image" content="{image_url}">'
+    icon_rel=Path(section,'icon',stem+'.jpg') if section in ('j','b') else Path('icon',stem+'.jpg')
+    image_meta=''
+    if not is_index and (src/icon_rel).is_file():
+        image_url=SITE+'/'+icon_rel.as_posix()
+        image_meta=f'<meta property="og:image" content="{image_url}"><meta name="twitter:image" content="{image_url}">'
     robots='<meta name="robots" content="noindex,follow">' if is_404 else ''
     structured='' if is_404 else json_ld(canonical,index_title if is_index else title,site_title,is_index,is_root,section)
     extra_script=script if not section else ''
@@ -134,7 +136,7 @@ def main(src,out):
         if '.DAV' in p.parts or p.name in EXCLUDE:continue
         rel=p.relative_to(src); rs=rows_for(src,rel); stem=p.stem; _,_,title=meta(rs,stem); b=body(read_text(p),rs,title,src,rel)
         if b is None:skipped.append(str(rel));continue
-        q=(out/rel).with_suffix('.html');q.parent.mkdir(parents=True,exist_ok=True);q.write_text(render(rel,stem,b,rs,script,p.name=='index.php'),encoding='utf-8');built.append(str(rel))
+        q=(out/rel).with_suffix('.html');q.parent.mkdir(parents=True,exist_ok=True);q.write_text(render(rel,stem,b,rs,script,src,p.name=='index.php'),encoding='utf-8');built.append(str(rel))
     make_search(out,src)
     make_seo_files(out,built)
     (out/'BUILD_REPORT.txt').write_text(f'built={len(built)}\nskipped_dynamic={len(skipped)}\n\nSKIPPED\n'+'\n'.join(skipped),encoding='utf-8')
