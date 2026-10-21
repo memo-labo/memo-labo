@@ -52,6 +52,14 @@ def related(rs,cat,prefix):
     its=[f'<li><a href="{prefix}{html.escape(r[1])}.php">{html.escape(r[2])}</a></li>' for r in rs if r[0]==cat]
     return '<h2>関連ページ</h2><ul class="top-links">'+''.join(its)+'</ul>' if its else ''
 
+def page_description(b,fallback):
+    text=re.sub(r'<(?:script|style)\b.*?</(?:script|style)>',' ',b,flags=re.S|re.I)
+    text=re.sub(r'<[^>]+>',' ',text)
+    text=html.unescape(text)
+    text=re.sub(r'\s+',' ',text).strip()
+    if len(text)<30:return fallback
+    return text[:155].rstrip(' 、。・,')+'…' if len(text)>155 else text
+
 def json_ld(canonical,title,site_title,is_index):
     if is_index:
         data={'@context':'https://schema.org','@type':'WebSite','name':site_title,'url':canonical,'inLanguage':'ja'}
@@ -69,7 +77,7 @@ def render(rel,stem,b,rs,script,is_index=False):
     if rel==Path('index.php'): canonical=SITE+'/'
     full=index_title if is_index else title+' - '+site_title
     og_title=index_title if is_index else title
-    description=index_title if is_index else full
+    description=index_title if is_index else page_description(b,full)
     logo=f'<h1><a href="{root}">{site_title}</a></h1>' if is_index else f'<div class="site-title"><a href="{root}">{site_title}</a></div>'
     h1='' if is_index else f'<h1 class="article-title">{html.escape(title)}</h1>'
     icon_base=f'{SITE}/{section}/icon' if section in ('j','b') else f'{SITE}/icon'
