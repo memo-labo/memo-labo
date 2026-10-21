@@ -60,13 +60,19 @@ def page_description(b,fallback):
     if len(text)<30:return fallback
     return text[:155].rstrip(' 、。・,')+'…' if len(text)>155 else text
 
-def json_ld(canonical,title,site_title,is_index,is_root):
+def json_ld(canonical,title,site_title,is_index,is_root,section):
     if is_root:
         data={'@context':'https://schema.org','@type':'WebSite','name':site_title,'url':canonical,'inLanguage':'ja'}
     elif is_index:
         data={'@context':'https://schema.org','@type':'CollectionPage','name':title,'url':canonical,'isPartOf':{'@type':'WebSite','name':'でんきメモ','url':SITE+'/'},'inLanguage':'ja'}
     else:
-        data={'@context':'https://schema.org','@type':'WebPage','name':title,'url':canonical,'isPartOf':{'@type':'WebSite','name':'でんきメモ','url':SITE+'/'},'inLanguage':'ja'}
+        page={'@type':'WebPage','name':title,'url':canonical,'isPartOf':{'@type':'WebSite','name':'でんきメモ','url':SITE+'/'},'inLanguage':'ja','breadcrumb':{'@id':canonical+'#breadcrumb'}}
+        items=[{'@type':'ListItem','position':1,'name':'でんきメモ','item':SITE+'/'}]
+        if section=='j': items.append({'@type':'ListItem','position':2,'name':'電気工事士メモ','item':SITE+'/j/index.php'})
+        elif section=='b': items.append({'@type':'ListItem','position':2,'name':'ビルメンメモ','item':SITE+'/b/index.php'})
+        items.append({'@type':'ListItem','position':len(items)+1,'name':title,'item':canonical})
+        breadcrumb={'@type':'BreadcrumbList','@id':canonical+'#breadcrumb','itemListElement':items}
+        data={'@context':'https://schema.org','@graph':[page,breadcrumb]}
     return '<script type="application/ld+json">'+json.dumps(data,ensure_ascii=False,separators=(',',':')).replace('</','<\\/')+'</script>'
 
 def render(rel,stem,b,rs,script,is_index=False):
@@ -86,10 +92,10 @@ def render(rel,stem,b,rs,script,is_index=False):
     icon_base=f'{SITE}/{section}/icon' if section in ('j','b') else f'{SITE}/icon'
     image_url=f'{icon_base}/{stem}.jpg'
     image_meta='' if is_index else f'<meta property="og:image" content="{image_url}"><meta name="twitter:image" content="{image_url}">'
-    structured=json_ld(canonical,index_title if is_index else title,site_title,is_index,is_root)
+    structured=json_ld(canonical,index_title if is_index else title,site_title,is_index,is_root,section)
     extra_script=script if not section else ''
     search='' if section else f'<div class="site-search"><form action="{root}search" method="get"><input type="search" name="q" placeholder="記事を検索"><button type="submit">検索</button></form></div>'
-    return f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="stylesheet" href="{root}style.css"><title>{html.escape(full)}</title><meta name="description" content="{html.escape(description)}"><link rel="canonical" href="{canonical}"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="{html.escape(og_title)}"><meta name="twitter:description" content="{html.escape(description)}"><meta property="og:type" content="{'website' if is_index else 'article'}"><meta property="og:site_name" content="{html.escape(site_title)}"><meta property="og:url" content="{canonical}"><meta property="og:title" content="{html.escape(og_title)}"><meta property="og:description" content="{html.escape(description)}">{image_meta}{structured}<script async src="https://www.googletagmanager.com/gtag/js?id={GA}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','{GA}');</script><script async src="https://pagead2.googlesyndication.com/pagead/js?client={ADS}" crossorigin="anonymous"></script>{extra_script}</head><body><div class="wrapper"><header>{logo}{tagline}</header>{search}<main>{h1}{b}{'' if is_index else related(rs,cat,root)}</main><div class="return"><a href="{root}">TOPに戻る</a></div></div></body></html>'''
+    return f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="stylesheet" href="{root}style.css"><title>{html.escape(full)}</title><meta name="description" content="{html.escape(description)}"><link rel="canonical" href="{canonical}"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="{html.escape(og_title)}"><meta name="twitter:description" content="{html.escape(description)}"><meta property="og:type" content="{'website' if is_index else 'article'}"><meta property="og:site_name" content="{html.escape(site_title)}"><meta property="og:url" content="{canonical}"><meta property="og:title" content="{html.escape(og_title)}"><meta property="og:description" content="{html.escape(description)}"><meta property="og:locale" content="ja_JP">{image_meta}{structured}<script async src="https://www.googletagmanager.com/gtag/js?id={GA}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','{GA}');</script><script async src="https://pagead2.googlesyndication.com/pagead/js?client={ADS}" crossorigin="anonymous"></script>{extra_script}</head><body><div class="wrapper"><header>{logo}{tagline}</header>{search}<main>{h1}{b}{'' if is_index else related(rs,cat,root)}</main><div class="return"><a href="{root}">TOPに戻る</a></div></div></body></html>'''
 
 def make_search(out,src):
     rs=read_rows(src/'data.csv')
