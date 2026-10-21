@@ -87,6 +87,7 @@ def render(rel,stem,b,rs,script,is_index=False):
     else: site_title='でんきメモ'; index_title='でんきメモ | 高圧受電設備、保護継電器、測定器、電気主任技術者、電気管理技術者の知識'; tagline='<p>電気管理技術者の備忘録</p>'
     canonical=SITE+'/'+str(rel).replace('\\','/')
     is_root=rel==Path('index.php')
+    is_404=rel==Path('404.php')
     if is_root: canonical=SITE+'/'
     full=index_title if is_index else title+' - '+site_title
     og_title=index_title if is_index else title
@@ -96,14 +97,15 @@ def render(rel,stem,b,rs,script,is_index=False):
     icon_base=f'{SITE}/{section}/icon' if section in ('j','b') else f'{SITE}/icon'
     image_url=f'{icon_base}/{stem}.jpg'
     image_meta='' if is_index else f'<meta property="og:image" content="{image_url}"><meta name="twitter:image" content="{image_url}">'
-    structured=json_ld(canonical,index_title if is_index else title,site_title,is_index,is_root,section)
+    robots='<meta name="robots" content="noindex,follow">' if is_404 else ''
+    structured='' if is_404 else json_ld(canonical,index_title if is_index else title,site_title,is_index,is_root,section)
     extra_script=script if not section else ''
     search='' if section else f'<div class="site-search"><form action="{root}search" method="get"><input type="search" name="q" placeholder="記事を検索"><button type="submit">検索</button></form></div>'
-    return f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="stylesheet" href="{root}style.css"><title>{html.escape(full)}</title><meta name="description" content="{html.escape(description)}"><link rel="canonical" href="{canonical}"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="{html.escape(og_title)}"><meta name="twitter:description" content="{html.escape(description)}"><meta property="og:type" content="{'website' if is_index else 'article'}"><meta property="og:site_name" content="{html.escape(site_title)}"><meta property="og:url" content="{canonical}"><meta property="og:title" content="{html.escape(og_title)}"><meta property="og:description" content="{html.escape(description)}"><meta property="og:locale" content="ja_JP">{image_meta}{structured}<script async src="https://www.googletagmanager.com/gtag/js?id={GA}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','{GA}');</script><script async src="https://pagead2.googlesyndication.com/pagead/js?client={ADS}" crossorigin="anonymous"></script>{extra_script}</head><body><div class="wrapper"><header>{logo}{tagline}</header>{search}<main>{h1}{b}{'' if is_index else related(rs,cat,root,stem)}</main><div class="return"><a href="{root}">TOPに戻る</a></div></div></body></html>'''
+    return f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="stylesheet" href="{root}style.css"><title>{html.escape(full)}</title><meta name="description" content="{html.escape(description)}">{robots}<link rel="canonical" href="{canonical}"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="{html.escape(og_title)}"><meta name="twitter:description" content="{html.escape(description)}"><meta property="og:type" content="{'website' if is_index else 'article'}"><meta property="og:site_name" content="{html.escape(site_title)}"><meta property="og:url" content="{canonical}"><meta property="og:title" content="{html.escape(og_title)}"><meta property="og:description" content="{html.escape(description)}"><meta property="og:locale" content="ja_JP">{image_meta}{structured}<script async src="https://www.googletagmanager.com/gtag/js?id={GA}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','{GA}');</script><script async src="https://pagead2.googlesyndication.com/pagead/js?client={ADS}" crossorigin="anonymous"></script>{extra_script}</head><body><div class="wrapper"><header>{logo}{tagline}</header>{search}<main>{h1}{b}{'' if is_index or is_404 else related(rs,cat,root,stem)}</main><div class="return"><a href="{root}">TOPに戻る</a></div></div></body></html>'''
 
 def make_search(out,src):
     rs=read_rows(src/'data.csv')
-    data=[{'url':r[1]+'.php','title':r[3],'label':r[2]} for r in rs]
+    data=[{'url':r[1]+'.php','title':r[3],'label':r[2]} for r in rs if r[1]!='404']
     (out/'search-index.json').write_text(json.dumps(data,ensure_ascii=False),encoding='utf-8')
     page='''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="style.css"><title>サイト内検索 - でんきメモ</title><link rel="canonical" href="https://memo-labo.com/search"><meta name="robots" content="noindex,follow"></head><body><div class="wrapper"><header><div class="site-title"><a href="/">でんきメモ</a></div></header><main><h1 class="article-title">サイト内検索</h1><form id="f"><input id="q" type="search" placeholder="検索語"><button>検索</button></form><p id="n"></p><ul id="r" class="top-links"></ul></main></div><script>let D=[];fetch('/search-index.json').then(r=>r.json()).then(x=>{D=x;go()});function go(){let q=(new URLSearchParams(location.search).get('q')||document.querySelector('#q').value||'').trim().toLowerCase();document.querySelector('#q').value=q;if(!q)return;let a=D.filter(x=>(x.title+' '+x.label).toLowerCase().includes(q));document.querySelector('#n').textContent=a.length+'件';document.querySelector('#r').innerHTML=a.map(x=>'<li><a href="/'+x.url+'">'+x.label+'</a></li>').join('')}document.querySelector('#f').onsubmit=e=>{e.preventDefault();history.replaceState(null,'','?q='+encodeURIComponent(document.querySelector('#q').value));go()}</script></body></html>'''
     (out/'search.html').write_text(page,encoding='utf-8')
@@ -112,6 +114,7 @@ def make_seo_files(out,built):
     urls=[]
     for s in built:
         rel=Path(s)
+        if rel==Path('404.php'):continue
         if rel==Path('index.php'): url=SITE+'/'
         else: url=SITE+'/'+s.replace('\\','/')
         urls.append(url)
