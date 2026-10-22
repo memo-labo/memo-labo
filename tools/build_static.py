@@ -65,18 +65,19 @@ def page_description(b,fallback):
     return text[:155].rstrip(' 、。・,')+'…' if len(text)>155 else text
 
 def json_ld(canonical,title,site_title,is_index,is_root,section):
+    website={'@type':'WebSite','@id':SITE+'/#website','name':'でんきメモ','url':SITE+'/','inLanguage':'ja'}
     if is_root:
-        data={'@context':'https://schema.org','@type':'WebSite','name':site_title,'url':canonical,'inLanguage':'ja'}
+        data={'@context':'https://schema.org','@graph':[website,{'@type':'CollectionPage','@id':canonical+'#webpage','name':title,'url':canonical,'isPartOf':{'@id':SITE+'/#website'},'inLanguage':'ja'}]}
     elif is_index:
-        data={'@context':'https://schema.org','@type':'CollectionPage','name':title,'url':canonical,'isPartOf':{'@type':'WebSite','name':'でんきメモ','url':SITE+'/'},'inLanguage':'ja'}
+        data={'@context':'https://schema.org','@graph':[website,{'@type':'CollectionPage','@id':canonical+'#webpage','name':title,'url':canonical,'isPartOf':{'@id':SITE+'/#website'},'inLanguage':'ja'}]}
     else:
-        page={'@type':'WebPage','name':title,'url':canonical,'isPartOf':{'@type':'WebSite','name':'でんきメモ','url':SITE+'/'},'inLanguage':'ja','breadcrumb':{'@id':canonical+'#breadcrumb'}}
+        page={'@type':'WebPage','@id':canonical+'#webpage','name':title,'url':canonical,'isPartOf':{'@id':SITE+'/#website'},'inLanguage':'ja','breadcrumb':{'@id':canonical+'#breadcrumb'}}
         items=[{'@type':'ListItem','position':1,'name':'でんきメモ','item':SITE+'/'}]
         if section=='j': items.append({'@type':'ListItem','position':2,'name':'電気工事士メモ','item':SITE+'/j/index.php'})
         elif section=='b': items.append({'@type':'ListItem','position':2,'name':'ビルメンメモ','item':SITE+'/b/index.php'})
         items.append({'@type':'ListItem','position':len(items)+1,'name':title,'item':canonical})
         breadcrumb={'@type':'BreadcrumbList','@id':canonical+'#breadcrumb','itemListElement':items}
-        data={'@context':'https://schema.org','@graph':[page,breadcrumb]}
+        data={'@context':'https://schema.org','@graph':[website,page,breadcrumb]}
     return '<script type="application/ld+json">'+json.dumps(data,ensure_ascii=False,separators=(',',':')).replace('</','<\\/')+'</script>'
 
 def render(rel,stem,b,rs,script,src,is_index=False):
@@ -92,7 +93,8 @@ def render(rel,stem,b,rs,script,src,is_index=False):
     full=index_title if is_index else title+' - '+site_title
     og_title=index_title if is_index else title
     description=index_title if is_index else page_description(b,full)
-    logo=f'<h1><a href="{root}">{site_title}</a></h1>' if is_index else f'<div class="site-title"><a href="{root}">{site_title}</a></div>'
+    # Brand header is deliberately identical on every page. Section identity stays in title/content, not the logo.
+    logo='<h1 class="site-logo"><a href="https://memo-labo.com/">でんきメモ</a></h1>' if is_index else '<div class="site-logo"><a href="https://memo-labo.com/">でんきメモ</a></div>'
     h1='' if is_index else f'<h1 class="article-title">{html.escape(title)}</h1>'
     icon_rel=Path(section,'icon',stem+'.jpg') if section in ('j','b') else Path('icon',stem+'.jpg')
     image_meta=''
@@ -103,13 +105,13 @@ def render(rel,stem,b,rs,script,src,is_index=False):
     structured='' if is_404 else json_ld(canonical,index_title if is_index else title,site_title,is_index,is_root,section)
     extra_script=script if not section else ''
     search='' if section else f'<div class="site-search"><form action="{root}search" method="get"><input type="search" name="q" placeholder="記事を検索"><button type="submit">検索</button></form></div>'
-    return f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="stylesheet" href="{root}style.css"><title>{html.escape(full)}</title><meta name="description" content="{html.escape(description)}">{robots}<link rel="canonical" href="{canonical}"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="{html.escape(og_title)}"><meta name="twitter:description" content="{html.escape(description)}"><meta property="og:type" content="{'website' if is_index else 'article'}"><meta property="og:site_name" content="{html.escape(site_title)}"><meta property="og:url" content="{canonical}"><meta property="og:title" content="{html.escape(og_title)}"><meta property="og:description" content="{html.escape(description)}"><meta property="og:locale" content="ja_JP">{image_meta}{structured}<script async src="https://www.googletagmanager.com/gtag/js?id={GA}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','{GA}');</script><script async src="https://pagead2.googlesyndication.com/pagead/js?client={ADS}" crossorigin="anonymous"></script>{extra_script}</head><body><div class="wrapper"><header>{logo}{tagline}</header>{search}<main>{h1}{b}{'' if is_index or is_404 else related(rs,cat,root,stem)}</main><div class="return"><a href="{root}">TOPに戻る</a></div></div></body></html>'''
+    return f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="stylesheet" href="{root}style.css"><title>{html.escape(full)}</title><meta name="description" content="{html.escape(description)}">{robots}<link rel="canonical" href="{canonical}"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="{html.escape(og_title)}"><meta name="twitter:description" content="{html.escape(description)}"><meta property="og:type" content="{'website' if is_index else 'article'}"><meta property="og:site_name" content="でんきメモ"><meta property="og:url" content="{canonical}"><meta property="og:title" content="{html.escape(og_title)}"><meta property="og:description" content="{html.escape(description)}"><meta property="og:locale" content="ja_JP">{image_meta}{structured}<script async src="https://www.googletagmanager.com/gtag/js?id={GA}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','{GA}');</script><script async src="https://pagead2.googlesyndication.com/pagead/js?client={ADS}" crossorigin="anonymous"></script>{extra_script}</head><body><div class="wrapper"><header>{logo}{tagline}</header>{search}<main>{h1}{b}{'' if is_index or is_404 else related(rs,cat,root,stem)}</main><div class="return"><a href="https://memo-labo.com/">TOPに戻る</a></div></div></body></html>'''
 
 def make_search(out,src):
     rs=read_rows(src/'data.csv')
     data=[{'url':r[1]+'.php','title':r[3],'label':r[2]} for r in rs if r[1]!='404']
     (out/'search-index.json').write_text(json.dumps(data,ensure_ascii=False),encoding='utf-8')
-    page='''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="style.css"><title>サイト内検索 - でんきメモ</title><link rel="canonical" href="https://memo-labo.com/search"><meta name="robots" content="noindex,follow"></head><body><div class="wrapper"><header><div class="site-title"><a href="/">でんきメモ</a></div></header><main><h1 class="article-title">サイト内検索</h1><form id="f"><input id="q" type="search" placeholder="検索語"><button>検索</button></form><p id="n"></p><ul id="r" class="top-links"></ul></main></div><script>let D=[];fetch('/search-index.json').then(r=>r.json()).then(x=>{D=x;go()});function go(){let q=(new URLSearchParams(location.search).get('q')||document.querySelector('#q').value||'').trim().toLowerCase();document.querySelector('#q').value=q;if(!q)return;let a=D.filter(x=>(x.title+' '+x.label).toLowerCase().includes(q));document.querySelector('#n').textContent=a.length+'件';document.querySelector('#r').innerHTML=a.map(x=>'<li><a href="/'+x.url+'">'+x.label+'</a></li>').join('')}document.querySelector('#f').onsubmit=e=>{e.preventDefault();history.replaceState(null,'','?q='+encodeURIComponent(document.querySelector('#q').value));go()}</script></body></html>'''
+    page='''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="style.css"><title>サイト内検索 - でんきメモ</title><meta name="description" content="でんきメモ内の記事を検索できます。高圧受電設備、保護継電器、測定器、電気主任技術者・電気管理技術者向けの現場情報を探せます。"><link rel="canonical" href="https://memo-labo.com/search"><meta name="robots" content="noindex,follow"></head><body><div class="wrapper"><header><div class="site-logo"><a href="https://memo-labo.com/">でんきメモ</a></div></header><main><h1 class="article-title">サイト内検索</h1><form id="f"><input id="q" type="search" placeholder="検索語"><button>検索</button></form><p id="n"></p><ul id="r" class="top-links"></ul></main></div><script>let D=[];fetch('/search-index.json').then(r=>r.json()).then(x=>{D=x;go()});function go(){let q=(new URLSearchParams(location.search).get('q')||document.querySelector('#q').value||'').trim().toLowerCase();document.querySelector('#q').value=q;if(!q)return;let a=D.filter(x=>(x.title+' '+x.label).toLowerCase().includes(q));document.querySelector('#n').textContent=a.length+'件';document.querySelector('#r').innerHTML=a.map(x=>'<li><a href="/'+x.url+'">'+x.label+'</a></li>').join('')}document.querySelector('#f').onsubmit=e=>{e.preventDefault();history.replaceState(null,'','?q='+encodeURIComponent(document.querySelector('#q').value));go()}</script></body></html>'''
     (out/'search.html').write_text(page,encoding='utf-8')
 
 def make_seo_files(out,built):
