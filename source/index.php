@@ -17,6 +17,10 @@ echo "</ul>";
 }
 ?>
 
+<h2>サイト運営・AI化</h2>
+<ul class="top-links">
+<li><a href="ai_site.php">でんきメモ AI化の流れ｜GitHub＋Cloudflareへの移行とメリット</a></li>
+</ul>
 
 <h2>送電・配電</h2>
 <?php cat_prev("souden");?>
