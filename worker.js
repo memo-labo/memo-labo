@@ -39,8 +39,15 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
 
+    // The static build creates index.html files, while html_handling is "none".
+    // Resolve directory URLs explicitly so /, /j/, /b/, etc. keep working.
+    if (path.endsWith("/")) {
+      url.pathname = path + "index.html";
+      return env.ASSETS.fetch(new Request(url.toString(), request));
+    }
+
     // Static replacement for the old PHP search endpoint.
-    if (path === "/search" || path === "/search/") {
+    if (path === "/search") {
       url.pathname = "/search.html";
       return env.ASSETS.fetch(new Request(url.toString(), request));
     }
