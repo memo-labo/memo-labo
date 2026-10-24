@@ -44,12 +44,11 @@ VTTがショートバータイプであれば検相器の非接触型でクリ�
 
 
 
-<section class="ad1 amazon-related-ad" aria-label="関連商品">
-<h2>関連商品：非接触式検相器</h2>
-<p>非接触式の検相器は導体への直接接触を避けられます。使用時は製品の対応電圧、電線の種類、取扱説明書に従ってください。</p>
-<p>※この記事にはAmazonアソシエイトの広告リンクが含まれます。</p>
-<p><a href="https://link.amazon/B01W8lHFv" target="_blank" rel="nofollow sponsored noopener">非接触式検相器をAmazonで見る</a></p>
-</section>
+<div style="margin:18px 0;padding:12px 0;border-top:1px solid #ddd;border-bottom:1px solid #ddd;line-height:1.7">
+<span style="font-size:.85em;color:#666">関連商品・広告</span><br>
+<a href="https://link.amazon/B01W8lHFv" target="_blank" rel="nofollow sponsored noopener">非接触式検相器をAmazonで見る</a><br>
+<small style="color:#666">※Amazonアソシエイトの広告リンクです。使用条件・対応電圧は製品仕様をご確認ください。</small>
+</div>
 <h2>非接触の使用上の注意</h2>
 ブスバー、シールド線などへは使用できない。被覆電線を被覆上からクリップする。<br>
 対地間電圧が70V以下の場合にはLEDは点灯しない。<br>
