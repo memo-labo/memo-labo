@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { url: 'https://link.amazon/B05rQUKdL', title: '電験三種受験テキスト 理論', image: 'https://memo-labo.com/images/20261008-1.jpg' }
     ];
 
-    // 記事タイトル・本文の主題と商品を対応付ける。該当しないページは表示しない。
+    // 記事の主題に合う商品を優先し、該当しないページも定番書籍を表示する。
     const topicRules = [
         { pattern: /短絡|地絡|保護協調|過電流|OCR|DGR|GR|継電器|整定/i, index: 4 },
         { pattern: /トラブル|事故|故障|不具合|停電|復旧/i, index: 2 },
@@ -28,23 +28,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const main = document.querySelector('main');
-    if (!main) return;
+    const container = main || document.querySelector('article') || document.body;
+    if (!container || !amazonAds.length) return;
 
-    const candidates = [...main.querySelectorAll('h2, img')].filter(el =>
-        !el.closest('.related-pages, .ad1')
-    );
-    if (!candidates.length || !amazonAds.length) return;
-    // トップ・一覧ページには表示せず、個別記事の主題で判定する。
-    const path = window.location.pathname;
-    if (path === '/' || /\\/(index|random|search)\\.php$/i.test(path)) return;
-    const heading = document.title + ' ' + (main.querySelector('h1')?.textContent || '') + ' ' + (main.querySelector('h2')?.textContent || '');
+    const heading = document.title + ' ' + (main?.querySelector('h1')?.textContent || '') + ' ' + (main?.querySelector('h2')?.textContent || '');
     const matched = topicRules.find(rule => rule.pattern.test(heading));
-    if (!matched) return;
-
-    // Amazon広告だけを本文中ほどに1枠表示する。
-    // AdSenseの配置はGoogleの自動広告に任せる。
+    // 主題が判定できないページは、電気管理技術者向けの定番書籍を固定表示する。
+    const ad = amazonAds[matched ? matched.index : 1];
+    const candidates = [...container.querySelectorAll('h2, img')].filter(el =>
+        !el.closest('.related-pages, .ad1, .amazon-related-ad, header, nav, footer')
+    );
     const position = candidates[Math.floor(candidates.length / 2)];
-    const ad = amazonAds[matched.index];
-    position.insertAdjacentElement('afterend', createAmazonAd(ad));
+    const element = createAmazonAd(ad);
+    // 見出しや画像がないページでも、コンテンツ末尾に必ず1枠表示する。
+    if (position) position.insertAdjacentElement('afterend', element);
+    else container.appendChild(element);
 });
 </script>
