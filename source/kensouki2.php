@@ -46,7 +46,7 @@ VTTがショートバータイプであれば検相器の非接触型でクリ�
 
 <div style="margin:18px 0;padding:12px 0;border-top:1px solid #ddd;border-bottom:1px solid #ddd;line-height:1.7">
 <span style="font-size:.85em;color:#666">関連商品・広告</span><br>
-<a href="https://link.amazon/B01W8lHFv" target="_blank" rel="nofollow sponsored noopener">非接触式検相器をAmazonで見る</a><br>
+<a href="https://link.amazon/B01W8lHFv" target="_blank" rel="nofollow sponsored noopener"><img src="https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B01W8LHFV&amp;Format=_SL250_&amp;ID=AsinImage&amp;MarketPlace=JP&amp;ServiceVersion=20070822" alt="非接触式検相器（Amazonの商品画像）" width="200" loading="lazy" style="display:block;max-width:100%;height:auto;margin:10px 0;border:0" onerror="this.style.display='none'">非接触式検相器をAmazonで見る</a><br>
 <small style="color:#666">※Amazonアソシエイトの広告リンクです。使用条件・対応電圧は製品仕様をご確認ください。</small>
 </div>
 <h2>非接触の使用上の注意</h2>
