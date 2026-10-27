@@ -9,12 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
         { url: 'https://link.amazon/B05rQUKdL', title: '電験三種受験テキスト 理論', image: 'https://memo-labo.com/images/20261008-1.jpg' }
     ];
 
-    // number.php は一覧表だけになりやすいため、検索・よく使う番号・説明を追加して読みやすくする。
     if (location.pathname === '/number.php') {
         const main = document.querySelector('main');
-        const heading = main?.querySelector('h2');
-        const table = main?.querySelector('table');
-        const tableContainer = table?.closest('.table-container') || table?.parentElement;
+        const heading = main && main.querySelector('h2');
+        const table = main && main.querySelector('table');
+        const tableContainer = table && (table.closest('.table-container') || table.parentElement);
 
         if (main && heading && table && tableContainer) {
             const style = document.createElement('style');
@@ -41,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const guide = document.createElement('section');
             guide.className = 'number-guide';
             guide.innerHTML = `
-                <p><strong>制御機器番号を番号・名称から検索できます。</strong><br>現場でよく見る番号は、下のショートカットからすぐ確認できます。</p>
+                <p><strong>制御機器番号を番号・名称・略称から検索できます。</strong><br>現場でよく見る番号は、下のショートカットからすぐ確認できます。</p>
                 <div class="number-search">
                     <input id="number-filter" type="search" inputmode="search" placeholder="例：51 / OCR / 過電流 / VCB" aria-label="制御機器番号を検索">
                     <button type="button" id="number-clear">検索をクリア</button>
@@ -61,11 +60,34 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             heading.insertAdjacentElement('afterend', guide);
 
-            const rows = [...table.querySelectorAll('tbody tr')];
+            const aliases = {
+                '27': 'uvr 不足電圧',
+                '51': 'ocr gr 過電流 地絡過電流',
+                '52': 'vcb 遮断器 しゃ断器',
+                '59': 'ovr 過電圧',
+                '64': 'ovgr 地絡過電圧',
+                '67': 'rpr dgr 逆電力 電力方向 地絡方向',
+                '79': 'reclose 再閉路',
+                '87': '差動 差動継電器',
+                '89': 'ds lbs 断路器 負荷開閉器',
+                '90': 'avr 自動電圧調整器'
+            };
+
+            const rows = Array.from(table.querySelectorAll('tbody tr'));
             rows.forEach(row => {
                 const first = row.querySelector('td');
-                const no = first?.textContent.trim();
-                if (/^\d+$/.test(no || '')) row.id = `device-${no}`;
+                const no = first ? first.textContent.trim() : '';
+                if (/^\d+$/.test(no)) row.id = `device-${no}`;
+
+                const hrefText = Array.from(row.querySelectorAll('a'))
+                    .map(a => (a.getAttribute('href') || '').replace('.php', '').replace(/[^a-zA-Z0-9_-]/g, ' '))
+                    .join(' ');
+
+                row.dataset.search = [
+                    row.textContent,
+                    hrefText,
+                    aliases[no] || ''
+                ].join(' ').toLowerCase();
             });
 
             const noResult = document.createElement('div');
@@ -75,25 +97,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const input = guide.querySelector('#number-filter');
             const clear = guide.querySelector('#number-clear');
+
+            const normalize = value => String(value || '')
+                .toLowerCase()
+                .replace(/\s+/g, ' ')
+                .trim();
+
             const filterRows = () => {
-                const q = (input.value || '').trim().toLowerCase();
+                const q = normalize(input.value);
+                const words = q ? q.split(' ') : [];
                 let visible = 0;
+
                 rows.forEach(row => {
-                    const hit = !q || row.textContent.toLowerCase().includes(q);
+                    const haystack = row.dataset.search || normalize(row.textContent);
+                    const hit = words.length === 0 || words.every(word => haystack.includes(word));
                     row.style.display = hit ? '' : 'none';
                     row.classList.toggle('number-hit', !!q && hit);
                     if (hit) visible++;
                 });
+
                 noResult.style.display = visible ? 'none' : 'block';
             };
+
             input.addEventListener('input', filterRows);
+            input.addEventListener('search', filterRows);
             clear.addEventListener('click', () => {
                 input.value = '';
                 filterRows();
                 input.focus();
             });
 
-            // Auto Ads が本文の区切りを認識しやすいよう、一覧の前後に自然なセクションを用意する。
             const adBreak = document.createElement('div');
             adBreak.className = 'number-ad-break';
             adBreak.setAttribute('aria-hidden', 'true');
@@ -115,7 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 記事の主題に合う商品を優先し、該当しないページも定番書籍を表示する。
     const topicRules = [
         { pattern: /短絡|地絡|保護協調|過電流|OCR|DGR|GR|継電器|整定/i, index: 4 },
         { pattern: /トラブル|事故|故障|不具合|停電|復旧/i, index: 2 },
@@ -137,21 +169,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = main || document.querySelector('article') || document.body;
     if (!container || !amazonAds.length) return;
 
-    const heading = document.title + ' ' + (main?.querySelector('h1')?.textContent || '') + ' ' + (main?.querySelector('h2')?.textContent || '');
+    const heading = document.title + ' ' + ((main && main.querySelector('h1')) ? main.querySelector('h1').textContent : '') + ' ' + ((main && main.querySelector('h2')) ? main.querySelector('h2').textContent : '');
     const matched = topicRules.find(rule => rule.pattern.test(heading));
-    // 主題が判定できないページは、電気管理技術者向けの定番書籍を固定表示する。
     const ad = amazonAds[matched ? matched.index : 1];
-    const candidates = [...container.querySelectorAll('h2, img')].filter(el =>
+    const candidates = Array.from(container.querySelectorAll('h2, img')).filter(el =>
         !el.closest('.related-pages, .ad1, .amazon-related-ad, header, nav, footer')
     );
     const position = candidates[Math.floor(candidates.length / 2)];
     const element = createAmazonAd(ad);
-    // 見出しや画像がないページでも、コンテンツ末尾に必ず1枠表示する。
+
     if (location.pathname === '/number.php') {
         const guide = container.querySelector('.number-guide');
         if (guide) guide.insertAdjacentElement('afterend', element);
         else container.appendChild(element);
-    } else if (position) position.insertAdjacentElement('afterend', element);
-    else container.appendChild(element);
+    } else if (position) {
+        position.insertAdjacentElement('afterend', element);
+    } else {
+        container.appendChild(element);
+    }
 });
 </script>
