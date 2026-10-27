@@ -148,6 +148,71 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    if (location.pathname === '/sozai.php') {
+        const main = document.querySelector('main');
+        const firstHeading = main && main.querySelector('h2');
+        if (main && firstHeading) {
+            const style = document.createElement('style');
+            style.textContent = `
+                .sozai-guide,.sozai-related{background:#fff;border:1px solid #d8e1e8;border-radius:10px;padding:18px 20px;margin:0 0 26px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+                .sozai-guide p,.sozai-related p{margin:0 0 12px}
+                .sozai-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+                .sozai-nav a{display:inline-block;padding:8px 12px;border:1px solid #bbdefb;border-radius:999px;background:#f7fbff;font-weight:700;text-decoration:none}
+                .sozai-separator{margin:34px 0 26px;padding:16px 18px;background:#fff;border-top:3px solid #e3eef7;border-bottom:1px solid #e3e8ec;color:#455a64}
+                .sozai-related-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+                .sozai-related-links a{display:inline-block;padding:8px 12px;background:#f7fbff;border:1px solid #d8e8f5;border-radius:7px;font-weight:700}
+                @media(max-width:767px){.sozai-guide,.sozai-related{padding:14px}.sozai-nav a,.sozai-related-links a{font-size:15px}}
+            `;
+            document.head.appendChild(style);
+
+            const headings = Array.from(main.querySelectorAll('h2'));
+            headings.forEach((h, index) => {
+                if (!h.id) h.id = `sozai-section-${index + 1}`;
+            });
+
+            const guide = document.createElement('section');
+            guide.className = 'sozai-guide';
+            guide.innerHTML = `
+                <p><strong>現場・電気設備で使える無料イラスト素材をまとめています。</strong><br>画像は保存して利用してください。サーバー負荷防止のため直リンクはご遠慮ください。</p>
+                <div class="sozai-nav">
+                    <a href="#sozai-section-1">猫・ネタ素材</a>
+                    <a href="#sozai-section-2">高圧検電器</a>
+                    <a href="#sozai-section-3">保護継電器</a>
+                    <a href="#sozai-section-4">PAS</a>
+                    <a href="#sozai-section-5">UGS</a>
+                    <a href="#sozai-section-6">MDS</a>
+                    <a href="#sozai-section-7">クランプメーター</a>
+                    <a href="#sozai-section-9">OCR試験機</a>
+                </div>
+            `;
+            firstHeading.insertAdjacentElement('afterend', guide);
+
+            const technicalHeading = headings.find(h => /高圧検電器/.test(h.textContent));
+            if (technicalHeading) {
+                const separator = document.createElement('div');
+                separator.className = 'sozai-separator';
+                separator.innerHTML = '<strong>ここから電気設備・保安業務向けの素材</strong><br>高圧検電器、保護継電器、PAS・UGSなど、設備資料や教育資料に使いやすいイラストを掲載しています。';
+                technicalHeading.insertAdjacentElement('beforebegin', separator);
+            }
+
+            const related = document.createElement('section');
+            related.className = 'sozai-related';
+            related.innerHTML = `
+                <p><strong>素材とあわせて確認したい技術ページ</strong><br>イラストの機器について詳しく確認したい場合はこちら。</p>
+                <div class="sozai-related-links">
+                    <a href="kenden.php">検電器</a>
+                    <a href="ocr.php">OCR</a>
+                    <a href="dgr.php">DGR</a>
+                    <a href="ovgr.php">OVGR</a>
+                    <a href="pas.php">PAS</a>
+                    <a href="ugs.php">UGS</a>
+                    <a href="lbs.php">LBS</a>
+                </div>
+            `;
+            main.appendChild(related);
+        }
+    }
+
     const topicRules = [
         { pattern: /短絡|地絡|保護協調|過電流|OCR|DGR|GR|継電器|整定/i, index: 4 },
         { pattern: /トラブル|事故|故障|不具合|停電|復旧/i, index: 2 },
@@ -171,7 +236,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const heading = document.title + ' ' + ((main && main.querySelector('h1')) ? main.querySelector('h1').textContent : '') + ' ' + ((main && main.querySelector('h2')) ? main.querySelector('h2').textContent : '');
     const matched = topicRules.find(rule => rule.pattern.test(heading));
-    const ad = amazonAds[matched ? matched.index : 1];
+    let ad = amazonAds[matched ? matched.index : 1];
+    if (location.pathname === '/sozai.php') ad = amazonAds[0];
+
     const candidates = Array.from(container.querySelectorAll('h2, img')).filter(el =>
         !el.closest('.related-pages, .ad1, .amazon-related-ad, header, nav, footer')
     );
@@ -180,6 +247,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (location.pathname === '/number.php') {
         const guide = container.querySelector('.number-guide');
+        if (guide) guide.insertAdjacentElement('afterend', element);
+        else container.appendChild(element);
+    } else if (location.pathname === '/sozai.php') {
+        const guide = container.querySelector('.sozai-guide');
         if (guide) guide.insertAdjacentElement('afterend', element);
         else container.appendChild(element);
     } else if (position) {
