@@ -1,0 +1,170 @@
+/* memo-labo 全ページ共通：読みやすさ・整理用 */
+
+main.article-enhanced {
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+main.article-enhanced > h2:first-of-type {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+main.article-enhanced h2 {
+    scroll-margin-top: 18px;
+}
+
+main.article-enhanced h2:not(:first-of-type) {
+    margin-top: 42px;
+}
+
+main.article-enhanced h3 {
+    margin: 30px 0 12px;
+    padding-left: 12px;
+    border-left: 4px solid #90caf9;
+    font-size: 20px;
+    line-height: 1.55;
+}
+
+main.article-enhanced p,
+main.article-enhanced li {
+    max-width: 78ch;
+}
+
+main.article-enhanced img:not(.amazon-related-ad img) {
+    margin-top: 16px;
+    margin-bottom: 18px;
+}
+
+.article-toc {
+    margin: 30px 0 34px;
+    padding: 18px 20px;
+    background: #fff;
+    border: 1px solid #d8e1e8;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.04);
+}
+
+.article-toc-title {
+    margin: 0 0 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #455a64;
+}
+
+.article-toc ul {
+    margin: 0;
+    padding-left: 1.3em;
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.article-toc li {
+    margin: 3px 0;
+}
+
+.article-toc a {
+    text-decoration: none;
+}
+
+.table-scroll {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 18px 0 26px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table-scroll table {
+    margin: 0;
+    min-width: 520px;
+}
+
+main.article-enhanced form:not(.site-search form) {
+    margin: 18px 0 28px;
+    padding: 16px 18px;
+    background: #fff;
+    border: 1px solid #d8e1e8;
+    border-radius: 8px;
+}
+
+main.article-enhanced input[type="number"],
+main.article-enhanced input[type="text"],
+main.article-enhanced input[type="search"],
+main.article-enhanced select {
+    max-width: 100%;
+    padding: 8px 10px;
+    margin: 4px 4px 4px 0;
+    border: 1px solid #b0bec5;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 16px;
+}
+
+main.article-enhanced input[type="button"],
+main.article-enhanced button {
+    padding: 8px 13px;
+    margin: 4px 4px 4px 0;
+    border: 1px solid #90a4ae;
+    border-radius: 6px;
+    background: #fff;
+    color: #37474f;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* 広告・関連商品の前後に十分な余白を確保し、本文やナビと混同させない */
+main .amazon-related-ad {
+    margin-top: 36px !important;
+    margin-bottom: 38px !important;
+}
+
+main .amazon-related-ad::before {
+    content: "おすすめ商品" !important;
+}
+
+.article-ad-separator {
+    height: 1px;
+    margin: 34px 0;
+    background: #e3e8ec;
+}
+
+.article-section-gap {
+    margin-top: 26px;
+}
+
+@media (min-width: 768px) {
+    main.article-enhanced img:not(.amazon-related-ad img) {
+        max-width: min(560px, 100%) !important;
+    }
+}
+
+@media (max-width: 767px) {
+    main.article-enhanced {
+        max-width: 100%;
+    }
+
+    main.article-enhanced > h2:first-of-type {
+        font-size: 21px;
+        margin-bottom: 16px;
+    }
+
+    main.article-enhanced h2:not(:first-of-type) {
+        margin-top: 34px;
+    }
+
+    .article-toc {
+        margin: 24px 0 28px;
+        padding: 14px 16px;
+    }
+
+    .article-toc ul {
+        font-size: 15px;
+    }
+
+    .table-scroll table {
+        min-width: 480px;
+    }
+}
