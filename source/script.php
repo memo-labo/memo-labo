@@ -161,6 +161,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 .sozai-separator{margin:34px 0 26px;padding:16px 18px;background:#fff;border-top:3px solid #e3eef7;border-bottom:1px solid #e3e8ec;color:#455a64}
                 .sozai-related-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
                 .sozai-related-links a{display:inline-block;padding:8px 12px;background:#f7fbff;border:1px solid #d8e8f5;border-radius:7px;font-weight:700}
+                @media(min-width:768px){
+                    main>img:not(.amazon-api-image),main img:not(.amazon-related-ad img){max-width:420px!important}
+                    main img[src*="ocr8"],main img[src*="gr10"],main img[src*="dgr_4"],main img[src*="uvr2"],main img[src*="ovr2"],main img[src*="ovgr11"]{max-width:150px!important}
+                    main img[src*="kendenki.svg"]{max-width:40px!important}
+                    main img[src*="clamp.png"]{max-width:220px!important}
+                    main img[src*="20211010-5"],main img[src*="20211010-6"],main img[src*="20211010-8"],main img[src*="20211010-9"],main img[src*="musk.png"],main img[src*="metabo"]{max-width:220px!important}
+                    .amazon-related-ad img{width:200px!important;max-width:200px!important}
+                }
                 @media(max-width:767px){.sozai-guide,.sozai-related{padding:14px}.sozai-nav a,.sozai-related-links a{font-size:15px}}
             `;
             document.head.appendChild(style);
