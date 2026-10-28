@@ -244,7 +244,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const heading = document.title + ' ' + ((main && main.querySelector('h1')) ? main.querySelector('h1').textContent : '') + ' ' + ((main && main.querySelector('h2')) ? main.querySelector('h2').textContent : '');
     const matched = topicRules.find(rule => rule.pattern.test(heading));
-    let ad = amazonAds[matched ? matched.index : 1];
+    const primaryIndex = matched ? matched.index : 1;
+    let ad = amazonAds[primaryIndex];
     if (location.pathname === '/sozai.php') ad = amazonAds[0];
 
     const candidates = Array.from(container.querySelectorAll('h2, img')).filter(el =>
@@ -265,6 +266,23 @@ document.addEventListener('DOMContentLoaded', () => {
         position.insertAdjacentElement('afterend', element);
     } else {
         container.appendChild(element);
+    }
+
+    // 長文の技術記事だけ、後半に別の関連商品を1件追加する。
+    // 短い記事や検索・トップ・素材ページでは広告密度を増やさない。
+    const excludedForSecondAd = new Set(['/number.php', '/sozai.php', '/', '/index.php', '/search.php', '/404.php']);
+    const textLength = (container.innerText || '').replace(/\s+/g, '').length;
+    const isLongArticle = candidates.length >= 12 && textLength >= 4500;
+
+    if (!excludedForSecondAd.has(location.pathname) && isLongArticle) {
+        const secondaryMap = { 0: 1, 1: 0, 2: 3, 3: 2, 4: 2, 5: 4 };
+        const secondaryIndex = secondaryMap[primaryIndex] ?? 0;
+        const secondaryAd = amazonAds[secondaryIndex];
+        const secondaryPosition = candidates[Math.min(candidates.length - 1, Math.floor(candidates.length * 0.8))];
+
+        if (secondaryAd && secondaryPosition && secondaryAd !== ad && secondaryPosition !== position) {
+            secondaryPosition.insertAdjacentElement('afterend', createAmazonAd(secondaryAd));
+        }
     }
 });
 </script>
