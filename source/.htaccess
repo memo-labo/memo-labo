@@ -25,6 +25,19 @@ ErrorDocument 404 /404.php
     RewriteCond %{HTTP_HOST} ^www\.memo-labo\.com$ [NC,OR]
     RewriteCond %{HTTPS} !=on
     RewriteRule ^(.*)$ https://memo-labo.com/$1 [R=301,L]
+
+    # GA4で確認された誤った階層URLを正規URLへ戻す
+    # 例: /vtest2.php/1000 → /vtest2.php
+    RewriteRule ^(.+\.php)/1000/?$ /$1 [R=301,L,NE]
+
+    # 例: /st.php/index.php → /st.php
+    RewriteRule ^(.+\.php)/index\.php/?$ /$1 [R=301,L,NE]
+
+    # 例: /v0.php/zpd.php → /zpd.php
+    RewriteRule ^.+\.php/([^/]+\.php)/?$ /$1 [R=301,L,NE]
+
+    # 例: /rpr.php.php → /rpr.php
+    RewriteRule ^(.+)\.php\.php/?$ /$1.php [R=301,L,NE]
 </IfModule>
 
 Redirect 301 /ocr_gimon2.php /ocr_gimon.php
