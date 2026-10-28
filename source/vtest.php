@@ -1,149 +1,116 @@
 <?php include("header.php"); ?>
 
-<h2>対地静電容量から充電電流を計算</h2>
+<h2>耐圧試験の充電電流を静電容量から計算する</h2>
+交流耐圧試験では、被試験物の絶縁が正常でも静電容量による充電電流が流れる。<br>
+基本式は、<br><br>
 
-■充電電流の計算式<br>
-対地静電容量C[µF] = C*10^-6[F]<br />
-充電電流I0[A] = 2πfCV = 3.25*C[μF]<br />
+<strong>I = 2πfCV</strong><br><br>
 
+I：充電電流[A]<br>
+f：周波数[Hz]<br>
+C：対地静電容量[F]<br>
+V：試験電圧[V]<br><br>
 
-<h2>静電容量から充電電流を計算する</h2>
+6.6kV系統をAC10.35kVで試験する場合、CをμFで入れると、<br><br>
 
-例：テスターで対地静電容量Cを測定した結果<br>
-C = 0.032[µF]<br><br>
+50Hz：<strong>I[A] ≒ 3.25 × C[μF]</strong><br>
+60Hz：<strong>I[A] ≒ 3.90 × C[μF]</strong><br><br>
 
-絶縁耐力試験時の充電電流の計算<br>
-I = 2πfCV[A]<br>
-= 3.25*C[µF]<br>
-= 0.032 ✕ 3.25 = 0.104[A]<br>
+となる。<br>
+「3.25 × C」は50Hz・10.35kVという条件での係数なので、60Hzや別の試験電圧ではそのまま使わない。<br>
 
-<h2>なぜ充電電流I0cは2πfCVなのか？</h2>
-電流は I = V ÷ Ω として表すことができる。<br>
-ここで抵抗Ωにあたる部分は容量性リアクタンス XCのみ。<br><br>
+<h2>計算例：C = 0.032μF、50Hz、10.35kV</h2>
+対地静電容量<br>
+C = 0.032μF<br><br>
 
-容量性リアクタンスは XC = 1/ωC で表すことができる。<br>
-⇒<a href="imp.php">容量性リアクタンスとは？</a><br><br>
+I = 2πfCV<br>
+≒ 3.25 × 0.032<br>
+≒ 0.104A<br><br>
 
-Ω = XC = 1/ωCを代入する。<br>
-I = V ÷ Ω = V × ωC<br><br>
+したがって、充電電流は約<strong>104mA</strong>。<br><br>
 
-ここで ω[オメガ] は角速度のこと。<br>
-これはω = 2πf で表すことができる。<br>
-⇒<a href="math.php">角速度とは？</a><br><br>
+60Hzで同じ静電容量・試験電圧なら、<br>
+I ≒ 3.90 × 0.032 ≒ 0.125A<br>
+となる。<br>
 
-すると電流は以下の式で表すことができる。<br>
-I = V × ωC = V × 2πfC = 2πfCV<br><br>
+<h2>なぜ I = 2πfCV になる？</h2>
+コンデンサの容量性リアクタンスは、<br>
+XC = 1 / (2πfC)<br>
+で表される。<br><br>
 
-I = [A]<br>
-π = 3.14<br>
-f = 50[Hz]<br>
-V = 10350[V]<br>
-C = [F] = 10^6[μF]<br><br>
+交流電流は、<br>
+I = V / XC<br>
+なので、XCを代入すると、<br><br>
 
-2πfV = 2*3.14*50*10350*10^-6 = 3.25<br>
-I[A] = 3.25 * C[μF]<br>
+I = V × 2πfC<br>
+= 2πfCV<br><br>
 
+となる。<br><br>
 
-<!--
-<form name="form3">
-2πfV：<input type="text" name="init"><br>
-静電容量：<input type="text" name="C">[µF]<br>
-<input type="button" value="計算" onclick="I0()"><br />
-充電電流：<input type="text" name="A">[mA]<br />
-</form>
--->
+⇒<a href="imp.php">容量性リアクタンスとは？</a><br>
+⇒<a href="math.php">角速度 2πf とは？</a><br>
 
-<h2>静電容量の単位</h2>
-<ul>
-  <li>ミリ mF 10^-3
-  <li>マイクロ µF 10^-6
-  <li>ナノ nF 10^-9
-  <li>ピコ pF 10^-12
-</ul>
+<h2>μF・nF・pFの換算</h2>
+<table>
+<tr><th>単位</th><th>Fへの換算</th></tr>
+<tr><td>mF</td><td>10<sup>-3</sup> F</td></tr>
+<tr><td>μF</td><td>10<sup>-6</sup> F</td></tr>
+<tr><td>nF</td><td>10<sup>-9</sup> F</td></tr>
+<tr><td>pF</td><td>10<sup>-12</sup> F</td></tr>
+</table>
+<br>
 
+1μF = 1000nF = 1,000,000pF。<br>
+計算するときは単位をそろえる。<br>
 
-<h2>CVケーブルの充電電流（10350V 三相一括）</h2>
+<h2>試験器容量の目安を出す</h2>
+充電電流が分かれば、交流耐圧試験に必要な皮相電力の目安も計算できる。<br><br>
 
-<!--
-<form name="form1">
-  CVケーブル長さ：<input type="number" name="cv_m">m<br />
-  CVケーブル太さ
-  <select name="sq">
-    <option value="2.04">38sq</option>
-    <option value="2.46">60sq</option>
-  </select>
-  <br />
-<INPUT type="button" value="計算" onclick="cv()"><br />
-CVケーブルの充電電流：<input type="number" name="cv_a" readonly>mA<br />
-</form>
--->
+<strong>S ≒ V × I</strong><br><br>
 
-CVケーブル充電電流一覧（50Hz）<br>
-（試験機メーカー取説より引用）<br>
-38[sq]：2.04[mA/m]<br>
-60[sq]：2.46[mA/m]<br>
-100[sq]：3.03[mA/m]<br>
-150[sq]：3.60[mA/m]<br><br>
+例：10.35kV、充電電流104mAの場合<br>
+10,350V × 0.104A ≒ 1,076VA<br><br>
 
-引込高圧CVケーブル充電電流の例<br>
-60[sq] 50m = 123[mA]<br>
+約1.08kVAの容量性負荷になる。<br>
+実際の試験器選定では余裕、試験用変圧器の定格、リアクトル使用条件なども確認する。<br>
 
-<h2>変圧器、コンデンサ、開閉器の充電電流の例</h2>
-※あくまで目安です。<br>
-・Tr 100kVA 10mA<br>
-・SC 100KVA 5mA<br>
-・PAS 5mA<br>
-・UGS 5mA<br>
+<h2>高圧CVケーブルは充電電流が大きくなりやすい</h2>
+高圧CV・CVTケーブルは長くなるほど対地静電容量が増え、交流耐圧試験の充電電流も大きくなる。<br>
+そのため長い引込ケーブルでは、試験用変圧器や発電機容量を先に確認する。<br><br>
 
-<!--
-■油入変圧器の対地間静電容量<br />
-1Φ3W 300kVA：4.0[nF]<br />
-3Φ3W 300kVA：4.8[nF]<br /><br />
+試験機メーカー取扱説明書に記載される参考値の例（50Hz・所定試験条件）<br>
+38sq：2.04mA/m<br>
+60sq：2.46mA/m<br>
+100sq：3.03mA/m<br>
+150sq：3.60mA/m<br><br>
 
-■高圧進相コンデンサ<br />
-200kvar：1.2[nF]<br /><br />
--->
+例：60sq、50m<br>
+2.46mA/m × 50m = 123mA<br><br>
 
-<h2>変圧器 静電容量表</h2>
-<img src="images/tr.png" alt="">
+これらはケーブル種類・メーカー・構造・試験条件で変わるため、実設備では静電容量の実測値やケーブル仕様を優先する。<br>
 
-<!--
-<SCRIPT language="JavaScript">
+<h2>変圧器・コンデンサ・開閉器の充電電流</h2>
+ケーブル以外の高圧機器にも対地静電容量がある。<br>
+変圧器、進相コンデンサ、PAS、UGS、VCBなどを一括して試験する場合、それぞれの静電容量が合成される。<br><br>
 
+機器単体では数mA程度しか流れない場合もある一方、ケーブルを含めると数百mAになる場合もある。<br>
+一律の目安値だけで試験器容量を決めず、可能なら静電容量を測定して計算する。<br>
 
-  var init = Math.round(2 * Math.PI * 50 * 10350 * Math.pow(10,-6) * 100) / 100;
-  document.form3.init.value = init;
+<h2>変圧器の静電容量例</h2>
+<img src="images/tr.png" alt="変圧器の対地静電容量参考表">
 
-  function I0(){
-      document.form3.A.value = document.form3.C.value * init * 1000;
-    }
+<h2>充電電流が大きすぎる場合</h2>
+交流耐圧試験で充電電流が大きい場合は、耐圧試験用リアクトルを使用して容量性の進み電流を補償する方法がある。<br><br>
 
-  function orgRound(value, base) {
-    return Math.round(value * base) / base;
-}
+⇒<a href="re.php">耐電圧試験用リアクトル</a><br>
+⇒<a href="vtest2.php">絶縁耐力試験の方法・10.35kVの理由・注意点</a><br>
 
-    function cv(){
-      var sq = document.form1.sq.value;
-      var cv_m = document.form1.cv_m.value;
-      var cv_a = cv_m * sq;
-      document.form1.cv_a.value = orgRound(cv_a,100);
-    }
-
-    function setubi(){
-     var tr1 = document.form2.tr1.value;
-     var tr2 = document.form2.tr2.value;
-     var CH = document.form2.CH.value;
-     var tr1_C = 4.0 * tr1;
-     var tr2_C = 4.8 * tr2;
-     var CH_C  = 1.2 * CH;
-     var C_SETUBI = tr1_C + tr2_C + CH_C;
-     var A_SETUBI = 3.25 * C_SETUBI;
-     document.form2.C_SETUBI.value = orgRound(C_SETUBI,100);
-     document.form2.A_SETUBI.value = orgRound(A_SETUBI,100);
-    }
-
-</SCRIPT>
--->
-
+<h2>計算するときの確認ポイント</h2>
+・50Hzか60Hzか<br>
+・試験電圧はいくつか<br>
+・静電容量の単位はF、μF、nFのどれか<br>
+・三相一括の静電容量か、一相分か<br>
+・ケーブルだけか、変圧器・開閉器なども含むか<br>
+・算出した電流に試験器容量が対応できるか<br>
 
 <?php include("footer.php"); ?>
