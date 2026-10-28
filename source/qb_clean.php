@@ -13,17 +13,18 @@
 
 <p>かなり汚れていたQB内をサッサでピカピカにしたことがある。翌年の点検で、モップで軽く拭いてからブロワーをかけたところ、すぐにピカピカの表面が出てきた。このときは清掃の効果にちょっと感動した。</p>
 
-<p style="text-align:center;"><img src="images/qb_clean_sassa.png" alt="キュービクル内をサッサで清掃するイメージ" style="max-width:100%;height:auto;"></p>
+<p style="text-align:center;"><img src="images/qb_clean_sassa.svg" alt="キュービクル内の清掃前後のイメージ" style="max-width:100%;height:auto;"></p>
 
 <h2>サッサ</h2>
 <p>キュービクル内の盤面や金属面など、ホコリや軽い汚れを落としたい場所の清掃に便利。</p>
-<p><a href="https://link.amazon/B040nJi4H" rel="nofollow sponsored" target="_blank">サッサをAmazonで見る</a></p>
+<p><a href="https://link.amazon/B040nJi4H" rel="nofollow sponsored noopener" target="_blank">サッサをAmazonで見る</a></p>
 
 <h2>一番安く済ませるなら水・バケツ・ウエス</h2>
 <p>ただ、コストを最優先するなら、水・バケツ・ウエスを用意して、固く絞ったウエスでゴシゴシ清掃する方法が一番コスパは良さそう。</p>
-<p><a href="https://link.amazon/B06Db4JJ0" rel="nofollow sponsored" target="_blank">清掃用ウエスなどをAmazonで見る</a></p>
+<p><a href="https://link.amazon/B06Db4JJ0" rel="nofollow sponsored noopener" target="_blank">清掃用ウエスなどをAmazonで見る</a></p>
 
 <h2>清掃時の注意</h2>
 <p>キュービクル内の清掃は、充電部への接触や水分の付着が事故につながるため、安全を確保した状態で行う。水や濡れたウエスを使用する場合は特に、充電部や機器内部へ水分が入らないよう注意する。</p>
+<p>停電・検電・接地など必要な安全措置を行ったうえで作業し、ウエスは水が垂れない程度まで固く絞る。ブロワーもホコリを機器内部へ押し込まないよう、吹き出す方向に注意する。</p>
 
 <?php include("footer.php"); ?>
