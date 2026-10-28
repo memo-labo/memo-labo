@@ -55,6 +55,11 @@ ErrorDocument 404 /404.php
 
     # 例: /sog.php/ → /sog.php
     RewriteRule ^(.+\.php)/$ /$1 [R=301,L,NE]
+
+    # 実在するPHP記事への拡張子なし流入を正規URLへ戻す
+    # 例: /ocr → /ocr.php, /dt → /dt.php
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^(.+?)/?$ /$1.php [R=301,L,NE]
 </IfModule>
 
 Redirect 301 /ocr_gimon2.php /ocr_gimon.php
