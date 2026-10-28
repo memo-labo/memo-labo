@@ -42,12 +42,10 @@ if($category_items){
     }
   }
 
-  // カテゴリ先頭の親記事を優先して内部リンクを集約する。
   if(isset($category_items[0]) && $category_items[0]["slug"] !== $current_slug){
     $related_items[] = $category_items[0];
   }
 
-  // 現在の記事の前後から近い記事を優先する。
   if($current_index !== null){
     for($distance = 1; $distance < count($category_items) && count($related_items) < 8; $distance++){
       foreach([$current_index - $distance, $current_index + $distance] as $idx){
@@ -70,7 +68,6 @@ if($category_items){
     }
   }
 
-  // 念のため8件に満たない場合はカテゴリ先頭から補完する。
   foreach($category_items as $item){
     if(count($related_items) >= 8) break;
     if($item["slug"] === $current_slug) continue;
@@ -88,8 +85,6 @@ if($category_items){
   }
 }
 
-// GA4直近30日で流入の多い代表記事。
-// カテゴリ外への回遊入口として少数だけ表示する。
 $popular_items = [
   ["slug" => "number", "title" => "制御機器番号一覧"],
   ["slug" => "b_sq", "title" => "B種接地線の太さ計算"],
@@ -123,6 +118,8 @@ $popular_items = array_values(array_filter($popular_items, function($item) use (
 <?php endif; ?>
 
 </main>
+
+<p class="affiliate-disclosure">Amazonのアソシエイトとして、でんきメモは適格販売により収入を得ています。</p>
 
 <div class="return">
   <a href="index.php">TOPに戻る</a>
