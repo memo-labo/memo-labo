@@ -8,6 +8,26 @@ document.addEventListener('DOMContentLoaded', function () {
         main.classList.add('article-enhanced');
     }
 
+    // 記事画像は先頭だけ即時表示し、2枚目以降を遅延読み込みにする。
+    // 古い記事側のHTMLを一括修正せず、表示速度を改善する。
+    const contentImages = Array.from(main.querySelectorAll('img')).filter(function (img) {
+        return !img.closest('.amazon-related-ad, .ad1');
+    });
+    contentImages.forEach(function (img, index) {
+        img.decoding = 'async';
+        if (index === 0) {
+            img.loading = 'eager';
+            img.fetchPriority = 'high';
+        } else if (!img.hasAttribute('loading')) {
+            img.loading = 'lazy';
+        }
+    });
+
+    // 埋め込みコンテンツは画面に近づくまで読み込ませない。
+    Array.from(main.querySelectorAll('iframe')).forEach(function (frame) {
+        if (!frame.hasAttribute('loading')) frame.loading = 'lazy';
+    });
+
     // 長い記事は見出しから自動目次を作る。本文そのものは変更しない。
     if (main.classList.contains('article-enhanced')) {
         const headings = Array.from(main.querySelectorAll(':scope > h2'));
