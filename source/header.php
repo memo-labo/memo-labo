@@ -33,7 +33,9 @@ while($line = fgetcsv($f)){
   if("/" . $line[1] . ".php" == $_SERVER["REQUEST_URI"]){
     $page_title = $line[3];
 
-    if(file_exists("icon/" . $line[1] . ".jpg")){
+    if($_SERVER["REQUEST_URI"] == "/v0.php"){
+      $filename = "https://memo-labo.com/images/v0/6.png";
+    }elseif(file_exists("icon/" . $line[1] . ".jpg")){
       $filename = "https://memo-labo.com/icon/" . $line[1] . ".jpg";
     }else{
       $filename = "https://memo-labo.com/icon/no.jpg";
@@ -53,8 +55,10 @@ echo <<< eof
 eof;
 }
 
+$twitter_card = ($_SERVER["REQUEST_URI"] == "/v0.php") ? "summary_large_image" : "summary";
+
 echo <<< eof
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="{$twitter_card}">
 <meta name="twitter:site" content="@den_study">
 <meta property="og:url" content="{$site_url}" />
 <meta property="og:title" content="{$page_title}" />
