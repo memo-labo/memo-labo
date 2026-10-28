@@ -1,36 +1,102 @@
 <?php
+$request_path = parse_url($_SERVER["REQUEST_URI"] ?? "/", PHP_URL_PATH);
+if(!$request_path){
+  $request_path = "/";
+}
+
+$current_slug = "";
+$category = "";
+$category_items = [];
+
 $f = fopen("data.csv","r");
 while($line = fgetcsv($f)){
-  if("/" . $line[1] . ".php" == $_SERVER["REQUEST_URI"]){
-    $category = $line[0];
+  $slug = $line[1] ?? "";
+  if("/" . $slug . ".php" === $request_path){
+    $current_slug = $slug;
+    $category = $line[0] ?? "";
     break;
   }
 }
 fclose($f);
-?>
 
-
-<?php
-$f = fopen("data.csv","r");
 if($category){
-echo <<< eof
-<h2>関連ページ</h2>
-<ul class="top-links">
-eof;
-while($line = fgetcsv($f)){
-    if($line[0] == $category){
-echo <<< eof
-<li><a href="{$line[1]}.php">{$line[2]}</a></li>
-eof;
-    } 
+  $f = fopen("data.csv","r");
+  while($line = fgetcsv($f)){
+    if(($line[0] ?? "") === $category){
+      $category_items[] = [
+        "slug" => $line[1] ?? "",
+        "title" => $line[2] ?? ($line[3] ?? "")
+      ];
+    }
+  }
+  fclose($f);
 }
-echo <<< eof
-</ul>
-eof;
+
+$related_items = [];
+if($category_items){
+  $current_index = null;
+  foreach($category_items as $i => $item){
+    if($item["slug"] === $current_slug){
+      $current_index = $i;
+      break;
+    }
+  }
+
+  // カテゴリ先頭の親記事を優先して内部リンクを集約する。
+  if(isset($category_items[0]) && $category_items[0]["slug"] !== $current_slug){
+    $related_items[] = $category_items[0];
+  }
+
+  // 現在の記事の前後から近い記事を優先する。
+  if($current_index !== null){
+    for($distance = 1; $distance < count($category_items) && count($related_items) < 8; $distance++){
+      foreach([$current_index - $distance, $current_index + $distance] as $idx){
+        if($idx < 0 || $idx >= count($category_items)) continue;
+        $item = $category_items[$idx];
+        if($item["slug"] === $current_slug) continue;
+
+        $exists = false;
+        foreach($related_items as $related){
+          if($related["slug"] === $item["slug"]){
+            $exists = true;
+            break;
+          }
+        }
+        if(!$exists){
+          $related_items[] = $item;
+        }
+        if(count($related_items) >= 8) break;
+      }
+    }
+  }
+
+  // 念のため8件に満たない場合はカテゴリ先頭から補完する。
+  foreach($category_items as $item){
+    if(count($related_items) >= 8) break;
+    if($item["slug"] === $current_slug) continue;
+
+    $exists = false;
+    foreach($related_items as $related){
+      if($related["slug"] === $item["slug"]){
+        $exists = true;
+        break;
+      }
+    }
+    if(!$exists){
+      $related_items[] = $item;
+    }
+  }
 }
-fclose($f);
 ?>
 
+<?php if($related_items): ?>
+<h2>関連ページ</h2>
+<ul class="top-links related-links">
+<?php foreach($related_items as $item): ?>
+<li><a href="<?= htmlspecialchars($item['slug'], ENT_QUOTES, 'UTF-8') ?>.php"><?= htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8') ?></a></li>
+<?php endforeach; ?>
+</ul>
+<?php endif; ?>
 
 </main>
 
