@@ -47,16 +47,35 @@ document.addEventListener('DOMContentLoaded', function () {
                 title.textContent = 'このページの内容';
                 toc.appendChild(title);
 
-                const ul = document.createElement('ul');
-                headings.slice(1).forEach(function (heading) {
-                    const li = document.createElement('li');
-                    const a = document.createElement('a');
-                    a.href = '#' + heading.id;
-                    a.textContent = heading.textContent.trim();
-                    li.appendChild(a);
-                    ul.appendChild(li);
-                });
-                toc.appendChild(ul);
+                const tocHeadings = headings.slice(1);
+                const visibleHeadings = tocHeadings.slice(0, 12);
+                const hiddenHeadings = tocHeadings.slice(12);
+
+                const createList = function (items) {
+                    const ul = document.createElement('ul');
+                    items.forEach(function (heading) {
+                        const li = document.createElement('li');
+                        const a = document.createElement('a');
+                        a.href = '#' + heading.id;
+                        a.textContent = heading.textContent.trim();
+                        li.appendChild(a);
+                        ul.appendChild(li);
+                    });
+                    return ul;
+                };
+
+                toc.appendChild(createList(visibleHeadings));
+
+                if (hiddenHeadings.length) {
+                    const details = document.createElement('details');
+                    details.className = 'article-toc-more';
+
+                    const summary = document.createElement('summary');
+                    summary.textContent = 'さらに' + hiddenHeadings.length + '項目を表示';
+                    details.appendChild(summary);
+                    details.appendChild(createList(hiddenHeadings));
+                    toc.appendChild(details);
+                }
 
                 // 導入文の後、最初の小見出しの直前に置く。
                 headings[1].insertAdjacentElement('beforebegin', toc);
