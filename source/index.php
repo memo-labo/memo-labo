@@ -17,6 +17,16 @@ echo "</ul>";
 }
 ?>
 
+<h2>よく見られているページ</h2>
+<ul class="top-links">
+<li><a href="number.php">制御機器番号一覧｜27・51・52・64・67・89</a></li>
+<li><a href="b_sq.php">B種接地線の太さ計算</a></li>
+<li><a href="dt.php">ダブルスロー（DT）の仕組み</a></li>
+<li><a href="ctt.php">CTT 電流試験端子</a></li>
+<li><a href="ocr.php">OCR 過電流継電器</a></li>
+<li><a href="v0.php">V0 零相電圧</a></li>
+</ul>
+
 <h2>サイト運営・AI化</h2>
 <ul class="top-links">
 <li><a href="ai_site.php">でんきメモ AI化の流れ｜GitHub＋Cloudflareへの移行とメリット</a></li>
