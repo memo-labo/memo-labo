@@ -113,7 +113,7 @@ $popular_items = array_values(array_filter($popular_items, function($item) use (
 </ul>
 <?php endif; ?>
 
-<?php if($popular_items && !$should_noindex): ?>
+<?php if($popular_items && !$should_noindex && !$is_home): ?>
 <h2>よく読まれているページ</h2>
 <ul class="top-links related-links">
 <?php foreach(array_slice($popular_items, 0, 5) as $item): ?>
