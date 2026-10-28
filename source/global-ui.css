@@ -69,6 +69,23 @@ main.article-enhanced img:not(.amazon-related-ad img) {
     text-decoration: none;
 }
 
+.article-toc-more {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #e3e8ec;
+}
+
+.article-toc-more summary {
+    cursor: pointer;
+    color: #1565c0;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.article-toc-more[open] summary {
+    margin-bottom: 8px;
+}
+
 .table-scroll {
     width: 100%;
     max-width: 100%;
