@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" type="text/css" href="https://memo-labo.com/style.css" />
   <link rel="stylesheet" type="text/css" href="https://memo-labo.com/global-ui.css?v=20261028" />
-  <link rel="stylesheet" type="text/css" href="https://memo-labo.com/comfort.css?v=20261028" />
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-R90T9GG6PR"></script>
@@ -17,7 +16,7 @@
   gtag('config', 'G-R90T9GG6PR');
 </script>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8063230043817903"
+<script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-8063230043817903"
      crossorigin="anonymous"></script>
 
 <?php
