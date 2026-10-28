@@ -58,6 +58,50 @@ while($line = fgetcsv($f)){
 }
 fclose($f);
 
+// GA4上位ページを中心に、検索意図が伝わりやすいタイトルへ調整。
+// 本文URLは変えず、ロングテールの検索入口を維持する。
+$seo_title_overrides = [
+  "/number.php" => "制御機器番号一覧｜27・51・52・64・67・89の意味と機器名",
+  "/b_sq.php" => "B種接地線の太さ計算｜地絡電流・計算式・選定例",
+  "/dt.php" => "ダブルスロー（DT）とは？仕組み・切替回路・非常用発電機",
+  "/ctt.php" => "CTT（電流試験端子）とは？構造・使い方・OCR試験方法",
+  "/ocr.php" => "OCR（過電流継電器）とは？原理・整定値・試験方法",
+  "/v0.php" => "V0（零相電圧）とは？完全一線地絡・3810V・5%整定",
+  "/st.php" => "スコットトランスとは？原理・結線・容量・接地方法",
+  "/dgr.php" => "DGR（地絡方向継電器）とは？原理・位相・整定値・試験方法",
+  "/rpr.php" => "RPR（逆電力継電器）とは？原理・整定値・試験方法・太陽光",
+  "/elb.php" => "ELB（漏電遮断器）とは？仕組み・動作原理・選定方法",
+  "/vt.php" => "VT（計器用変圧器）とは？原理・結線・二次側接地・注意点",
+  "/uvr.php" => "UVR（不足電圧継電器）とは？原理・整定値・試験方法・誤動作",
+  "/ovgr.php" => "OVGR（地絡過電圧継電器）とは？原理・整定値・試験方法・太陽光",
+  "/evt.php" => "EVT（接地形計器用変圧器）とは？原理・結線・零相電圧",
+  "/sog.php" => "SOG制御装置とは？仕組み・配線・試験方法・注意点",
+  "/gr.php" => "GR（地絡継電器）とは？原理・整定値・試験方法・設置基準",
+  "/zpd.php" => "ZPD（零相電圧検出装置）とは？原理・役割・試験方法",
+  "/shield_zct.php" => "ケーブルシースアースとZCT｜くぐらせ方・接地位置・保護範囲",
+  "/vtest.php" => "絶縁耐力試験の充電電流計算｜静電容量・試験容量・計算式",
+  "/vtest2.php" => "耐圧試験のAC10350Vはなぜ？絶縁耐力試験の電圧根拠",
+  "/vcb.php" => "VCB（真空遮断器）とは？構造・仕組み・点検ポイント"
+];
+
+$seo_description_overrides = [
+  "/number.php" => "27 UVR、51 OCR・GR、52 VCB、64 OVGR、67 DGR・RPR、89 DS・LBSなど、電気設備の制御機器番号を一覧・検索で確認できます。",
+  "/b_sq.php" => "B種接地線の太さを地絡電流から計算する方法を、計算式と具体例で解説。変圧器容量、低圧側過電流遮断器、接地線サイズ選定の考え方をまとめています。",
+  "/dt.php" => "ダブルスロー（DT）の仕組み、商用電源と非常用発電機の切替、図面上の考え方、停電・復電時の動作を現場向けに整理しています。",
+  "/ctt.php" => "CTT（電流試験端子・テストターミナル）の構造、短絡・切り離しの順序、OCR試験での使い方、4端子CTTの注意点を解説します。",
+  "/ocr.php" => "OCR（過電流継電器）の動作原理、限時・瞬時要素、整定値の計算、試験方法、VCB連動試験まで現場向けにまとめています。",
+  "/v0.php" => "零相電圧V0の意味、3V0との違い、6.6kV系統の完全一線地絡で3810Vになる理由、5%・10%整定、ZPDやDGRとの関係を解説します。",
+  "/dgr.php" => "DGR（地絡方向継電器）の原理、V0・I0の位相判定、整定値、電圧・電流引き外し、試験方法と現場での注意点をまとめています。",
+  "/rpr.php" => "RPR（逆電力継電器）の原理、整定値計算、試験方法、発電機・自家消費型太陽光での設置目的、逆潮流時の動作を解説します。",
+  "/sog.php" => "SOG制御装置の仕組み、PASとの連動、SO動作、DGR要素、試験方法、P1・P2への試験電源印加時の注意点をまとめています。",
+  "/zpd.php" => "ZPD（零相電圧検出装置）の構造、コンデンサ分圧、V0検出原理、試験電圧、配線、T端子などを計算例とともに解説します。",
+  "/shield_zct.php" => "高圧ケーブルのシースアースをZCTへどう通すか、需要家側・電源側の接地位置と保護範囲、誤配線しやすいポイントを図と考え方で整理します。"
+];
+
+if(isset($seo_title_overrides[$request_path])){
+  $page_title = $seo_title_overrides[$request_path];
+}
+
 if($is_home){
   $html_title = "でんきメモ | 高圧受電設備、保護継電器、測定器、電気主任技術者、電気管理技術者の知識";
   $meta_title = "でんきメモ";
@@ -68,7 +112,8 @@ if($is_home){
   }
   $html_title = $page_title . " - " . $site_title;
   $meta_title = $page_title;
-  $meta_description = $page_title . "について、電気設備の点検・試験・保守で役立つ情報をまとめた技術メモ。";
+  $meta_description = $seo_description_overrides[$request_path]
+    ?? ($page_title . "について、電気設備の点検・試験・保守で役立つ情報をまとめた技術メモ。");
 }
 
 $twitter_card = ($request_path === "/v0.php") ? "summary_large_image" : "summary";
@@ -81,6 +126,8 @@ $meta_title_esc = htmlspecialchars($meta_title, ENT_QUOTES, "UTF-8");
 $meta_description_esc = htmlspecialchars($meta_description, ENT_QUOTES, "UTF-8");
 $canonical_url_esc = htmlspecialchars($canonical_url, ENT_QUOTES, "UTF-8");
 $filename_esc = htmlspecialchars($filename, ENT_QUOTES, "UTF-8");
+$image_alt = $meta_title . " - でんきメモ";
+$image_alt_esc = htmlspecialchars($image_alt, ENT_QUOTES, "UTF-8");
 
 $schema = [
   "@context" => "https://schema.org",
@@ -89,6 +136,10 @@ $schema = [
   "headline" => $is_home ? null : $meta_title,
   "description" => $meta_description,
   "url" => $canonical_url,
+  "mainEntityOfPage" => $is_home ? null : [
+    "@type" => "WebPage",
+    "@id" => $canonical_url
+  ],
   "image" => $filename,
   "publisher" => [
     "@type" => "Organization",
@@ -110,6 +161,7 @@ $schema_json = json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLAS
   <meta name="twitter:title" content="<?= $meta_title_esc ?>">
   <meta name="twitter:description" content="<?= $meta_description_esc ?>">
   <meta name="twitter:image" content="<?= $filename_esc ?>">
+  <meta name="twitter:image:alt" content="<?= $image_alt_esc ?>">
 
   <meta property="og:type" content="<?= $is_home ? 'website' : 'article' ?>">
   <meta property="og:site_name" content="でんきメモ">
@@ -117,6 +169,7 @@ $schema_json = json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLAS
   <meta property="og:title" content="<?= $meta_title_esc ?>">
   <meta property="og:description" content="<?= $meta_description_esc ?>">
   <meta property="og:image" content="<?= $filename_esc ?>">
+  <meta property="og:image:alt" content="<?= $image_alt_esc ?>">
   <meta name="thumbnail" content="<?= $filename_esc ?>">
 
   <script type="application/ld+json"><?= $schema_json ?></script>
