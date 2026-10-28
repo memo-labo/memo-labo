@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /search.php
+
+Sitemap: https://memo-labo.com/sitemap.xml
