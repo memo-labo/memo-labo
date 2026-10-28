@@ -87,12 +87,36 @@ if($category_items){
     }
   }
 }
+
+// GA4直近30日で流入の多い代表記事。
+// カテゴリ外への回遊入口として少数だけ表示する。
+$popular_items = [
+  ["slug" => "number", "title" => "制御機器番号一覧"],
+  ["slug" => "b_sq", "title" => "B種接地線の太さ計算"],
+  ["slug" => "dt", "title" => "ダブルスロー（DT）の仕組み"],
+  ["slug" => "ctt", "title" => "CTT 電流試験端子"],
+  ["slug" => "ocr", "title" => "OCR 過電流継電器"],
+  ["slug" => "v0", "title" => "V0 零相電圧"],
+];
+
+$popular_items = array_values(array_filter($popular_items, function($item) use ($current_slug){
+  return ($item["slug"] ?? "") !== $current_slug;
+}));
 ?>
 
 <?php if($related_items): ?>
 <h2>関連ページ</h2>
 <ul class="top-links related-links">
 <?php foreach($related_items as $item): ?>
+<li><a href="<?= htmlspecialchars($item['slug'], ENT_QUOTES, 'UTF-8') ?>.php"><?= htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8') ?></a></li>
+<?php endforeach; ?>
+</ul>
+<?php endif; ?>
+
+<?php if($popular_items && !$should_noindex): ?>
+<h2>よく読まれているページ</h2>
+<ul class="top-links related-links">
+<?php foreach(array_slice($popular_items, 0, 5) as $item): ?>
 <li><a href="<?= htmlspecialchars($item['slug'], ENT_QUOTES, 'UTF-8') ?>.php"><?= htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8') ?></a></li>
 <?php endforeach; ?>
 </ul>
