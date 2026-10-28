@@ -33,6 +33,7 @@ if(!$request_path){
   $request_path = "/";
 }
 $is_home = ($request_path === "/" || $request_path === "/index.php");
+$should_noindex = in_array($request_path, ["/search.php", "/404.php"], true);
 $canonical_url = "https://memo-labo.com" . ($request_path === "/index.php" ? "/" : $request_path);
 
 $page_title = "";
@@ -71,6 +72,9 @@ if($is_home){
 }
 
 $twitter_card = ($request_path === "/v0.php") ? "summary_large_image" : "summary";
+$robots_content = $should_noindex
+  ? "noindex,follow"
+  : "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1";
 
 $html_title_esc = htmlspecialchars($html_title, ENT_QUOTES, "UTF-8");
 $meta_title_esc = htmlspecialchars($meta_title, ENT_QUOTES, "UTF-8");
@@ -98,7 +102,7 @@ $schema_json = json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLAS
 
   <title><?= $html_title_esc ?></title>
   <meta name="description" content="<?= $meta_description_esc ?>">
-  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="robots" content="<?= htmlspecialchars($robots_content, ENT_QUOTES, 'UTF-8') ?>">
   <link rel="canonical" href="<?= $canonical_url_esc ?>">
 
   <meta name="twitter:card" content="<?= htmlspecialchars($twitter_card, ENT_QUOTES, 'UTF-8') ?>">
