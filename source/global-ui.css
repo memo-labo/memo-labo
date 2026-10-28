@@ -135,6 +135,95 @@ main .amazon-related-ad::before {
     margin-top: 26px;
 }
 
+/* =========================================================
+   青アクセント
+   落ち着いた余白・背景は残し、主要UIだけ青へ統一
+   ========================================================= */
+
+header h1,
+header h1 a,
+header h1 a:link,
+header h1 a:visited,
+header h1 a:hover,
+header h1 a:active {
+    color: #263f5f !important;
+}
+
+header h1::after {
+    background: linear-gradient(90deg, #1565c0 0%, #1976d2 55%, #42a5f5 100%) !important;
+}
+
+h2 {
+    color: #263f5f !important;
+}
+
+h2::before {
+    background: #1976d2 !important;
+}
+
+h3 {
+    color: #345a82 !important;
+}
+
+a {
+    color: #1565c0 !important;
+}
+
+a:hover {
+    color: #0d47a1 !important;
+}
+
+ul.top-links > li > a,
+ul.related-links > li > a {
+    color: #1565c0 !important;
+    border-color: #d7e2ee !important;
+    background: #fff !important;
+}
+
+ul.top-links > li > a:hover,
+ul.related-links > li > a:hover {
+    color: #0d47a1 !important;
+    border-color: #90caf9 !important;
+    background: #f5f9fe !important;
+}
+
+form input:focus,
+form select:focus,
+.site-search input[type="search"]:focus {
+    border-color: #64a5e8 !important;
+    box-shadow: 0 0 0 3px rgba(25,118,210,.11) !important;
+}
+
+form input[type="button"],
+form button,
+.site-search button,
+.search-page-form button {
+    background: #1976d2 !important;
+}
+
+th {
+    background: #eef5fb !important;
+    color: #38536d !important;
+}
+
+.ad1::before {
+    background: #1976d2 !important;
+}
+
+.return a {
+    border-color: #90b9df !important;
+    color: #1976d2 !important;
+}
+
+.article-toc {
+    border-color: #d8e5f1 !important;
+    background: #fbfdff !important;
+}
+
+.article-toc-title {
+    color: #3d5872 !important;
+}
+
 @media (min-width: 768px) {
     main.article-enhanced img:not(.amazon-related-ad img) {
         max-width: min(560px, 100%) !important;
