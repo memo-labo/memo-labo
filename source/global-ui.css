@@ -132,14 +132,9 @@ main.article-enhanced button {
     cursor: pointer;
 }
 
-/* 広告・関連商品の前後に十分な余白を確保し、本文やナビと混同させない */
+/* 自動挿入されるAmazon関連商品は非表示。記事本文に手動で置いたAmazonリンクは残す。 */
 main .amazon-related-ad {
-    margin-top: 36px !important;
-    margin-bottom: 38px !important;
-}
-
-main .amazon-related-ad::before {
-    content: "PR・おすすめ" !important;
+    display: none !important;
 }
 
 .article-ad-separator {
