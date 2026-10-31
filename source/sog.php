@@ -4,11 +4,13 @@
 SOGはPASやUGSなどの区分開閉器と組み合わせ、需要家構内の地絡・短絡事故時に開閉器を開放して波及事故を防止する制御装置。<br>
 SOGはStorage Over Current Groundの略で、地絡保護と短絡事故時のSO動作を扱う。<br><br>
 
+<strong>このページでは、SOG制御装置の仕組み、PASとの連動、DGR要素試験、SO動作、P1・P2やZ2/Eの注意点、無停電試験時の確認事項までまとめる。</strong><br><br>
+
 SOG端子部分<br>
-<img src="images/sog5.jpg" style="max-width:700px;" alt="SOG端子部分"><br>
+<img src="images/sog5.jpg" style="max-width:700px;" alt="SOG制御装置の端子部分"><br>
 
 SOGつまみ<br>
-<img src="images/sog6.jpg" style="max-width:700px;" alt="SOGつまみ"><br>
+<img src="images/sog6.jpg" style="max-width:700px;" alt="SOG制御装置の整定つまみ"><br>
 
 <h2>SOG制御装置の月次点検</h2>
 ・電源ランプは点灯しているか<br>
@@ -30,7 +32,8 @@ VT焼損や感電につながるため、必ず切り分けを確認する。<br
 
 <h2>DGR要素試験</h2>
 SOGの地絡方向要素試験では、I0とV0の位相関係を確認する。<br>
-最大感度角で試験することで、動作時間や最小動作値を安定して確認しやすい。<br><br>
+最大感度角で試験することで、動作時間や最小動作値を安定して確認しやすい。<br>
+⇒<a href="dgr.php">DGR（地絡方向継電器）の原理・位相・整定値・試験方法</a><br><br>
 
 試験例<br>
 地絡電流 / Z1-Z2間電圧<br>
@@ -50,7 +53,8 @@ PASの連動試験時間は、地絡動作時間に開閉器動作時間を加�
 この突入電流の大きさや継続時間によっては、LBSの高圧限流ヒューズが溶断する可能性がある。<br><br>
 
 停電点検中のSOG連動試験では、PAS・UGSの動作確認だけが目的なら、不要な受電設備まで繰り返し励磁しないよう系統を切り分けておくと安全。<br>
-ただし、LBSの開放可否や試験手順は設備構成・保護協調・現場の作業手順によって異なるため、単線結線図と現場状態を確認して判断する。<br><br>
+ただし、LBSの開放可否や試験手順は設備構成・保護協調・現場の作業手順によって異なるため、単線結線図と現場状態を確認して判断する。<br>
+⇒<a href="lbs.php">LBS（高圧交流負荷開閉器）の基本と点検</a><br><br>
 
 試験例<br>
 <ul>
@@ -115,11 +119,12 @@ PAS筐体の接地状態もあわせて確認する。<br>
 単相負荷の偏りやSVRなどにより、地絡事故がなくても零相電圧が常時発生する場合がある。<br>
 この残留電圧と試験電圧がベクトル合成され、試験結果が基準値から外れることがある。<br>
 必要に応じてPAS・UGSを開放し、残留電圧の影響をなくして試験する。<br>
+⇒<a href="v0.php">V0（零相電圧）の意味・3810V・5%整定</a><br>
 
 <h2>警報回路のサージ対策</h2>
 SOG警報回路へ雷サージ対策としてサージアブソーバを取り付ける構成がある。<br>
 ⇒<a href="znr.php">サージアブソーバ</a><br>
-<img src="images/sog7.jpg" style="max-width:400px;" alt="SOG警報回路サージアブソーバ"><br>
+<img src="images/sog7.jpg" style="max-width:400px;" alt="SOG警報回路のサージアブソーバ"><br>
 
 <h2>試験後の確認ポイント</h2>
 ・P1・P2を元どおり復旧したか<br>
@@ -129,11 +134,15 @@ SOG警報回路へ雷サージ対策としてサージアブソーバを取り�
 ・PASが正常な投入状態か<br>
 ・SOG電源ランプ、自己診断表示に異常がないか<br>
 
-<h2>PAS・SOG関連記事</h2>
+<h2>SOG試験でよく確認する関連項目</h2>
 <ul>
-<li><a href="pas_size.php">大垣電機と戸上電機のPASの違い・更新工事の注意点</a></li>
-<li><a href="pasz2.php">PAS・SOGのZ2/E接地</a></li>
-<li><a href="pas_himo.php">PAS操作紐の紫外線劣化・交換時の注意</a></li>
+<li><a href="j1.php">P1・P2を外さず試験電源を印加したときのVT焼損リスク</a></li>
+<li><a href="dgr.php">DGR試験のV0・I0・位相関係</a></li>
+<li><a href="v0.php">零相電圧V0の基礎と整定値</a></li>
+<li><a href="pasz2.php">Z2/E接地と多点接地の注意</a></li>
+<li><a href="pas_size.php">PAS更新時のSOG制御線・端末処理</a></li>
+<li><a href="pas_himo.php">PAS操作紐の劣化・交換時の注意</a></li>
+<li><a href="number.php">制御機器番号一覧｜27・51・52・64・67・89</a></li>
 </ul>
 
 <?php include("footer.php"); ?>
