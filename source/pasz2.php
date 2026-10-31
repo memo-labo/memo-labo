@@ -43,7 +43,10 @@ Z2/E端子とPAS本体の接地が内部で共通になっていない旧仕様�
 3. Z2/EとPAS本体の内部接続有無を確認<br>
 4. 不要な多点接地が生じないことを確認<br>
 5. 更新後にSOG・DGR要素の試験を行う<br>
-という順で確認する。<br>
+という順で確認する。<br><br>
+
+メーカーを変更してPASを更新する場合は、接地方式だけでなく本体外形やSOG制御線の端末処理が変わることもある。<br>
+⇒<a href="pas_size.php">大垣電機と戸上電機のPASの違い｜本体サイズ・SOG制御線・更新時の注意</a><br>
 
 <h2>多点接地が問題になる理由</h2>
 SOG・DGRは零相電圧V0や零相電流I0を使って地絡を判定する。<br>
@@ -65,7 +68,8 @@ SOG・DGRは零相電圧V0や零相電流I0を使って地絡を判定する。<
 <ul>
 <li><a href="sog.php">SOG制御装置の仕組み・試験方法</a></li>
 <li><a href="sogv0.php">SOGの零相電圧・V0</a></li>
-<li><a href="pas.php">PAS 高圧交流負荷開閉器</a></li>
+<li><a href="pas_size.php">大垣電機と戸上電機のPASの違い・更新時の注意点</a></li>
+<li><a href="pas_himo.php">PAS操作紐の劣化・交換時の注意</a></li>
 <li><a href="dgr.php">DGR 地絡方向継電器</a></li>
 </ul>
 
