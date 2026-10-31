@@ -99,8 +99,9 @@ PASが開放状態のまま操作紐が切れると、通常の地上操作で�
 
 <h2>関連ページ</h2>
 <ul>
-<li><a href="pas.php">PAS 高圧交流負荷開閉器</a></li>
-<li><a href="sog.php">SOG制御装置</a></li>
+<li><a href="sog.php">SOG制御装置の仕組み・試験方法</a></li>
+<li><a href="pas_size.php">大垣電機と戸上電機のPASの違い｜本体サイズ・SOG制御線</a></li>
+<li><a href="pasz2.php">PAS・SOGのZ2/E接地｜更新時の注意</a></li>
 <li><a href="pas_himo2.php">PAS操作紐の関連情報</a></li>
 </ul>
 
