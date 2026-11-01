@@ -1,9 +1,18 @@
 <?php include("header.php"); ?>
 
+<h2>モールドジスコン（MDS）とは？投入・開放・復電時の注意</h2>
+モールドジスコン（MDS）は、地中引込の高圧受電設備で使われる断路器の一種。<br>
+古い高圧キャビネットに残っていることがあり、投入・開放時は下流のDS・LBS・VCBの状態、地絡保護、投入直後の電圧確認まで含めて復電手順を考える必要がある。<br><br>
+
+特に復電時は、<strong>MDS投入直後に需要家側の電圧を確認し、電圧が確認できない場合はそのまま復電操作を進めない。</strong><br>
+地絡によって配電側の送電が停止している可能性があり、再送電時の二度目の地絡が波及事故につながるおそれがある。<br><br>
+
+このページでは、モールドジスコンの構造・操作、単極型と三極型、DSとの投入順序、ピラージスコンとの違い、地絡・波及事故を防ぐための現場上の注意点をまとめる。<br>
+
 <h2>モールドジスコン 外観</h2>
-<img src="images/mds1.jpg" alt="" style="max-width:700px;"><br><br>
-<img src="images/mds2.jpg" alt="" style="max-width:700px;"><br><br>
-<img src="images/mds4.jpg" alt="" style="max-width:700px;"><br><br>
+<img src="images/mds1.jpg" alt="モールドジスコン MDS 外観" style="max-width:700px;"><br><br>
+<img src="images/mds2.jpg" alt="高圧キャビネット内のモールドジスコン" style="max-width:700px;"><br><br>
+<img src="images/mds4.jpg" alt="モールドジスコンの取付状態" style="max-width:700px;"><br><br>
 <img src="material/mds2.png" style="max-width:600px;" alt="MDS モールドジスコン イラスト"><br><br>
 <img src="material/mds1.png" style="max-width:400px;" alt="MDS モールドジスコン イラスト"><br>
 
@@ -17,19 +26,17 @@
 モールドジスコンにハンドルを押し込む。<br>
 ハンドルフックがMDS先端の突起にひっかかる。<br>
 ハンドルバネが戻ることで固定される。<br>
-<img src="images/mds/2.jpg" alt="" style="max-width:400px;"><br>
-
+<img src="images/mds/2.jpg" alt="モールドジスコン操作用ハンドル" style="max-width:400px;"><br>
 
 <h2>モールドジスコンのタイプ</h2>
 モールドジスコンには「単極型」と「三極型」がある。<br>
 １相ずつ開放・投入するタイプが「単極型」<br>
 ３相いっぺんに開放・投入するタイプが「三極型」<br>
 
-
 <h2>投入と開放時の注意</h2>
 
 ↓これをハンドルを使って引き抜くことで断路する<br>
-<img src="images/mds3.jpg" alt="" style="max-width:700px;"><br><br>
+<img src="images/mds3.jpg" alt="モールドジスコンをハンドルで引き抜く部分" style="max-width:700px;"><br><br>
 
 落として割る<br>
 モールドジスコンを引き抜く際、ハンドルのロックからモールドジスコンが外れて落下。<br>
@@ -38,7 +45,7 @@
 モールドジスコンの入切操作時には、高圧ゴム手袋を装着して行う。<br>
 屋外で雨に濡れた状態で操作した場合、体を通して足に地絡し感電する恐れ<br>
 
-<img src="images/mds/3.jpg" alt="" style="max-width:300px;"><br>
+<img src="images/mds/3.jpg" alt="モールドジスコン操作部" style="max-width:300px;"><br>
 
 モールドジスコンが１相ずつ引き抜くタイプで、かつVCBやLBSを投入状態で変圧器まで受電状態で引き抜くと、引き抜いた瞬間に欠相状態となり、変圧器から異音が発生する。<br><br>
 なので、停電の際にはVCBやLBSは開放状態にしてから、モールドジスコンを引き抜く。<br><br>
@@ -98,7 +105,6 @@ LBS or VCBを入れる。<br>
 
 構内地絡事故は、高圧ケーブルの経年劣化によるものがほとんどらしいので、構内ケーブル地絡事故から波及事故への被害拡大を防止するためにも、UGS（地中線用負荷開閉器）への交換が推奨される。
 
-
 <h2>高圧キャビネットの種類</h2>
 
 二回路形（A1形）<br>
@@ -112,10 +118,12 @@ LBS or VCBを入れる。<br>
 高圧キャビネット内部には、UGSやモールドジスコンなど需要家が必要とする断路器を設置し、電力会社との責任分界点は、断路器の一次側となる。<br>
 
 <h2>関連リンク</h2>
-
 <ul>
-    <li><a href="ugs.php">UGS 地中線用負荷開閉器</a></li>
-    <li><a href="moraijiko.php">もらい事故</a></li>
+<li><a href="ugs.php">UGS（地中線用負荷開閉器）の仕組み・試験・注意点</a></li>
+<li><a href="moraijiko.php">高圧地絡のもらい事故とGR動作</a></li>
+<li><a href="gr.php">GR（地絡継電器）の原理・試験方法</a></li>
+<li><a href="vcb.php">VCB（真空遮断器）の仕組み・点検</a></li>
+<li><a href="lbs.php">LBS（高圧交流負荷開閉器）</a></li>
 </ul>
 
 <?php include("footer.php"); ?>
