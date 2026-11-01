@@ -147,6 +147,58 @@ main .amazon-related-ad {
     margin-top: 26px;
 }
 
+/* =========================================================
+   記事内の重要情報ボックス
+   ========================================================= */
+
+.article-warning,
+.article-field-note {
+    margin: 22px 0 28px;
+    padding: 16px 18px 17px;
+    border-radius: 10px;
+    line-height: 1.8;
+}
+
+.article-warning {
+    background: #fff8e6;
+    border: 1px solid #f0cf78;
+    border-left: 6px solid #e6a700;
+}
+
+.article-field-note {
+    background: #f3f8fd;
+    border: 1px solid #c9dff2;
+    border-left: 6px solid #1976d2;
+}
+
+.article-warning-title,
+.article-field-note-title {
+    display: block;
+    margin: 0 0 8px;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.article-warning-title {
+    color: #7a5700;
+}
+
+.article-field-note-title {
+    color: #245b8f;
+}
+
+.article-warning p:last-child,
+.article-field-note p:last-child,
+.article-warning ul:last-child,
+.article-field-note ul:last-child {
+    margin-bottom: 0;
+}
+
+.article-warning a,
+.article-field-note a {
+    font-weight: 700;
+}
+
 /* Amazonアソシエイト参加表示。全ページで読めるが本文より控えめにする */
 .affiliate-disclosure {
     max-width: 860px;
@@ -279,6 +331,12 @@ th {
 
     .table-scroll table {
         min-width: 480px;
+    }
+
+    .article-warning,
+    .article-field-note {
+        margin: 18px 0 24px;
+        padding: 14px 15px 15px;
     }
 
     .affiliate-disclosure {
