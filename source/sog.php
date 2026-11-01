@@ -1,5 +1,14 @@
 <?php include("header.php"); ?>
 
+<style>
+.article-warning,.article-field-note{margin:22px 0 28px;padding:16px 18px 17px;border-radius:10px;line-height:1.8}
+.article-warning{background:#fff8e6;border:1px solid #f0cf78;border-left:6px solid #e6a700}
+.article-field-note{background:#f3f8fd;border:1px solid #c9dff2;border-left:6px solid #1976d2}
+.article-warning-title,.article-field-note-title{display:block;margin:0 0 8px;font-weight:800;line-height:1.5}
+.article-warning-title{color:#7a5700}.article-field-note-title{color:#245b8f}
+@media(max-width:767px){.article-warning,.article-field-note{margin:18px 0 24px;padding:14px 15px 15px}}
+</style>
+
 <h2>SOG制御装置とは？</h2>
 SOGはPASやUGSなどの区分開閉器と組み合わせ、需要家構内の地絡・短絡事故時に開閉器を開放して波及事故を防止する制御装置。<br>
 SOGはStorage Over Current Groundの略で、地絡保護と短絡事故時のSO動作を扱う。<br><br>
