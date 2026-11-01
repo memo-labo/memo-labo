@@ -1,19 +1,20 @@
 <?php include("header.php"); ?>
 
-<style>
-.article-warning,.article-field-note{margin:22px 0 28px;padding:16px 18px 17px;border-radius:10px;line-height:1.8}
-.article-warning{background:#fff8e6;border:1px solid #f0cf78;border-left:6px solid #e6a700}
-.article-field-note{background:#f3f8fd;border:1px solid #c9dff2;border-left:6px solid #1976d2}
-.article-warning-title,.article-field-note-title{display:block;margin:0 0 8px;font-weight:800;line-height:1.5}
-.article-warning-title{color:#7a5700}.article-field-note-title{color:#245b8f}
-@media(max-width:767px){.article-warning,.article-field-note{margin:18px 0 24px;padding:14px 15px 15px}}
-</style>
-
 <h2>SOG制御装置とは？</h2>
 SOGはPASやUGSなどの区分開閉器と組み合わせ、需要家構内の地絡・短絡事故時に開閉器を開放して波及事故を防止する制御装置。<br>
 SOGはStorage Over Current Groundの略で、地絡保護と短絡事故時のSO動作を扱う。<br><br>
 
-<strong>このページでは、SOG制御装置の仕組み、PASとの連動、DGR要素試験、SO動作、P1・P2やZ2/Eの注意点、無停電試験時の確認事項までまとめる。</strong><br><br>
+<div class="article-summary">
+<strong>このページで分かること</strong>
+<ul>
+<li>SOG制御装置の役割とPAS・UGSとの関係</li>
+<li>DGR要素試験とI0・V0の確認</li>
+<li>SOGとPASの連動試験</li>
+<li>P1・P2、Va・Vc、Z2/Eを扱うときの注意</li>
+<li>SO動作と無停電試験時の確認事項</li>
+<li>試験後に必ず戻す配線・表示・開閉状態</li>
+</ul>
+</div>
 
 SOG端子部分<br>
 <img src="images/sog5.jpg" style="max-width:700px;" alt="SOG制御装置の端子部分"><br>
@@ -22,13 +23,15 @@ SOGつまみ<br>
 <img src="images/sog6.jpg" style="max-width:700px;" alt="SOG制御装置の整定つまみ"><br>
 
 <h2>SOG制御装置の月次点検</h2>
-・電源ランプは点灯しているか<br>
-・自己診断表示ランプは点灯していないか<br>
-・V0、I0ランプは点灯していないか<br>
-・扉は確実に閉まっているか<br>
-・ブッシング部に亀裂、損傷、汚損がないか<br>
-・外箱に錆、損傷、汚損がないか<br>
-・内部に水滴、虫、汚れがないか<br>
+<ul>
+<li>電源ランプは点灯しているか</li>
+<li>自己診断表示ランプは点灯していないか</li>
+<li>V0、I0ランプは点灯していないか</li>
+<li>扉は確実に閉まっているか</li>
+<li>ブッシング部に亀裂、損傷、汚損がないか</li>
+<li>外箱に錆、損傷、汚損がないか</li>
+<li>内部に水滴、虫、汚れがないか</li>
+</ul>
 
 <h2>SOG試験前の重要確認</h2>
 既設のP1・P2配線は切り離して試験する。<br>
@@ -54,11 +57,13 @@ SOGの地絡方向要素試験では、I0とV0の位相関係を確認する。<
 
 零相電圧 / Y1-Z2間電圧<br>
 ・190V 5% / 60mV±15mV<br>
-・381V 10% / 120mV±30mV<br>
+・381V 10% / 120mV±30mV<br><br>
+
+数値は機種やメーカーで異なるため、実際の判定は取扱説明書・試験要領を優先する。<br>
 
 <h2 id="rendou">SOGとPASの連動試験</h2>
 SOG動作からPAS開放までを確認する試験。<br>
-PASの連動試験時間は、地絡動作時間に開閉器動作時間を加えた値で確認する。<br><br>
+PASの連動試験時間は、SOGの動作時間に開閉器の機械的動作時間を加えた値として確認する。<br><br>
 
 <div class="article-field-note">
 <span class="article-field-note-title">現場メモ：連動試験では不要な受電設備まで励磁しない</span>
@@ -84,8 +89,8 @@ PASまたはUGSを実際に投入してSOG連動試験を行う場合は、設�
 <span class="article-field-note-title">現場メモ：PASトリップ時の振動をカウンタ停止信号に使う方法</span>
 130%など所定の試験値でSOGを動作させ、PASがトリップするまでの時間を測定したい場合、振動センサーを電柱へ固定し、PAS開放時の機械的な振動を拾ってカウンタ停止信号として使える場合がある。<br><br>
 PAS本体から直接接点信号を取りにくい現場では、動作時の振動を利用できると測定しやすい。<br>
-同じ考え方で、OCRとVCBの連動試験でもVCB開放時の振動を検出してカウンタ停止に利用できる場合があり、1台あると複数の連動試験で使いやすい。<br><br>
-ただし、振動の伝わり方は電柱・架台・機器の構造で変わり、周囲の衝撃や作業振動を拾う可能性もあるため、事前に確実に動作信号を取れることを確認する。正式な測定方法や判定条件は、使用する試験器・センサー・メーカー手順に従う。
+同じ考え方で、OCRとVCBの連動試験でもVCB開放時の振動を検出してカウンタ停止に利用できる場合がある。<br><br>
+ただし、振動の伝わり方は電柱・架台・機器の構造で変わり、周囲の衝撃や作業振動を拾う可能性もある。事前に確実に動作信号を取れることを確認し、正式な測定方法や判定条件は使用する試験器・センサー・メーカー手順に従う。
 </div>
 
 <h2>PAS無停電状態でのSOG単体試験</h2>
@@ -118,14 +123,7 @@ PASを投入したままSOG単体を試験する場合は、SOGが動作して�
 </ol>
 
 <h2>SOの疑似動作試験</h2>
-<ol>
-<li>SOGの既設P1・P2を外して絶縁する</li>
-<li>PASを投入状態にする</li>
-<li>SOGへ試験用補助電源を供給する</li>
-<li>Vb-Vc間を一瞬短絡して過電流要素動作を模擬する</li>
-<li>所定時間内にP1・P2電源を停止する</li>
-<li>蓄勢回路からトリップ信号が出てPASが開放することを確認する</li>
-</ol>
+SO疑似試験の方法は機種・メーカーで異なる。既設配線を扱う場合は、取扱説明書と試験要領に従い、制御回路への誤印加や復旧漏れを防ぐ。<br>
 
 <h2>SOG制御線</h2>
 制御線のシールドは開閉器本体側で接地されている構成がある。<br>
@@ -136,8 +134,7 @@ PASをメーカー変更して更新する場合は、SOG制御線の先端がY�
 
 <h2>Z2接地の確認</h2>
 SOGはZ1-Z2間で零相電流信号、Y1-Z2間で零相電圧信号を扱う構成がある。<br>
-Z2接地が不完全だと、試験時のV0不動作やノイズによる誤動作につながる可能性がある。<br>
-PAS筐体の接地状態もあわせて確認する。<br>
+Z2接地が不完全だと、試験時のV0不動作やノイズによる誤動作につながる可能性がある。PAS筐体の接地状態もあわせて確認する。<br>
 ⇒<a href="pasz2.php">PAS・SOGのZ2/E接地｜旧仕様・新仕様・多点接地の注意</a><br>
 
 <h2>残留電圧の影響</h2>
@@ -152,12 +149,14 @@ SOG警報回路へ雷サージ対策としてサージアブソーバを取り�
 <img src="images/sog7.jpg" style="max-width:400px;" alt="SOG警報回路のサージアブソーバ"><br>
 
 <h2>試験後の確認ポイント</h2>
-・P1・P2を元どおり復旧したか<br>
-・Va・Vb・Vcなど制御線を復旧したか<br>
-・警報接点を復旧したか<br>
-・GR／SO表示やターゲットを復帰したか<br>
-・PASが正常な投入状態か<br>
-・SOG電源ランプ、自己診断表示に異常がないか<br>
+<ul>
+<li>P1・P2を元どおり復旧したか</li>
+<li>Va・Vb・Vcなど制御線を復旧したか</li>
+<li>警報接点を復旧したか</li>
+<li>GR／SO表示やターゲットを復帰したか</li>
+<li>PASが正常な投入状態か</li>
+<li>SOG電源ランプ、自己診断表示に異常がないか</li>
+</ul>
 
 <h2>SOG試験でよく確認する関連項目</h2>
 <ul>
