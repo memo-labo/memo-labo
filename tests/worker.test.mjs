@@ -40,3 +40,52 @@ test('unknown pages keep the asset 404 status', async () => {
   });
   assert.equal(response.status, 404);
 });
+
+// Cloudflare supplies this API; routing tests only need a pass-through transform.
+globalThis.HTMLRewriter = class {
+  on() { return this; }
+  transform(response) { return response; }
+};
+
+function htmlAssets(canonical) {
+  return { ASSETS: { fetch: async () => new Response(
+    `<!doctype html><link rel="canonical" href="${canonical}"><h1>Article</h1>`,
+    { headers: { 'content-type': 'text/html; charset=utf-8' } },
+  ) } };
+}
+
+for (const [path, canonical, target] of [
+  ['/dt.html?ref=test', '/dt.php', '/dt.php?ref=test'],
+  ['/index.html', '/', '/'],
+  ['/j/', '/j/index.php', '/j/index.php'],
+  ['/j/index.html', '/j/index.php', '/j/index.php'],
+]) {
+  test(`static alias ${path} redirects to its declared canonical`, async () => {
+    const response = await worker.fetch(new Request('https://memo-labo.com' + path),
+      htmlAssets('https://memo-labo.com' + canonical));
+    assert.equal(response.status, 301);
+    assert.equal(response.headers.get('location'), 'https://memo-labo.com' + target);
+  });
+}
+
+test('canonical article and standalone HTML do not redirect', async () => {
+  for (const path of ['/dt.php', '/standalone.html', '/']) {
+    const response = await worker.fetch(new Request('https://memo-labo.com' + path),
+      htmlAssets('https://memo-labo.com' + path));
+    assert.equal(response.status, 200);
+    assert.match(await response.text(), /Article/);
+  }
+});
+
+test('canonical on another origin cannot redirect visitors off site', async () => {
+  const response = await worker.fetch(new Request('https://memo-labo.com/example.html'),
+    htmlAssets('https://example.com/elsewhere'));
+  assert.equal(response.status, 200);
+});
+
+test('direct error template returns HTTP 404 with its body', async () => {
+  const response = await worker.fetch(new Request('https://memo-labo.com/404.php'),
+    htmlAssets('https://memo-labo.com/404.php'));
+  assert.equal(response.status, 404);
+  assert.match(await response.text(), /Article/);
+});

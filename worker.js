@@ -56,10 +56,30 @@ header .site-logo a:active {
 }
 </style>`;
 
-async function serveHtml(response) {
+async function serveHtml(response, request) {
   if (!response.ok) return response;
   const type = response.headers.get("content-type") || "";
   if (!type.includes("text/html")) return response;
+  const publicUrl = new URL(request.url);
+  // Generated HTML files and section directories are aliases of legacy URLs.
+  // Read their declared canonical so standalone HTML files remain untouched.
+  if (/\.html$/i.test(publicUrl.pathname) ||
+      (publicUrl.pathname !== "/" && publicUrl.pathname.endsWith("/"))) {
+    const markup = await response.clone().text();
+    const match = markup.match(/<link rel="canonical" href="([^"]+)">/i);
+    if (match) {
+      const canonical = new URL(match[1]);
+      if (canonical.origin === "https://memo-labo.com" &&
+          canonical.pathname !== publicUrl.pathname) {
+        publicUrl.pathname = canonical.pathname;
+        return Response.redirect(publicUrl.toString(), 301);
+      }
+    }
+  }
+  // The error template must never become a soft 404 in search results.
+  if (publicUrl.pathname === "/404.php" || publicUrl.pathname === "/404.html") {
+    response = new Response(response.body, { status: 404, headers: response.headers });
+  }
   return new HTMLRewriter()
     .on("head", { element(element) { element.append(LOGO_STYLE, { html: true }); } })
     .transform(response);
@@ -112,21 +132,21 @@ export default {
     // The static build creates index.html files, while html_handling is "none".
     if (path.endsWith("/")) {
       url.pathname = path + "index.html";
-      return serveHtml(await env.ASSETS.fetch(new Request(url.toString(), request)));
+      return serveHtml(await env.ASSETS.fetch(new Request(url.toString(), request)), request);
     }
 
     // Static replacement for the old PHP search endpoint.
     if (path === "/search") {
       url.pathname = "/search.html";
-      return serveHtml(await env.ASSETS.fetch(new Request(url.toString(), request)));
+      return serveHtml(await env.ASSETS.fetch(new Request(url.toString(), request)), request);
     }
 
     // Keep the visible/public .php URL, but serve the generated .html asset.
     if (/\.php$/i.test(path)) {
       url.pathname = path.replace(/\.php$/i, ".html");
-      return serveHtml(await env.ASSETS.fetch(new Request(url.toString(), request)));
+      return serveHtml(await env.ASSETS.fetch(new Request(url.toString(), request)), request);
     }
 
-    return serveHtml(await env.ASSETS.fetch(request));
+    return serveHtml(await env.ASSETS.fetch(request), request);
   }
 };
