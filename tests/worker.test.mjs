@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import worker from '../worker.js';
+import { readFileSync } from 'node:fs';
 
 for (const [path, target] of [
   ['/index.php', '/'],
@@ -88,4 +89,11 @@ test('direct error template returns HTTP 404 with its body', async () => {
     htmlAssets('https://memo-labo.com/404.php'));
   assert.equal(response.status, 404);
   assert.match(await response.text(), /Article/);
+});
+
+
+test('deployment routes HTML aliases through the canonical redirect handler', () => {
+  const config = JSON.parse(readFileSync(new URL('../wrangler.jsonc', import.meta.url), 'utf8'));
+  assert.deepEqual(config.assets.run_worker_first, ['/*.html', '/*/']);
+  assert.equal(config.assets.html_handling, 'none');
 });
