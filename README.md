@@ -20,6 +20,17 @@ python tools/build_static.py SOURCE_DIR dist
 
 生成先 `dist/` には静的HTML、画像等のアセット、サイト内検索用データ、Cloudflare用 `_worker.js`、ビルドレポートが作られます。
 
+## SEOの検証
+
+静的ページの生成時に、`source/header.php` の既存のSEO用タイトル・説明文を引き継ぎます。関連記事は同じカテゴリのディレクトリ内にリンクし、CSVに残っている実体のない記事を記事一覧・関連記事・検索候補から除きます。
+
+```bash
+python -m unittest discover -s tests -p 'test_*.py'
+node --test tests/worker.test.mjs
+```
+
+全生成ページのサイトマップとcanonicalの一致、関連記事リンク、検索候補、SEOメタデータ、Workerの301転送を確認します。プルリクエストでも同じ検証を実行します。
+
 ## 本番切替前チェック
 
 1. ビルドレポートで未変換PHPを確認する。
