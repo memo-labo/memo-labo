@@ -90,6 +90,11 @@ class StaticSEO(unittest.TestCase):
         dt = next(item for item in data if item['url'] == 'dt.php')
         self.assertEqual(dt['title'], build.seo_overrides(ROOT / 'source', 'title')['/dt.php'])
 
+    def test_unlisted_article_uses_its_heading(self):
+        text = (self.out / 'cg.html').read_text()
+        self.assertEqual(Metadata(text).metas['og:title'], 'CVTケーブルとは？')
+        self.assertIn('<title>CVTケーブルとは？ - でんきメモ</title>', text)
+
     def test_root_overrides_do_not_leak_into_other_sections(self):
         rows = [['test', 'ocr', '別記事', '電気工事士の別記事']]
         self.assertEqual(build.page_title(ROOT / 'source', Path('j/ocr.php'), rows), '電気工事士の別記事')

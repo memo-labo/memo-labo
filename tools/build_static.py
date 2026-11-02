@@ -52,7 +52,13 @@ def seo_overrides(src, kind):
 
 def page_title(src,rel,rs):
     # Root overrides must not affect unrelated articles with the same slug.
-    title=next((r[3] or r[2] for r in rs if r[1]==rel.stem),rel.stem)
+    title=next((r[3] or r[2] for r in rs if r[1]==rel.stem),'')
+    if not title and (src/rel).is_file():
+        heading=re.search(r'<h[12]\b[^>]*>(.*?)</h[12]>',read_text(src/rel),re.S|re.I)
+        if heading:
+            title=html.unescape(re.sub(r'<[^>]+>','',heading.group(1))).strip()
+            if '<?' in title:title=''
+    title=title or rel.stem
     if len(rel.parts)==1:title=SEO_TITLES.get(rel.stem,title)
     return seo_overrides(src,'title').get('/'+rel.as_posix(),title)
 
