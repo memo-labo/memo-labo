@@ -95,6 +95,20 @@ class StaticSEO(unittest.TestCase):
         self.assertEqual(Metadata(text).metas['og:title'], 'CVTケーブルとは？')
         self.assertIn('<title>CVTケーブルとは？ - でんきメモ</title>', text)
 
+    def test_cross_section_article_links_resolve(self):
+        cases = {
+            'remote.html': ['j/' + slug + '.php' for slug in
+                            ('full2', 'inter', 'rb', 'pomp', '61f', 'rousui', 'knife')],
+            'draw2.html': ['j/sai.php'],
+            'b/boi.html': ['boiler.php'],
+        }
+        for page, links in cases.items():
+            text = (self.out / page).read_text()
+            for href in links:
+                self.assertIn('href="' + href + '"', text)
+                path = urlsplit(urljoin('/' + page, href)).path
+                self.assertTrue((self.out / path.lstrip('/')).with_suffix('.html').is_file())
+
     def test_root_overrides_do_not_leak_into_other_sections(self):
         rows = [['test', 'ocr', '別記事', '電気工事士の別記事']]
         self.assertEqual(build.page_title(ROOT / 'source', Path('j/ocr.php'), rows), '電気工事士の別記事')

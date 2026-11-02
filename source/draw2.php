@@ -4,7 +4,7 @@
 
 ソフト名「draw.io」<br><br>
 
-実際に書いたアイソメ図（<a href="sai.php">サイディングボードとは？</a>）<br>
+実際に書いたアイソメ図（<a href="j/sai.php">サイディングボードとは？</a>）<br>
 <img src="j/images/sai2.svg" style="max-width:600px;"><br><br>
 
 作業机のアイソメ図<br>
