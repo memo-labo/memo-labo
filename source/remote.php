@@ -111,7 +111,7 @@ AC100VをAC24Vに変換しリモコンリレー動作用電源として出力。
 
 
 <h2>関連ページ</h2>
-<ul><li><a href="remote.php">リモコンスイッチ・リモコンリレー・ワンショットリモコン</a></li><li><a href="full2.php">フル2線式リモコンスイッチ</a></li><li><a href="inter.php">インターホン・テレビドアホン</a></li><li><a href="rb.php">電源遮断ユニット（非常放送設備）</a></li><li><a href="pomp.php">ポンプとは？（給水・排水・制御盤）</a></li><li><a href="61f.php">61F フロートなしスイッチ ポンプ制御</a></li><li><a href="rousui.php">漏液検出器と漏水検知帯</a></li><li><a href="knife.php">ナイフスイッチ</a></li></ul>
+<ul><li><a href="remote.php">リモコンスイッチ・リモコンリレー・ワンショットリモコン</a></li><li><a href="j/full2.php">フル2線式リモコンスイッチ</a></li><li><a href="j/inter.php">インターホン・テレビドアホン</a></li><li><a href="j/rb.php">電源遮断ユニット（非常放送設備）</a></li><li><a href="j/pomp.php">ポンプとは？（給水・排水・制御盤）</a></li><li><a href="j/61f.php">61F フロートなしスイッチ ポンプ制御</a></li><li><a href="j/rousui.php">漏液検出器と漏水検知帯</a></li><li><a href="j/knife.php">ナイフスイッチ</a></li></ul>
 
 
 <?php include("footer.php"); ?>
