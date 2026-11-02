@@ -1,5 +1,93 @@
 <?php include("header.php"); ?>
 
+<h2>最大需要電力・使用電力量・一日平均電力量 自動計算</h2>
+<p>月次点検時に、需要電力・乗率・今回指針・前回指針を入力すると、最大需要電力と使用電力量を自動計算する。前回点検日と今回実施日を入力すると、点検間隔の日数から一日平均電力量も自動計算する。</p>
+
+<div class="article-summary">
+<span class="article-summary-title">計算式</span>
+<ul>
+<li>最大需要電力 ＝ 需要電力 × 乗率</li>
+<li>使用電力量 ＝（今回指針 − 前回指針）× 乗率</li>
+<li>一日平均電力量 ＝ 使用電力量 ÷ 前回点検日から今回実施日までの日数</li>
+</ul>
+</div>
+
+<div id="getu-calc" style="max-width:680px;margin:24px 0;padding:20px;background:#fff;border:1px solid #d8e0e6;border-radius:10px;box-sizing:border-box;">
+  <h3 style="margin-top:0;">入力</h3>
+
+  <label for="demandPower"><strong>① 需要電力</strong></label><br>
+  <input id="demandPower" type="number" inputmode="decimal" step="any" placeholder="例：12.5" style="width:100%;max-width:320px;padding:10px;margin:6px 0 14px;box-sizing:border-box;"><br>
+
+  <label for="multiplier"><strong>② 乗率</strong></label><br>
+  <input id="multiplier" type="number" inputmode="decimal" step="any" placeholder="例：10" style="width:100%;max-width:320px;padding:10px;margin:6px 0 14px;box-sizing:border-box;"><br>
+
+  <label for="currentReading"><strong>③ 今回指針</strong></label><br>
+  <input id="currentReading" type="number" inputmode="decimal" step="any" placeholder="例：1250.6" style="width:100%;max-width:320px;padding:10px;margin:6px 0 14px;box-sizing:border-box;"><br>
+
+  <label for="previousReading"><strong>④ 前回指針</strong></label><br>
+  <input id="previousReading" type="number" inputmode="decimal" step="any" placeholder="例：1200.4" style="width:100%;max-width:320px;padding:10px;margin:6px 0 18px;box-sizing:border-box;"><br>
+
+  <label for="previousDate"><strong>前回点検日</strong></label><br>
+  <input id="previousDate" type="date" style="width:100%;max-width:320px;padding:10px;margin:6px 0 14px;box-sizing:border-box;"><br>
+
+  <label for="currentDate"><strong>今回実施日</strong></label><br>
+  <input id="currentDate" type="date" style="width:100%;max-width:320px;padding:10px;margin:6px 0 18px;box-sizing:border-box;">
+
+  <h3>計算結果</h3>
+  <table style="width:100%;max-width:620px;">
+    <tr><th>項目</th><th>計算結果</th></tr>
+    <tr><td>最大需要電力</td><td><strong id="maxDemand">―</strong></td></tr>
+    <tr><td>使用電力量</td><td><strong id="usedEnergy">―</strong></td></tr>
+    <tr><td>点検間隔</td><td><strong id="daysBetween">―</strong></td></tr>
+    <tr><td>一日平均電力量</td><td><strong id="dailyAverage">―</strong></td></tr>
+  </table>
+  <p id="calcMessage" style="margin-bottom:0;"></p>
+</div>
+
+<script>
+(function () {
+  const ids = ['demandPower','multiplier','currentReading','previousReading','previousDate','currentDate'];
+  const el = id => document.getElementById(id);
+  const numberText = value => Number.isFinite(value) ? value.toLocaleString('ja-JP', {maximumFractionDigits: 3}) : '―';
+
+  function calculateGetu() {
+    const demand = parseFloat(el('demandPower').value);
+    const multiplier = parseFloat(el('multiplier').value);
+    const current = parseFloat(el('currentReading').value);
+    const previous = parseFloat(el('previousReading').value);
+
+    const maxDemand = demand * multiplier;
+    const usedEnergy = (current - previous) * multiplier;
+
+    el('maxDemand').textContent = Number.isFinite(maxDemand) ? numberText(maxDemand) + ' kW' : '―';
+    el('usedEnergy').textContent = Number.isFinite(usedEnergy) ? numberText(usedEnergy) + ' kWh' : '―';
+
+    let days = NaN;
+    if (el('previousDate').value && el('currentDate').value) {
+      const d1 = new Date(el('previousDate').value + 'T00:00:00');
+      const d2 = new Date(el('currentDate').value + 'T00:00:00');
+      days = Math.round((d2 - d1) / 86400000);
+    }
+
+    el('daysBetween').textContent = Number.isFinite(days) && days > 0 ? days + '日' : '―';
+
+    if (Number.isFinite(usedEnergy) && Number.isFinite(days) && days > 0) {
+      el('dailyAverage').textContent = numberText(usedEnergy / days) + ' kWh/日';
+      el('calcMessage').textContent = '';
+    } else {
+      el('dailyAverage').textContent = '―';
+      if (Number.isFinite(days) && days <= 0) {
+        el('calcMessage').textContent = '今回実施日は、前回点検日より後の日付を入力してください。';
+      } else {
+        el('calcMessage').textContent = '';
+      }
+    }
+  }
+
+  ids.forEach(id => el(id).addEventListener('input', calculateGetu));
+})();
+</script>
+
 <h2>月次点検</h2>
 
 点検頻度<br>
