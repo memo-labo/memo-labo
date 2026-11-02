@@ -100,6 +100,7 @@ class StaticSEO(unittest.TestCase):
             'remote.html': ['j/' + slug + '.php' for slug in
                             ('full2', 'inter', 'rb', 'pomp', '61f', 'rousui', 'knife')],
             'draw2.html': ['j/sai.php'],
+            'rdf.html': ['henatu.php'],
             'b/boi.html': ['boiler.php'],
         }
         for page, links in cases.items():
