@@ -48,6 +48,17 @@ class StaticSEO(unittest.TestCase):
         with contextlib.redirect_stdout(io.StringIO()):
             build.main(ROOT / 'source', cls.out)
 
+    def test_book_guide_is_discoverable_and_disclosed(self):
+        guide = (self.out / 'books.html').read_text()
+        self.assertIn('Amazonのアソシエイトとして', guide)
+        self.assertEqual(guide.count('data-placement="book-guide"'), 4)
+        self.assertIn('books.php', (self.out / 'index.html').read_text())
+        self.assertIn('https://memo-labo.com/books.php', (self.out / 'sitemap.xml').read_text())
+        search = json.loads((self.out / 'search-index.json').read_text())
+        self.assertTrue(any(item['url'] == 'books.php' for item in search))
+        for page in ('ocr.html', 'number.html', 'index.html'):
+            self.assertIn('Amazonのアソシエイトとして', (self.out / page).read_text())
+
     def test_legacy_metadata_is_preserved(self):
         titles = build.seo_overrides(ROOT / 'source', 'title')
         descriptions = build.seo_overrides(ROOT / 'source', 'description')
