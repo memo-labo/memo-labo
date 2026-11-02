@@ -9,6 +9,7 @@ desktop.ini
 
 # Local/generated build output
 dist/
+__pycache__/
 
 # Archives and temporary files
 *.zip

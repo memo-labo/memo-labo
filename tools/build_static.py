@@ -34,12 +34,27 @@ def read_rows(p):
 
 def rows_for(src, rel):
     local=src.joinpath(*rel.parts[:-1],'data.csv')
-    return read_rows(local if local.exists() else src/'data.csv')
+    csv_path=local if local.exists() else src/'data.csv'
+    return [r for r in read_rows(csv_path) if (csv_path.parent/(r[1]+'.php')).is_file()]
 
 def meta(rs,stem):
     for r in rs:
         if r[1]==stem:return r[0],r[2],SEO_TITLES.get(stem,r[3])
     return '',stem,SEO_TITLES.get(stem,stem)
+
+def seo_overrides(src, kind):
+    """Reuse existing PHP metadata without executing legacy PHP code."""
+    p=src/'header.php'
+    if not p.exists():return {}
+    match=re.search(r'\$seo_'+kind+r'_overrides\s*=\s*\[(.*?)\];',read_text(p),re.S)
+    if not match:return {}
+    return dict(re.findall(r'"([^"\n]+)"\s*=>\s*"([^"\n]*)"',match.group(1)))
+
+def page_title(src,rel,rs):
+    # Root overrides must not affect unrelated articles with the same slug.
+    title=next((r[3] or r[2] for r in rs if r[1]==rel.stem),rel.stem)
+    if len(rel.parts)==1:title=SEO_TITLES.get(rel.stem,title)
+    return seo_overrides(src,'title').get('/'+rel.as_posix(),title)
 
 def script_js(src):
     p=src/'script.php'
@@ -95,13 +110,15 @@ def json_ld(canonical,title,site_title,is_index,is_root,section,description):
     return '<script type="application/ld+json">'+json.dumps(data,ensure_ascii=False,separators=(',',':')).replace('</','<\\/')+'</script>'
 
 def render(rel,stem,b,rs,script,src,is_index=False):
-    cat,label,title=meta(rs,stem); depth=len(rel.parts)-1; root='../'*depth; section=rel.parts[0] if depth else ''
+    cat,label,_=meta(rs,stem); title=page_title(src,rel,rs); depth=len(rel.parts)-1; root='../'*depth; section=rel.parts[0] if depth else ''
     if section=='j':site_title='電気工事士メモ'; index_title='電気工事士・電気施工管理メモ'; tagline=''
     elif section=='b':site_title='ビルメンメモ'; index_title='ビルメンメモ | 設備、水道、ビル管理'; tagline=''
     else:site_title='でんきメモ'; index_title='でんきメモ | 高圧受電設備、保護継電器、測定器、電気主任技術者、電気管理技術者の知識'; tagline='<p>電気管理技術者の備忘録</p>'
     canonical=SITE+'/'+str(rel).replace('\\','/'); is_root=rel==Path('index.php'); is_404=rel==Path('404.php')
     if is_root:canonical=SITE+'/'
     full=index_title if is_index else title+' - '+site_title; og_title=index_title if is_index else title; description=index_title if is_index else page_description(b,full)
+    if is_root:description='高圧受電設備、保護継電器、測定器、電気主任技術者・電気管理技術者の点検、試験、保守に役立つ技術メモ。'
+    description=seo_overrides(src,'description').get('/'+rel.as_posix(),description)
     logo='<h1 class="site-logo"><a href="https://memo-labo.com/">でんきメモ</a></h1>' if is_index else '<div class="site-logo"><a href="https://memo-labo.com/">でんきメモ</a></div>'; h1='' if is_index else f'<h1 class="article-title">{html.escape(title)}</h1>'
     icon_rel=Path(section,'icon',stem+'.jpg') if section in ('j','b') else Path('icon',stem+'.jpg'); image_meta=''
     if not is_index and (src/icon_rel).is_file():
@@ -109,10 +126,10 @@ def render(rel,stem,b,rs,script,src,is_index=False):
     robots='<meta name="robots" content="noindex,follow">' if is_404 else '<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">'
     structured='' if is_404 else json_ld(canonical,index_title if is_index else title,site_title,is_index,is_root,section,description); extra_script=script if not section else ''
     search='' if section else f'<div class="site-search"><form action="{root}search" method="get"><input type="search" name="q" placeholder="記事を検索" aria-label="記事を検索"><button type="submit">検索</button></form></div>'
-    return f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="stylesheet" href="{root}style.css"><title>{html.escape(full)}</title><meta name="description" content="{html.escape(description)}">{robots}<link rel="canonical" href="{canonical}"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="{html.escape(og_title)}"><meta name="twitter:description" content="{html.escape(description)}"><meta property="og:type" content="{'website' if is_index else 'article'}"><meta property="og:site_name" content="でんきメモ"><meta property="og:url" content="{canonical}"><meta property="og:title" content="{html.escape(og_title)}"><meta property="og:description" content="{html.escape(description)}"><meta property="og:locale" content="ja_JP">{image_meta}{structured}<script async src="https://www.googletagmanager.com/gtag/js?id={GA}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','{GA}');</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADS}" crossorigin="anonymous"></script>{extra_script}</head><body><div class="wrapper"><header>{logo}{tagline}</header>{search}<main>{h1}{b}{'' if is_index or is_404 else related(rs,cat,root,stem)}</main><div class="return"><a href="https://memo-labo.com/">TOPに戻る</a></div></div></body></html>'''
+    return f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="stylesheet" href="{root}style.css"><title>{html.escape(full)}</title><meta name="description" content="{html.escape(description)}">{robots}<link rel="canonical" href="{canonical}"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="{html.escape(og_title)}"><meta name="twitter:description" content="{html.escape(description)}"><meta property="og:type" content="{'website' if is_index else 'article'}"><meta property="og:site_name" content="でんきメモ"><meta property="og:url" content="{canonical}"><meta property="og:title" content="{html.escape(og_title)}"><meta property="og:description" content="{html.escape(description)}"><meta property="og:locale" content="ja_JP">{image_meta}{structured}<script async src="https://www.googletagmanager.com/gtag/js?id={GA}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','{GA}');</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADS}" crossorigin="anonymous"></script>{extra_script}</head><body><div class="wrapper"><header>{logo}{tagline}</header>{search}<main>{h1}{b}{'' if is_index or is_404 else related(rs,cat,'',stem)}</main><div class="return"><a href="https://memo-labo.com/">TOPに戻る</a></div></div></body></html>'''
 
 def make_search(out,src):
-    rs=read_rows(src/'data.csv'); data=[{'url':r[1]+'.php','title':SEO_TITLES.get(r[1],r[3]),'label':r[2]} for r in rs if r[1]!='404']
+    rs=rows_for(src,Path('index.php')); data=[{'url':r[1]+'.php','title':page_title(src,Path(r[1]+'.php'),rs),'label':r[2]} for r in rs if r[1]!='404' and (out/(r[1]+'.html')).is_file()]
     (out/'search-index.json').write_text(json.dumps(data,ensure_ascii=False),encoding='utf-8')
     page='''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="style.css"><title>サイト内検索 - でんきメモ</title><meta name="description" content="でんきメモ内の記事を検索できます。高圧受電設備、保護継電器、測定器、電気主任技術者・電気管理技術者向けの現場情報を探せます。"><link rel="canonical" href="https://memo-labo.com/search"><meta name="robots" content="noindex,follow"></head><body><div class="wrapper"><header><div class="site-logo"><a href="https://memo-labo.com/">でんきメモ</a></div></header><main><h1 class="article-title">サイト内検索</h1><form id="f"><input id="q" type="search" placeholder="検索語"><button>検索</button></form><p id="n"></p><ul id="r" class="top-links"></ul></main></div><script>let D=[];fetch('/search-index.json').then(r=>r.json()).then(x=>{D=x;go()});function go(){let q=(new URLSearchParams(location.search).get('q')||document.querySelector('#q').value||'').trim().toLowerCase();document.querySelector('#q').value=q;if(!q)return;let a=D.filter(x=>(x.title+' '+x.label).toLowerCase().includes(q));document.querySelector('#n').textContent=a.length+'件';document.querySelector('#r').innerHTML=a.map(x=>'<li><a href="/'+x.url+'">'+x.label+'</a></li>').join('')}document.querySelector('#f').onsubmit=e=>{e.preventDefault();history.replaceState(null,'','?q='+encodeURIComponent(document.querySelector('#q').value));go()}</script></body></html>'''
     (out/'search.html').write_text(page,encoding='utf-8')
@@ -136,7 +153,7 @@ def main(src,out):
     built=[]; skipped=[]
     for p in src.rglob('*.php'):
         if '.DAV' in p.parts or p.name in EXCLUDE:continue
-        rel=p.relative_to(src); rs=rows_for(src,rel); stem=p.stem; _,_,title=meta(rs,stem); b=body(read_text(p),rs,title,src,rel)
+        rel=p.relative_to(src); rs=rows_for(src,rel); stem=p.stem; title=page_title(src,rel,rs); b=body(read_text(p),rs,title,src,rel)
         if b is None:skipped.append(str(rel));continue
         q=(out/rel).with_suffix('.html');q.parent.mkdir(parents=True,exist_ok=True);q.write_text(render(rel,stem,b,rs,script,src,p.name=='index.php'),encoding='utf-8');built.append(str(rel))
     make_search(out,src); make_seo_files(out,built)

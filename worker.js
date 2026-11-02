@@ -78,6 +78,19 @@ export default {
 
     const path = url.pathname;
 
+    // The home page and legacy search endpoint each have one public URL.
+    if (path === "/index.php" || path === "/search.php") {
+      url.pathname = path === "/index.php" ? "/" : "/search";
+      return Response.redirect(url.toString(), 301);
+    }
+
+    // Match the URL corrections used by the original Apache site.
+    const doubledExtension = path.match(/^(.+)\.php\.php\/?$/i);
+    if (doubledExtension) {
+      url.pathname = doubledExtension[1] + ".php";
+      return Response.redirect(url.toString(), 301);
+    }
+
     // Preserve the redirects that already exist on the Lolipop site.
     const legacyTarget = LEGACY_REDIRECTS.get(path);
     if (legacyTarget) {
@@ -86,9 +99,13 @@ export default {
     }
 
     // Remove historical PATH_INFO after the first .php component.
-    const pathInfo = path.match(/^(.*?\.php)\/.+$/i);
+    const pathInfo = path.match(/^(.*?\.php)\/(.*)$/i);
     if (pathInfo) {
-      url.pathname = pathInfo[1];
+      // /v0.php/zpd.php points at zpd.php; /st.php/index.php stays st.php.
+      const nestedArticle = pathInfo[2].match(/^([^/]+\.php)\/?$/i);
+      url.pathname = nestedArticle && nestedArticle[1].toLowerCase() !== "index.php"
+        ? "/" + nestedArticle[1]
+        : pathInfo[1];
       return Response.redirect(url.toString(), 301);
     }
 
