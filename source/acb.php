@@ -32,4 +32,4 @@ MCCBやELBと同様に空気中で電流を遮断する遮断器。<br>
 </ul>
 
 
-<?php include("footer.php"); ?
+<?php include("footer.php"); ?>
