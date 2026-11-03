@@ -22,8 +22,10 @@ DGR（地絡方向継電器）やOVGR（地絡過電圧継電器）などの零�
 </table>
 
 <h2>EVT 製品・資料例</h2>
-・<a href="https://www.risho.co.jp/rishonews/products_news/pn241/rn208_pn241.pdf">利昌工業 EVT 資料</a><br>
-・<a href="https://www.hasegawa-elec.co.jp/images/keiki-katarogu_00.pdf">長谷川電機工業 計器用変成器資料</a><br>
+<ul>
+<li><a href="https://www.risho.co.jp/rishonews/products_news/pn241/rn208_pn241.pdf">利昌工業 EVT 資料</a></li>
+<li><a href="https://www.hasegawa-elec.co.jp/images/keiki-katarogu_00.pdf">長谷川電機工業 計器用変成器資料</a></li>
+</ul>
 
 <h2>EVTの構造と結線</h2>
 EVTは三相分の変圧器要素を組み合わせて構成される。<br>
@@ -58,8 +60,10 @@ EVTは系統の零相回路・接地方式に関係するため、どこへ接�
 <h2>EVTとDGR・OVGR</h2>
 EVTから得た零相電圧は、地絡保護継電器の入力として利用される。<br><br>
 
-・<a href="dgr.php">DGR</a>：V0とI0の位相関係を利用して地絡方向を判定<br>
-・<a href="ovgr.php">OVGR</a>：零相電圧の大きさを監視<br><br>
+<ul>
+<li><a href="dgr.php">DGR</a>：V0とI0の位相関係を利用して地絡方向を判定</li>
+<li><a href="ovgr.php">OVGR</a>：零相電圧の大きさを監視</li>
+</ul>
 
 DGRで方向判定を行う場合は、EVT側の極性・ZCT極性・位相設定を合わせて確認する。<br>
 
@@ -86,13 +90,15 @@ EVTを接続したまま主回路へ高い試験電圧を印加すると、EVT�
 <img src="images/20260727-1.jpg" alt="EVTを含む高圧回路の耐圧試験時の確認例"><br>
 
 <h2>EVT点検時の確認ポイント</h2>
-・一次側・二次側・開放デルタ巻線の端子接続<br>
-・中性点および接地線の状態<br>
-・CLRの抵抗値・焼損・変色・端子緩み<br>
-・DGR・OVGRへ入力される零相電圧の変換比<br>
-・既設ZCT、ZPD、他のEVTとの位置関係<br>
-・高圧発電機がある場合の商用／発電機切替時の接続状態<br>
-・耐圧試験時の切り離し範囲<br>
+<ul>
+<li>一次側・二次側・開放デルタ巻線の端子接続</li>
+<li>中性点および接地線の状態</li>
+<li>CLRの抵抗値・焼損・変色・端子緩み</li>
+<li>DGR・OVGRへ入力される零相電圧の変換比</li>
+<li>既設ZCT、ZPD、他のEVTとの位置関係</li>
+<li>高圧発電機がある場合の商用／発電機切替時の接続状態</li>
+<li>耐圧試験時の切り離し範囲</li>
+</ul>
 
 <h2>関連ページ</h2>
 <ul>
