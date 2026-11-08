@@ -238,10 +238,22 @@ if (location.pathname === '/number.php') {
     );
     if (!candidates.length || !amazonAds.length) return;
 
-    // Amazon広告だけを本文中ほどに1枠表示する。
+    // 記事内の異なる2か所に、重複しない商品をランダムに表示する。
+    // 候補位置が1か所しかない短い記事では1枠にする。
     // AdSenseの配置はGoogleの自動広告に任せる。
-    const position = candidates[Math.floor(candidates.length / 2)];
-    const ad = amazonAds[Math.floor(Math.random() * amazonAds.length)];
-    position.insertAdjacentElement('afterend', createAmazonAd(ad));
+    const shuffle = items => {
+        const result = [...items];
+        for (let i = result.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [result[i], result[j]] = [result[j], result[i]];
+        }
+        return result;
+    };
+    const count = Math.min(2, candidates.length, amazonAds.length);
+    const positions = shuffle(candidates.map((_, i) => i)).slice(0, count);
+    const selectedAds = shuffle(amazonAds).slice(0, count);
+    positions.forEach((index, i) => {
+        candidates[index].insertAdjacentElement('afterend', createAmazonAd(selectedAds[i]));
+    });
 });
 </script>
