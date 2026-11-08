@@ -119,7 +119,7 @@ $popular_items = array_values(array_filter($popular_items, function($item) use (
 
 </main>
 
-<p class="affiliate-disclosure">Amazonのアソシエイトとして、でんきメモは適格販売により収入を得ています。</p>
+
 
 <div class="return">
   <a href="index.php">TOPに戻る</a>
