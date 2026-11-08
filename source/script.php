@@ -1,14 +1,6 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    const amazonAds = [
-        { url: 'https://amzn.to/4fJ2QUA', title: 'オススメ本「大写解 高圧受電設備」', image: 'https://memo-labo.com/images/hon1.jpg' },
-        { url: 'https://amzn.to/4fyfztj', title: '電気管理技術者必携', image: 'https://memo-labo.com/images/dk1.jpg' },
-        { url: 'https://amzn.to/4eMcTqR', title: '電気Q&A 電気設備のトラブル事例', image: 'https://memo-labo.com/images/trouble1.jpg' },
-        { url: 'https://amzn.to/40RFJTd', title: '電気技術者のための失敗100選', image: 'https://memo-labo.com/images/sp1.jpg' },
-        { url: 'https://link.amazon/B05rQUKdL', title: '電気技術者の実務理論<br>短絡・地絡現象の解析から保護協調の整定まで', image: 'https://memo-labo.com/images/jitumu.jpg' }
-    ];
-
-    if (location.pathname === '/number.php') {
+if (location.pathname === '/number.php') {
         const main = document.querySelector('main');
         const heading = main && main.querySelector('h2');
         const table = main && main.querySelector('table');
@@ -219,60 +211,6 @@ document.addEventListener('DOMContentLoaded', () => {
             main.appendChild(related);
         }
     }
-
-    const topicRules = [
-        { pattern: /短絡|地絡|保護協調|過電流|OCR|DGR|GR|継電器|整定/i, index: 4 },
-        { pattern: /トラブル|事故|故障|不具合|停電|復旧/i, index: 2 },
-        { pattern: /失敗|ヒヤリ|安全|感電|災害/i, index: 3 },
-
-        { pattern: /高圧受電|キュービクル|受電設備|PAS|VCB|LBS|変圧器/i, index: 0 },
-        { pattern: /電気管理技術者|保安管理|点検業務|主任技術者/i, index: 1 }
-    ];
-
-    const path = location.pathname.replace(/\.html$/, '.php');
-    // Track only editorial affiliate links, never AdSense interactions.
-    document.addEventListener('click', event => {
-        const link = event.target.closest && event.target.closest('a[data-affiliate-product]');
-        if (link && typeof window.gtag === 'function') {
-            window.gtag('event', 'affiliate_click', {
-                affiliate_partner: 'amazon',
-                product_name: link.dataset.affiliateProduct,
-                placement: link.dataset.placement || 'article',
-                page_path: location.pathname,
-                transport_type: 'beacon'
-            });
-        }
-    });
-
-    const excluded = new Set(['/', '/index.php', '/search', '/search.php', '/404.php', '/books.php']);
-    if (excluded.has(path)) return;
-    const main = document.querySelector('main');
-    if (!main) return;
-    const heading = document.title + ' ' + (main.querySelector('h1')?.textContent || '');
-    const matched = topicRules.find(rule => rule.pattern.test(heading));
-    // Only show a product when the article topic supplies a reason for it.
-    if (!matched) return;
-    const ad = amazonAds[matched.index];
-    const purposes = [
-        '高圧受電設備を図解で学びたい方の参考書候補です。',
-        '電気管理の実務に関する参考書を探している方へ。',
-        '電気設備のトラブル事例を学びたい方の参考書候補です。',
-        '電気技術者の失敗事例を学びたい方の参考書候補です。',
-        '短絡・地絡や保護協調を理論から学びたい方へ。'
-    ];
-    const box = document.createElement('aside');
-    box.className = 'reading-card';
-    box.setAttribute('aria-label', '参考書の紹介（広告）');
-    const title = ad.title.replace(/<br\s*\/?\s*>/gi, ' ').replace('オススメ本', '');
-    box.innerHTML = `<p class="ad-label">広告・Amazonアソシエイト</p>
-        <strong>${title}</strong><p>${purposes[matched.index]}</p>
-        <p>購入前に目次・発行年・版をご確認ください。設備の仕様や現行の基準は、メーカー資料・公的資料と照合してください。</p>
-        <a class="amazon-cta" href="${ad.url}" target="_blank" rel="sponsored nofollow noopener" data-affiliate-product="${title}" data-placement="article-end">Amazonで書籍の詳細を確認する（広告）</a>
-        <p><a href="/books.php">目的別の参考書の選び方を見る</a></p>`;
-    // Keep headings, diagrams and their explanations together.
-    const related = main.querySelector('.related-pages');
-    if (related) related.before(box);
-    else main.appendChild(box);
 
 });
 </script>
