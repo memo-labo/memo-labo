@@ -16,14 +16,6 @@ eof;
 }
 ?>
 
-<section class="reading-guide">
-<h2>実務を調べる・参考書を選ぶ</h2>
-<p>機器の仕組みを調べたい方は技術記事へ。体系的に学びたい方は、目的別の参考書ガイドから選べます。</p>
-<ul class="top-links">
-<li><a href="books.php">電気管理の参考書ガイド｜設備・点検・事故の目的別に選ぶ</a></li>
-<li><a href="ocr.php">保護継電器の基礎を調べる：OCR</a></li>
-<li><a href="number.php">図面の機器番号を調べる</a></li>
-</ul></section>
 <h2>よく見られているページ</h2>
 <ul class="top-links">
 <li><a href="number.php">制御機器番号一覧｜27・51・52・64・67・89</a></li>
