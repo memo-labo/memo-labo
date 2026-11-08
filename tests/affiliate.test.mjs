@@ -16,6 +16,9 @@ test('six selected links and random article placement are restored', () => {
   assert.match(script, /Math\\.random\\(\\)/);
   assert.match(script, /amazon-random-ad/);
   assert.match(script, /insertAdjacentElement/);
+  assert.ok(script.includes('Math.min(2, candidates.length, amazonAds.length)'));
+  assert.ok(script.includes('shuffle(candidates.map'));
+  assert.ok(script.includes('shuffle(amazonAds).slice(0, count)'));
 });
 
 test('guide and disclosure remain free of previous contextual promotions', () => {
