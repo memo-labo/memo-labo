@@ -212,48 +212,5 @@ if (location.pathname === '/number.php') {
         }
     }
 
-    const amazonAds = [
-        { url: 'https://amzn.to/4fJ2QUA', title: 'オススメ本「大写解 高圧受電設備」', image: 'https://memo-labo.com/images/hon1.jpg' },
-        { url: 'https://amzn.to/4fyfztj', title: '電気管理技術者必携', image: 'https://memo-labo.com/images/dk1.jpg' },
-        { url: 'https://amzn.to/4eMcTqR', title: '電気Q&A 電気設備のトラブル事例', image: 'https://memo-labo.com/images/trouble1.jpg' },
-        { url: 'https://amzn.to/40RFJTd', title: '電気技術者のための失敗100選', image: 'https://memo-labo.com/images/sp1.jpg' },
-        { url: 'https://amzn.to/3KlX2WB', title: '電気技術者の実務理論<br>短絡・地絡現象の解析から保護協調の整定まで', image: 'https://memo-labo.com/images/jitumu.jpg' },
-        { url: 'https://link.amazon/B05rQUKdL', title: '電験三種受験テキスト 理論', image: 'https://memo-labo.com/images/20261008-1.jpg' }
-    ];
-
-    function createAmazonAd(ad) {
-        const div = document.createElement('aside');
-        div.className = 'ad1 amazon-random-ad';
-        div.setAttribute('aria-label', '関連商品');
-        div.innerHTML = `<a href="${ad.url}" target="_blank" rel="nofollow sponsored noopener">${ad.title}<br><img src="${ad.image}" width="200" height="auto" loading="lazy" alt="${ad.title.replace(/<br\s*\/?\s*>/gi, ' ')}"></a>`;
-        return div;
-    }
-
-    if (['/', '/index.php', '/books.php', '/search', '/search.php', '/404.php'].includes(location.pathname)) return;
-    const main = document.querySelector('main');
-    if (!main) return;
-
-    const candidates = [...main.querySelectorAll('h2, img')].filter(el =>
-        !el.closest('.related-pages, .ad1')
-    );
-    if (!candidates.length || !amazonAds.length) return;
-
-    // 記事内の異なる2か所に、重複しない商品をランダムに表示する。
-    // 候補位置が1か所しかない短い記事では1枠にする。
-    // AdSenseの配置はGoogleの自動広告に任せる。
-    const shuffle = items => {
-        const result = [...items];
-        for (let i = result.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [result[i], result[j]] = [result[j], result[i]];
-        }
-        return result;
-    };
-    const count = Math.min(2, candidates.length, amazonAds.length);
-    const positions = shuffle(candidates.map((_, i) => i)).slice(0, count);
-    const selectedAds = shuffle(amazonAds).slice(0, count);
-    positions.forEach((index, i) => {
-        candidates[index].insertAdjacentElement('afterend', createAmazonAd(selectedAds[i]));
-    });
 });
 </script>
