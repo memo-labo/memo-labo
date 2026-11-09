@@ -8,17 +8,9 @@ test('home page book promotion remains removed', () => {
   assert.doesNotMatch(read('source/index.php'), /reading-guide|実務を調べる・参考書を選ぶ/);
 });
 
-test('six selected links and random article placement are restored', () => {
+test('shared script does not inject random Amazon promotions', () => {
   const script = read('source/script.php');
-  for (const link of ['4fJ2QUA', '4fyfztj', '4eMcTqR', '40RFJTd', '3KlX2WB', 'B05rQUKdL']) {
-    assert.ok(script.includes(link), link);
-  }
-  assert.match(script, /Math\\.random\\(\\)/);
-  assert.match(script, /amazon-random-ad/);
-  assert.match(script, /insertAdjacentElement/);
-  assert.ok(script.includes('Math.min(2, candidates.length, amazonAds.length)'));
-  assert.ok(script.includes('shuffle(candidates.map'));
-  assert.ok(script.includes('shuffle(amazonAds).slice(0, count)'));
+  assert.doesNotMatch(script, /amazonAds|createAmazonAd|amazon-random-ad|amzn\.to|link\.amazon/);
 });
 
 test('guide and disclosure remain free of previous contextual promotions', () => {
