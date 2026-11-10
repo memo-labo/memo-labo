@@ -16,20 +16,6 @@ eof;
 }
 ?>
 
-<h2>カテゴリから探す</h2>
-<ul class="top-links">
-<li><a href="#protection">保護継電器・保護協調</a></li>
-<li><a href="#switchgear">高圧受電・開閉器・遮断器</a></li>
-<li><a href="#transformer">変圧器・計器用変成器・高圧機器</a></li>
-<li><a href="#cable-ground">ケーブル・接地・絶縁</a></li>
-<li><a href="#test">試験・測定・点検</a></li>
-<li><a href="#power">非常電源・発電設備</a></li>
-<li><a href="#control">制御・シーケンス</a></li>
-<li><a href="#rules-trouble">法規・理論・事故</a></li>
-<li><a href="#maintenance">設備管理・環境</a></li>
-<li><a href="#tools">便利ツール・その他</a></li>
-</ul>
-
 <h2 id="protection">保護継電器・保護協調</h2>
 <h3>OCR 過電流継電器 51</h3>
 <?php cat_prev("ocr");?>
