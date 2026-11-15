@@ -2,7 +2,7 @@
 
 <h2>アンカーボルト コンクリート</h2>
 
-<img src="images/anchor1.jpg" style="max-width:300px;"><br>
+<img src="images/electric-work/anchor1.jpg" style="max-width:300px;"><br>
 
 用途<br>
 変圧器とコンクリート床を固定。<br>
@@ -14,9 +14,9 @@
 
 <h2>施工方法</h2>
 
-<img src="images/anchor5.jpg" style="max-width:600px;"><br>
+<img src="images/electric-work/anchor5.jpg" style="max-width:600px;"><br>
 
-<img src="images/anchor2.jpg" style="max-width:600px;"><br>
+<img src="images/electric-work/anchor2.jpg" style="max-width:600px;"><br>
 
 コンクリートにドリルで埋込み穴（下穴）をあける。<br>
 コンクリー卜粉をブ口アー、シュポシュポなどで取り除く。<br>
@@ -29,7 +29,7 @@
 また、芯棒が曲がったり、ネジ部を潰してしまうことがある。<br>
 ハンマードリルで芯棒を垂直に打ち込み、最後の少しをハンマーで叩く方法もある。<br>
 芯棒の叩き込みが足りないと引張り強度が出ないことがあるので注意。<br>
-<img src="images/anchor6.jpg" style="max-width:600px;"><br>
+<img src="images/electric-work/anchor6.jpg" style="max-width:600px;"><br>
 
 アンカー撤去<br>
 ディスクグラインダーで切断する。<br>
@@ -39,13 +39,13 @@
 
 
 <h2>打込まないアンカーボルト「タップスター」</h2>
-<img src="images/anchor3.jpg" style="max-width:400px;"><br>
+<img src="images/electric-work/anchor3.jpg" style="max-width:400px;"><br>
 「マルチインパクトドライバー」だけで埋め込める。<br>
 端部が割れにくく、施工後も高さ調整ができる。<br>
 不要になったら簡単に取り出すこともできる。<br><br>
 
 専用ソケットを使用する。<br>
-<img src="images/anchor4.jpg" style="max-width:300px;"><br><br>
+<img src="images/electric-work/anchor4.jpg" style="max-width:300px;"><br><br>
 
 最後はしっかりレンチ等で締め付ける。<br>
 

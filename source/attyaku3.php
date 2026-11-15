@@ -1,7 +1,7 @@
 <?php include("header.php"); ?>
 
 <h2>圧着の分類</h2>
-<img src="images/20211001-2.jpg" style="max-width:800px;" alt=""><br>
+<img src="images/electric-work/20211001-2.jpg" style="max-width:800px;" alt=""><br>
 
 <h2>絶縁閉端子（CE形）</h2>
 
@@ -11,8 +11,8 @@ JIS C2807<br><br>
 通称<br>
 パラシュート端子、落下傘、ハット端子、UFO端子など。<br>
 
-<img src="images/20210930-4.jpg" style="max-width:400px;" alt=""><br><br>
-<img src="images/20210930-5.jpg" style="max-width:400px;" alt=""><br><br>
+<img src="images/electric-work/20210930-4.jpg" style="max-width:400px;" alt=""><br><br>
+<img src="images/electric-work/20210930-5.jpg" style="max-width:400px;" alt=""><br><br>
 
 
 <h2>サイズ</h2>
@@ -42,8 +42,8 @@ JIS C2807<br><br>
 
 <h2>絶縁閉端子用圧着工具</h2>
 適合範囲：CE1、CE2、CE5<br>
-<img src="images/20210930-6.jpg" style="max-width:600px;" alt=""><br>
-<img src="images/20210930-7.jpg" style="max-width:400px;" alt=""><br><br>
+<img src="images/electric-work/20210930-6.jpg" style="max-width:600px;" alt=""><br>
+<img src="images/electric-work/20210930-7.jpg" style="max-width:400px;" alt=""><br><br>
 
 
 <h2>注意点</h2>

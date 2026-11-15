@@ -10,7 +10,7 @@
 ・カーテンレール設置<br>
 ・天井照明器具取り付け<br>
 ・棚受けの取り付け、DIYなど<br>
-<img src="images/board1.jpg" style="max-width:300px;" /><br>
+<img src="images/electric-work/board1.jpg" style="max-width:300px;" /><br>
 
 石膏ボードにねじを打つために使用される。<br>
 仮に石膏ボードに下地のない部分にビスを打つと、ボロっと取れてビスが固定されない。<br>
@@ -29,7 +29,7 @@
 <h2>カベピタ30</h2>
 材質：ナイロン(ガラス繊維入)<br>
 用途：カーテンレール、房掛け、タオル掛け、額縁、電気器具等<br>
-<img src="images/board2.jpg" style="max-width:300px;" /><br>
+<img src="images/electric-work/board2.jpg" style="max-width:300px;" /><br>
 使用上の注意<br>
 エアコン等の重量物取り付けはできない。<br>
 天井部には使用してはならない。<br>

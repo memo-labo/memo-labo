@@ -21,29 +21,29 @@
 チューブ容器に入っていて専用の押出し機であるコーキングガンを使用する。<br>
 樹脂性の物をコーキング剤（コーキング）という事が多いらしい。<br><br>
 
-<img src="images/caulking1.jpg" style="max-width:150px;"><br>
+<img src="images/electric-work/caulking1.jpg" style="max-width:150px;"><br>
 製品例<br>
 型番：SR-066<br>
 材質：シリコーン<br>
 色：クリア（半透明）<br><br>
 
 色の種類はたくさんあるらしい。<br>
-<img src="images/caulking5.jpg" style="max-width:400px;"><br>
+<img src="images/electric-work/caulking5.jpg" style="max-width:400px;"><br>
 
 <h2>コーキングされた現場の写真</h2>
-<img src="images/caulking6.jpg" style="max-width:400px;"><br>
-<img src="images/caulking7.jpg" style="max-width:600px;"><br>
-<img src="images/caulking8.jpg" style="max-width:300px;"><br>
+<img src="images/electric-work/caulking6.jpg" style="max-width:400px;"><br>
+<img src="images/electric-work/caulking7.jpg" style="max-width:600px;"><br>
+<img src="images/electric-work/caulking8.jpg" style="max-width:300px;"><br>
 
 <h2>コーキングガン</h2>
-<img src="images/caulking2.jpg" style="max-width:400px;"><br>
-<img src="images/caulking3.jpg" style="max-width:400px;"><br>
+<img src="images/electric-work/caulking2.jpg" style="max-width:400px;"><br>
+<img src="images/electric-work/caulking3.jpg" style="max-width:400px;"><br>
 
 
 <h2>コーキングの塗り方の注意点</h2>
 上と左右は塗って、下は塗らないと聞いたことがある。<br>
 理由は「中に水分が溜まらないようにするため」だそうだ。<br>
-<img src="images/caulking4.png" style="max-width:600px;"><br>
+<img src="images/electric-work/caulking4.png" style="max-width:600px;"><br>
 
 
 <h2>コーキングの種類</h2>

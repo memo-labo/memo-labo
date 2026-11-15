@@ -3,16 +3,16 @@
 <h2>61F フロートなしスイッチ</h2>
 
 コンパクト・プラグインタイプ<br>
-<img src="images/pomp/8.jpg" style="max-width:650px;"><br>
+<img src="images/electric-work/pomp/8.jpg" style="max-width:650px;"><br>
 
 61F-GN（自動給・排水）<br>
-<img src="images/pomp1.png" style="max-width:350px;"><br>
+<img src="images/electric-work/pomp1.png" style="max-width:350px;"><br>
 
 61F-GN 回路図と端子配置<br>
 S2 S1 S0<br>
 Tb Tc Ta<br>
 E3 E2 E1<br>
-<img src="images/pomp2.png" style="max-width:350px;"><br><br>
+<img src="images/electric-work/pomp2.png" style="max-width:350px;"><br><br>
 
 61F（フロートなしスイッチ）<br>
 動作状態がひとめでわかるLED動作表示<br>
@@ -30,7 +30,7 @@ E1だけで制御すると、液面の波立ちによってコンタクタがバ
 コモン電極（一番長い電極）を確実にアースする。<br>
 200V/24Vに降圧し制御回路電源に使用する。<br>
 200V/8Vに降圧し水面導通確認用電源に使用する。<br>
-<img src="images/pomp/9.png" style="max-width:750px;"><br>
+<img src="images/electric-work/pomp/9.png" style="max-width:750px;"><br>
 
 流れ<br>
 水槽の水面が上限に達するとE1とE3が導通し①⑦間に電圧が印加<br>

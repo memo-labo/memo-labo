@@ -9,7 +9,7 @@
 鉄バインド線は錆びてすぐ切れてしまってダメ、という意見もある。<br>
 銅バインド線だったら鉄のように錆びて切れることが少ない、とのこと。<br>
 銅バインド線の値段は 芯線0.9mm ✕ 300m で約6800円で鉄の約３倍。高い。<br>
-<img src="images/bind1.jpg" style="max-width:500px;" /><br>
+<img src="images/electric-work/bind1.jpg" style="max-width:500px;" /><br>
 
 <h2>インシュロック</h2>
 「インシュロック」とは「ヘラマンタイトン株式会社」の登録商標。<br>
@@ -35,7 +35,7 @@
 その点、ガルバロックは耐塩害性に優れ、塩化亜鉛で劣化することがない。<br>
 
 <h2>クレモナ（ケーブル縛り紐）</h2>
-<img src="images/bind2.jpg" style="max-width:300px;" /><br>
+<img src="images/electric-work/bind2.jpg" style="max-width:300px;" /><br>
 ねじれが少なく結びやすい組みひも。<br>
 耐久性・耐候性に優れ、経年劣化が少ない。<br>
 材質：ポリエステル<br><br>

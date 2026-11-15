@@ -1,14 +1,14 @@
 <?php include("header.php"); ?>
 
 <h2>圧着の分類</h2>
-<img src="images/20211001-2.jpg" style="max-width:800px;" alt=""><br>
+<img src="images/electric-work/20211001-2.jpg" style="max-width:800px;" alt=""><br>
 
 <h2>裸端子用圧着工具</h2>
-<img src="images/20210930-1.jpg" style="max-width:600px;" alt=""><br>
+<img src="images/electric-work/20210930-1.jpg" style="max-width:600px;" alt=""><br>
 
 <h2>圧着の痕</h2>
 凹んだ痕と、数字が刻まれる。<br>
-<img src="images/20211001-1.jpg" style="max-width:400px;" alt=""><br>
+<img src="images/electric-work/20211001-1.jpg" style="max-width:400px;" alt=""><br>
 
 <h2>値段による工具の質の差</h2>
 
@@ -18,14 +18,14 @@
 適用サイズ:1.25、2、5.5、8、14<br>
 仕様:JIS、圧着マーク、コンパクト、楽々圧着、端子仮押さえ<br>
 適用端子:裸圧着端子・スリーブ用<br>
-<img src="images/20211001-9.jpg" style="max-width:500px;" alt=""><br><br>
+<img src="images/electric-work/20211001-9.jpg" style="max-width:500px;" alt=""><br><br>
 
 
 ■アイウィス(IWISS)<br>
 汎用タイプ 1.25-16.0sq対応 HS-16<br>
 JIS規格品ではない。汎用品。<br>
-<img src="images/20211001-7.jpg" style="max-width:500px;" alt=""><br>
-<img src="images/20211001-8.jpg" style="max-width:500px;" alt=""><br>
+<img src="images/electric-work/20211001-7.jpg" style="max-width:500px;" alt=""><br>
+<img src="images/electric-work/20211001-8.jpg" style="max-width:500px;" alt=""><br>
 
 
 
