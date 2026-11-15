@@ -1,8 +1,8 @@
 <?php include("header.php"); ?>
 
 <h2>プルボックス</h2>
-<img src="images/pullbox1.jpg" style="max-width:100px;" /><br>
-<img src="images/pullbox2.jpg" style="max-width:400px;" /><br>
+<img src="images/electric-work/pullbox1.jpg" style="max-width:100px;" /><br>
+<img src="images/electric-work/pullbox2.jpg" style="max-width:400px;" /><br>
 
 プルボックス<br>
 ケーブルの分岐部分に使用される箱のこと。<br>
@@ -20,6 +20,6 @@
 
 ボックスとコネクタ部分。<br>
 ボンド線が接地用端子にネジ止めされておりボックスの中へ。<br>
-<img src="images/pullbox3.jpg" style="max-width:700px;" /><br>
+<img src="images/electric-work/pullbox3.jpg" style="max-width:700px;" /><br>
 
 <?php include("footer.php"); ?>

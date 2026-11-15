@@ -3,13 +3,13 @@
 <h2>ポンプの仕組み</h2>
 最も多く使用されているのは渦巻ポンプ。<br>
 ポンプの内部で羽根車を回転、遠心力を利用、水の吸い込み、吐き出しを同時に行う。
-<img src="images/uzu1.jpg" style="max-width:500px;"><br>
-<img src="images/uzu2.jpg" style="max-width:500px;"><br>
+<img src="images/electric-work/uzu1.jpg" style="max-width:500px;"><br>
+<img src="images/electric-work/uzu2.jpg" style="max-width:500px;"><br>
 
 吸水管は水に浸かっており、その水は大気圧で押されている。<br>
 ポンプの中心部分は大気圧よりも低い「真空状態」になっている。<br>
 水は圧力の低いポンプの中心部分へと動いていく。<br>
-<img src="images/uzu3.jpg" style="max-width:500px;"><br>
+<img src="images/electric-work/uzu3.jpg" style="max-width:500px;"><br>
 
 <h2>給水の制御とは？</h2>
 ビルや集合住宅は、いったん受水槽で給水を受けた後、屋上に設置した「高架水槽」へ水を送り、各階に配給する方式をとっている。<br>
@@ -23,32 +23,32 @@
 電極に液体が接触すると、液体を通して閉回路（電気が流れる道）ができる。<br>
 そこに電流が流れ、水位のレベルを検知する。<br>
 液体の電極間抵抗を直接検出して、設定した抵抗値より大きいか小さいかで液面の有無を判断する。<br>
-<img src="images/pomp/6.png" style="max-width:550px;"><br>
+<img src="images/electric-work/pomp/6.png" style="max-width:550px;"><br>
 
 
 <h2>ポンプ制御盤 仕組み</h2>
-<img src="images/pomp/1.jpg"><br>
+<img src="images/electric-work/pomp/1.jpg"><br>
 
 <h2>ポンプ制御盤 操作パネル</h2>
 43：制御回路切換スイッチ（手動・自動・切）<br>
-<img src="images/pomp/2.png" style="max-width:650px;"><br>
+<img src="images/electric-work/pomp/2.png" style="max-width:650px;"><br>
 
 <h2>ポンプ制御盤 単線結線図</h2>
-<img src="images/pomp/3.png" style="max-width:450px;"><br>
+<img src="images/electric-work/pomp/3.png" style="max-width:450px;"><br>
 
 <h2>ポンプ制御盤 シーケンス図</h2>
-<img src="images/pomp/4.png" style="max-width:750px;"><br>
+<img src="images/electric-work/pomp/4.png" style="max-width:750px;"><br>
 
 <h2>制御装置 外観</h2>
 61F-GP<br>
 フロートなしスイッチ（コンパクト・プラグインタイプ）
-<img src="images/pomp/8.jpg" style="max-width:650px;"><br>
+<img src="images/electric-work/pomp/8.jpg" style="max-width:650px;"><br>
 
 61F-GN（自動給・排水）<br>
-<img src="images/pomp1.png" style="max-width:350px;"><br>
+<img src="images/electric-work/pomp1.png" style="max-width:350px;"><br>
 
 61F-GN 回路図<br>
-<img src="images/pomp2.png" style="max-width:350px;"><br><br>
+<img src="images/electric-work/pomp2.png" style="max-width:350px;"><br><br>
 
 61F（フロートなしスイッチ）<br>
 動作状態がひとめでわかるLED動作表示<br>
@@ -66,7 +66,7 @@ E1だけで制御すると、液面の波立ちによってコンタクタがバ
 コモン電極（一番長い電極）を確実にアースする。<br>
 200V/24Vに降圧し制御回路電源に使用する。<br>
 200V/8Vに降圧し水面導通確認用電源に使用する。<br>
-<img src="images/pomp/9.png" style="max-width:750px;"><br>
+<img src="images/electric-work/pomp/9.png" style="max-width:750px;"><br>
 
 ■動きの流れ<br>
 水槽の水面が上限に達するとE1とE3が導通し①⑦間に電圧が印加<br>
@@ -79,9 +79,9 @@ C接点の動作に合わせてモーター用のコンタクタ内にあるコ�
 <h2>電極棒と電極保持器</h2>
 電極保持器は、水槽内の環境・水槽設置環境に応じて選定する。<br>
 電極棒は、水槽内の環境・制御範囲に応じて選定する。<br>
-<img src="images/pomp/5.jpg" style="max-width:750px;"><br>
+<img src="images/electric-work/pomp/5.jpg" style="max-width:750px;"><br>
 
 <h2>漏液検出器と漏水検知帯</h2>
-<img src="images/pomp/7.png" style="max-width:550px;"><br>
+<img src="images/electric-work/pomp/7.png" style="max-width:550px;"><br>
 
 <?php include("footer.php"); ?>

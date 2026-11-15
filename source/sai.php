@@ -3,10 +3,10 @@
 <h2>サイディングボード（一般住宅の外壁）</h2>
 
 正面図<br>
-<img src="images/sai1.svg" style="max-width:400px;"><br>
+<img src="images/electric-work/sai1.svg" style="max-width:400px;"><br>
 アイソメ図<br>
-<img src="images/sai2.svg" style="max-width:500px;"><br>
-⇒<a href="../draw2.php">アイソメ図が描けるフリーソフトの詳細はこちら</a><br><br>
+<img src="images/electric-work/sai2.svg" style="max-width:500px;"><br>
+⇒<a href="/draw2.php">アイソメ図が描けるフリーソフトの詳細はこちら</a><br><br>
 
 窯業系サイディング材（ようぎょうけい）<br>
 日本産業規格（JIS A 5422 2019）に規定されている。<br>
@@ -37,8 +37,8 @@
 非常に軽量で、施工が容易。軽量で建物への負担が少ない。<br><br>
 
 
-<img src="images/sai1.jpg" style="max-width:300px;"><br>
-<img src="images/sai2.jpg" style="max-width:300px;"><br>
+<img src="images/electric-work/sai1.jpg" style="max-width:300px;"><br>
+<img src="images/electric-work/sai2.jpg" style="max-width:300px;"><br>
 ・パイプクランプ<br>
 ・サイディング<br>
 ・アンカー<br>

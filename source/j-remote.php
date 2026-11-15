@@ -5,27 +5,27 @@
 型番：WR6006<br>
 ２線式リモコンセレクタスイッチ６回路<br>
 緑がオフ、赤がオン<br>
-<img src="images/remote1.jpg" style="max-width:400px;"><br>
+<img src="images/electric-work/remote1.jpg" style="max-width:400px;"><br>
 
 
 <h2>片切スイッチと照明の配線図</h2>
 
 照明が１つの場合の配線図<br>
-<img src="images/202207061.svg" style="max-width:500px;"><br>
+<img src="images/electric-work/202207061.svg" style="max-width:500px;"><br>
 
 照明が２つの場合の配線図<br>
 照明の数が増えると、それに合わせてスイッチの数も、AC100V配線の本数も増えていく。<br>
-<img src="images/202207062.svg" style="max-width:500px;"><br>
+<img src="images/electric-work/202207062.svg" style="max-width:500px;"><br>
 
 通常のスイッチの場合の配線例<br>
 ・入切スイッチの数：８個<br>
 ・配線：各照明用への電源線８本＋電源用１本<br>
-<img src="images/full2/2.jpg" alt="" style="width:400px;"><br>
+<img src="images/electric-work/full2/2.jpg" alt="" style="width:400px;"><br>
 
 <h2>ワンショットリモコン（リモコンリレー）</h2>
 
 ワンショットリモコンとリモコンリレーの配線図<br>
-<img src="images/remote3.png"><br>
+<img src="images/electric-work/remote3.png"><br>
 
 特徴<br>
 スイッチからリモコンリレーまでの配線はAC24Vの弱電線。<br>
@@ -36,10 +36,10 @@ AC100V配線に比べ、配線の費用が安く、軽く、細いので施工�
 ・リモコンスイッチの数：８個<br>
 ・配線：24V信号線９本<br>
 ※本数は通常スイッチと同じだが弱電線で対応できる。<br>
-<img src="images/full2/3.jpg" alt="" style="width:400px;"><br>
+<img src="images/electric-work/full2/3.jpg" alt="" style="width:400px;"><br>
 
 <h2>リモコンリレー本体</h2>
-<img src="images/remote11.jpg" style="max-width:800px;" alt=""><br>
+<img src="images/electric-work/remote11.jpg" style="max-width:800px;" alt=""><br>
 赤と青の端子は操作用でAC24Vのリレー制御用電源<br>
 100V側の端子が２段の場合<br>
 ・下の１段目はAC100Vブレーカーへ<br>
@@ -67,11 +67,11 @@ AC100V配線に比べ、配線の費用が安く、軽く、細いので施工�
 パワーリレーは照明など5Aを超える負荷設備に対しては使えない。<br>
 パワーリレーは手動でON/OFFが出来ない。<br><br>
 
-⇒<a href="../sequence.php">パワーリレー（有接点リレー）</a>
+⇒<a href="/sequence.php">パワーリレー（有接点リレー）</a>
 
 
 <h2>リモコントランスとは？</h2>
-<img src="images/remote2.jpg" style="max-width:500px;" alt=""><br>
+<img src="images/electric-work/remote2.jpg" style="max-width:500px;" alt=""><br>
 小型リモコントランス(F型/分電盤用) <br>
 20Aフルパワーリモコンリレーを駆動するための電源として使用する。<br>
 リモコンリレー用として使用する場合、盤内に１台取り付ける。<br>

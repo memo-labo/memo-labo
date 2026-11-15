@@ -5,9 +5,9 @@
 標準プリカ<br>
 外層に亜鉛めっき鋼帯、中間層に鋼帯、内層に耐水紙を用いた管にひだ付けした構造<br><br>
 
-<img src="images/plica2.jpg" style="width:400px;" alt=""><br><br>
+<img src="images/electric-work/plica2.jpg" style="width:400px;" alt=""><br><br>
 
-<img src="images/plica1.jpg" style="width:700px;" alt=""><br>
+<img src="images/electric-work/plica1.jpg" style="width:700px;" alt=""><br>
 
 特定電気用品以外の電気用品である。<br>
 コンクリート埋設や、特殊場所を除いた乾燥した場所の低圧屋内配線に鋼製電線管と同様に施設できる。<br>
@@ -30,11 +30,11 @@ PF管・CD管に比べて値段が高い。<br>
 
 
 <h2>プリカチューブとボックスコネクタ</h2>
-<img src="images/plica3.jpg" style="width:700px;" alt=""><br>
+<img src="images/electric-work/plica3.jpg" style="width:700px;" alt=""><br>
 
 リング（スリーブ）を、プリカチューブのビニルと本体のスキマに差し込む。<br>
-<img src="images/plica4.jpg" style="width:400px;" alt=""><br>
-<img src="images/plica5.jpg" style="width:400px;" alt=""><br>
+<img src="images/electric-work/plica4.jpg" style="width:400px;" alt=""><br>
+<img src="images/electric-work/plica5.jpg" style="width:400px;" alt=""><br>
 
 <h2>参考・引用</h2>
 <ul>

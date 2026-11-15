@@ -1,9 +1,9 @@
 <?php include("header.php"); ?>
 
 <h2>パイプレンチ</h2>
-<img src="images/pipe3.jpg" style="max-width:800px;" alt=""><br><br>
-<img src="images/pipe1.jpg" style="max-width:400px;" alt=""><br><br>
-<img src="images/pipe2.jpg" style="max-width:400px;" alt=""><br><br>
+<img src="images/electric-work/pipe3.jpg" style="max-width:800px;" alt=""><br><br>
+<img src="images/electric-work/pipe1.jpg" style="max-width:400px;" alt=""><br><br>
+<img src="images/electric-work/pipe2.jpg" style="max-width:400px;" alt=""><br><br>
 
 水道管、ガス管、単管パイプなどの丸いパイプをつかんで回すためのレンチ。<br>
 パイプは丸い形状なので、スパナやモンキーレンチでは回せない。<br>
@@ -21,7 +21,7 @@
 モンキーレンチのあごは互いに平行。<br><br>
 
 モンキーレンチ<br>
-<img src="images/mon1.jpg" style="max-width:800px;" alt=""><br>
+<img src="images/electric-work/mon1.jpg" style="max-width:800px;" alt=""><br>
 
 <h2>パイプレンチの特殊な用途例</h2>
 ユンボで土に埋め込まれた単管パイプは土との摩擦があり抜けない。<br>
