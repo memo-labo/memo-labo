@@ -31,6 +31,21 @@ ErrorDocument 404 /404.php
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    # Redirect the former /j/ section to its new root-level URLs.
+    RewriteRule ^j/?$ / [R=301,L,NE]
+    RewriteRule ^j/index\.php$ / [R=301,L,NE]
+    RewriteRule ^j/bou\.php$ /j-bou.php [R=301,L,NE]
+    RewriteRule ^j/denki-1\.php$ /j-denki-1.php [R=301,L,NE]
+    RewriteRule ^j/denki-2\.php$ /j-denki-2.php [R=301,L,NE]
+    RewriteRule ^j/kanki\.php$ /j-kanki.php [R=301,L,NE]
+    RewriteRule ^j/remote\.php$ /j-remote.php [R=301,L,NE]
+    RewriteRule ^j/timer\.php$ /j-timer.php [R=301,L,NE]
+    RewriteRule ^j/z1\.php$ /j-z1.php [R=301,L,NE]
+    RewriteRule ^j/([^/]+)\.php$ /$1.php [R=301,L,NE]
+    RewriteRule ^j/images/(.*)$ /images/electric-work/$1 [R=301,L,NE]
+    RewriteRule ^j/icon/(.*)$ /icon/$1 [R=301,L,NE]
+
+
     # wwwあり → wwwなし
     # http → https
     RewriteCond %{HTTP_HOST} ^www\.memo-labo\.com$ [NC,OR]

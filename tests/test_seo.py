@@ -110,9 +110,9 @@ class StaticSEO(unittest.TestCase):
 
     def test_cross_section_article_links_resolve(self):
         cases = {
-            'remote.html': ['j/' + slug + '.php' for slug in
+            'remote.html': [slug + '.php' for slug in
                             ('full2', 'inter', 'rb', 'pomp', '61f', 'rousui', 'knife')],
-            'draw2.html': ['j/sai.php'],
+            'draw2.html': ['sai.php'],
             'rdf.html': ['henatu.php'],
             'b/boi.html': ['boiler.php'],
         }

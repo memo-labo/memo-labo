@@ -26,7 +26,7 @@
 
 
 <h2>リモコンリレー</h2>
-<img src="j/images/remote11.jpg" style="max-width:600px;" alt=""><br>
+<img src="images/electric-work/remote11.jpg" style="max-width:600px;" alt=""><br>
 <img src="images/20260320-1.jpg" style="max-width:150px;" alt=""><br>
 赤と青の端子はリレー操作用入力端子で、AC24V印加でON⇔OFF動作<br>
 反対の銀色端子２段は、一方がAC100Vの電源側、もう一方が負荷側へ<br>
@@ -41,26 +41,26 @@
 型番：WR6006<br>
 ２線式リモコンセレクタスイッチ６回路<br>
 緑がオフ、赤がオン<br>
-<img src="j/images/remote1.jpg" style="max-width:400px;"><br>
+<img src="images/electric-work/remote1.jpg" style="max-width:400px;"><br>
 
 <h2>片切スイッチと照明の配線図</h2>
 
 照明が１つの場合の配線図<br>
-<img src="j/images/202207061.svg" style="max-width:500px;"><br>
+<img src="images/electric-work/202207061.svg" style="max-width:500px;"><br>
 
 照明が２つの場合の配線図<br>
 照明の数が増えると、それに合わせてスイッチの数も、AC100V配線の本数も増えていく。<br>
-<img src="j/images/202207062.svg" style="max-width:500px;"><br>
+<img src="images/electric-work/202207062.svg" style="max-width:500px;"><br>
 
 通常のスイッチの場合の配線例<br>
 ・入切スイッチの数：８個<br>
 ・配線：各照明用への電源線８本＋電源用１本<br>
-<img src="j/images/full2/2.jpg" alt="" style="width:400px;"><br>
+<img src="images/electric-work/full2/2.jpg" alt="" style="width:400px;"><br>
 
 <h2>ワンショットリモコン（リモコンリレー）</h2>
 
 ワンショットリモコンとリモコンリレーの配線図<br>
-<img src="j/images/remote3.png"><br>
+<img src="images/electric-work/remote3.png"><br>
 
 特徴<br>
 スイッチからリモコンリレーまでの配線はAC24Vの弱電線。<br>
@@ -71,7 +71,7 @@ AC100V配線に比べ、配線の費用が安く、軽く、細いので施工�
 ・リモコンスイッチの数：８個<br>
 ・配線：24V信号線９本<br>
 ※本数は通常スイッチと同じだが弱電線で対応できる。<br>
-<img src="j/images/full2/3.jpg" alt="" style="width:400px;"><br>
+<img src="images/electric-work/full2/3.jpg" alt="" style="width:400px;"><br>
 
 
 
@@ -111,7 +111,7 @@ AC100VをAC24Vに変換しリモコンリレー動作用電源として出力。
 
 
 <h2>関連ページ</h2>
-<ul><li><a href="remote.php">リモコンスイッチ・リモコンリレー・ワンショットリモコン</a></li><li><a href="j/full2.php">フル2線式リモコンスイッチ</a></li><li><a href="j/inter.php">インターホン・テレビドアホン</a></li><li><a href="j/rb.php">電源遮断ユニット（非常放送設備）</a></li><li><a href="j/pomp.php">ポンプとは？（給水・排水・制御盤）</a></li><li><a href="j/61f.php">61F フロートなしスイッチ ポンプ制御</a></li><li><a href="j/rousui.php">漏液検出器と漏水検知帯</a></li><li><a href="j/knife.php">ナイフスイッチ</a></li></ul>
+<ul><li><a href="remote.php">リモコンスイッチ・リモコンリレー・ワンショットリモコン</a></li><li><a href="full2.php">フル2線式リモコンスイッチ</a></li><li><a href="inter.php">インターホン・テレビドアホン</a></li><li><a href="rb.php">電源遮断ユニット（非常放送設備）</a></li><li><a href="pomp.php">ポンプとは？（給水・排水・制御盤）</a></li><li><a href="61f.php">61F フロートなしスイッチ ポンプ制御</a></li><li><a href="rousui.php">漏液検出器と漏水検知帯</a></li><li><a href="knife.php">ナイフスイッチ</a></li></ul>
 
 
 <?php include("footer.php"); ?>

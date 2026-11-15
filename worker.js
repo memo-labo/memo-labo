@@ -10,6 +10,8 @@ const LEGACY_REDIRECTS = new Map([
   ["/qa9.php", "/koutei.php"],
 ]);
 
+const J_COLLISIONS = {"bou":"j-bou","denki-1":"j-denki-1","denki-2":"j-denki-2","kanki":"j-kanki","remote":"j-remote","timer":"j-timer","z1":"j-z1"};
+
 const LOGO_STYLE = `<style>
 header .site-logo {
   position: relative;
@@ -97,6 +99,25 @@ export default {
     }
 
     const path = url.pathname;
+    if (path === "/j/" || path === "/j/index.php") {
+      url.pathname = "/";
+      return Response.redirect(url.toString(), 301);
+    }
+    const oldJ = path.match(/^\/j\/([^/]+)\.php$/i);
+    if (oldJ) {
+      url.pathname = "/" + (J_COLLISIONS[oldJ[1]] || oldJ[1]) + ".php";
+      return Response.redirect(url.toString(), 301);
+    }
+    if (path.startsWith("/j/images/")) {
+      url.pathname = "/images/electric-work/" + path.slice("/j/images/".length);
+      return Response.redirect(url.toString(), 301);
+    }
+    if (path.startsWith("/j/icon/")) {
+      const name = path.slice("/j/icon/".length);
+      const slug = name.replace(/\.jpg$/i, "");
+      url.pathname = "/icon/" + (J_COLLISIONS[slug] || slug) + name.slice(slug.length);
+      return Response.redirect(url.toString(), 301);
+    }
 
     // The home page and legacy search endpoint each have one public URL.
     if (path === "/index.php" || path === "/search.php") {
