@@ -20,7 +20,7 @@
 
 ガラリ・ベントキャップ<br>
 屋外と室内を隔てる壁やドア、窓などに取り付ける通気口のこと。<br>
-<img src="images/kanki1.jpg" style="max-width:200px;" /><br>
-<img src="images/kanki2.jpg" style="max-width:200px;" /><br>
+<img src="images/electric-work/kanki1.jpg" style="max-width:200px;" /><br>
+<img src="images/electric-work/kanki2.jpg" style="max-width:200px;" /><br>
 
 <?php include("footer.php"); ?>

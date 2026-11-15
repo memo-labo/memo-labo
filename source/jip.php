@@ -4,7 +4,7 @@
 ジプトーンとは、トラバーチン模様の洋風天井用化粧石膏ボードのこと。<br>
 トラバーチンとは天然で採掘される無機質石灰岩の一種。分類としては大理石。<br>
 ジプトーンという名称は某会社の化粧石膏ボードの商品名。<br>
-<img src="images/jip3.jpg" style="max-width:700px;" alt=""><br>
+<img src="images/electric-work/jip3.jpg" style="max-width:700px;" alt=""><br>
 
 ジプトーンの特徴
 ・値段がそこそこ安い。<br>
@@ -22,8 +22,8 @@
 
 <h2>スクエアトーン</h2>
 
-<img src="images/jip1.jpg" style="max-width:600px;" alt=""><br>
-<img src="images/jip2.png" style="max-width:400px;" alt=""><br><br>
+<img src="images/electric-work/jip1.jpg" style="max-width:600px;" alt=""><br>
+<img src="images/electric-work/jip2.png" style="max-width:400px;" alt=""><br><br>
 
 吸音天井ボード<br>
 ・模様が統一されている。<br>

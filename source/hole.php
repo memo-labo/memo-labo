@@ -2,7 +2,7 @@
 
 <h2>ホルソー</h2>
 
-<img src="images/hole1.jpg" style="max-width:400px;"><br>
+<img src="images/electric-work/hole1.jpg" style="max-width:400px;"><br>
 ホルソー（ホールソー）<br>
 英語で「Hole saw」<br>
 ホール（穴）をあけるためのソー（ノコギリ）<br>

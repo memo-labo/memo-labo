@@ -4,16 +4,16 @@
 ポータブル発電機から子ブレーカーに電源供給する際の注意<br>
 みのむしクリップでは少しの衝撃で外れてしまう。<br>
 パワークリップ（サトーパーツ）であれば、つかみやすく、外れにくい。<br>
-<img src="images/20211130-2.jpg" style="max-width:300px;" alt=""><br><br>
+<img src="images/electric-work/20211130-2.jpg" style="max-width:300px;" alt=""><br><br>
 
 
 分電盤の子ブレーカーは段差があるタイプがあり、クリップでは届きにくい。<br>
-<img src="images/20211130-1.jpg" style="max-width:400px;" alt=""><br><br>
+<img src="images/electric-work/20211130-1.jpg" style="max-width:400px;" alt=""><br><br>
 
 クリップを使うのではなく、VVF 2C線を直接ブレーカーのネジに固定して使用する。<br>
 この方法であればネジで固定されるのでコードを引っ張っても外れない。<br>
 
-<img src="images/20211130-3.jpg" style="max-width:400px;" alt=""><br><br>
+<img src="images/electric-work/20211130-3.jpg" style="max-width:400px;" alt=""><br><br>
 
 ただし既存の状態に対してネジを緩めて離線し、さらに戻す作業が発生するので、<br>
 配線の戻し間違い、ネジの緩み、ネジを落として紛失するなどの危険もある。<br><br>
@@ -21,7 +21,7 @@
 また離線する際、ブスバーに接触して感電、離線した配線が他のブレーカーやブスバーに接触して火花が散るなど、作業中の様々な危険性が考えられる。
 
 <h2>VVF 単線 のの字</h2>
-<img src="images/20211130-4.png" style="max-width:400px;" alt=""><br>
+<img src="images/electric-work/20211130-4.png" style="max-width:400px;" alt=""><br>
 
 VVF 2C 単線を用意しておき、先端は被覆を剥き、のの字を作っておく。ネジ止めに便利。<br>
 より線の場合、のの字、ネジ止めに向かないので単線にする。<br>

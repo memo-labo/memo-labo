@@ -3,13 +3,13 @@
 <h2>ケーブルドラムの荷積み、荷降ろしでぎっくり腰</h2>
 
 軽トラの荷台にケーブルドラムを載せる時は、足場を使って転がすように載せる。<br>
-<img src="images/kega/1.png" alt="" style="max-width:600px;"><br>
+<img src="images/electric-work/kega/1.png" alt="" style="max-width:600px;"><br>
 
 鉄パイプを穴に入れて両サイドから持ち上げると、ギックリ腰になりやすい。<br>
-<img src="images/kega/2.png" alt="" style="max-width:300px;"><br>
+<img src="images/electric-work/kega/2.png" alt="" style="max-width:300px;"><br>
 
 <h2>脚立の事故</h2>
-<img src="images/kega/4.png" alt="" style="max-width:300px;"><br>
+<img src="images/electric-work/kega/4.png" alt="" style="max-width:300px;"><br>
 
 <li>脚立の天端（てんば）に登っての作業。やってはいけないルールだが、破る人間多数、事故も多数。
 
@@ -28,7 +28,7 @@
 <li>伸縮タイプの脚立を使用していたら、そのうちの１本が急に折れて、バランスを崩して落下。
 
 <h2>ドリルで穴あけ中のケガ</h2>
-<img src="images/kega/3.png" alt="" style="max-width:200px;"><br>
+<img src="images/electric-work/kega/3.png" alt="" style="max-width:200px;"><br>
 木造住宅で幹線を通すために穴あけをする際、急に刃が噛んで、回転方向とは逆に負荷がかかり、手首をひねる。<br>
 金属に穴あけをする時、金属の破片が目に入り、眼球を痛める。<br>
 

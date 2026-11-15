@@ -2,7 +2,7 @@
 
 <h2>仮設電気工事</h2>
 
-<img src="images/kasetu21.svg" style="max-width:400px;"><br>
+<img src="images/electric-work/kasetu21.svg" style="max-width:400px;"><br>
 
 新築住宅の建築工事現場において、電気は通っていない。<br>
 そこで金属ポールを建て、低圧電灯2Pを引き込み、電気を使用する。<br><br>
@@ -17,7 +17,7 @@
 筋力や体力のない人が電工になって最初に面食らうのはこの穴掘りかも。<br>
 土の地面に太めの金属ポールを建柱する場合、穴の大きさも直径50cmくらい必要。<br>
 石がゴロゴロしている土の場合、スコップで石を掻き出して掘り進めていく。<br>
-<img src="images/kasetu21.jpg" style="max-width:300px;"><br>
+<img src="images/electric-work/kasetu21.jpg" style="max-width:300px;"><br>
 
 <h2>仮設電気工事の電力契約</h2>
 臨時電灯<br>
@@ -66,8 +66,8 @@
 建柱<br>
 １人は穴にスコップを当てて、もう１人は柱を持ち上げる。<br>
 スコップではなく木板（幅100mm、長さ500mm程度）を使うほうがいいらしい。<br>
-<img src="images/kasetu1.svg" style="max-width:500px;" /><br><br>
-<img src="images/kasetu2.svg" style="max-width:500px;" /><br>
+<img src="images/electric-work/kasetu1.svg" style="max-width:500px;" /><br><br>
+<img src="images/electric-work/kasetu2.svg" style="max-width:500px;" /><br>
 
 <h2>仮設ポールの抜き方</h2>
 まずポールを引き抜いて横に倒す方向を決める。<br>

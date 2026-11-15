@@ -2,7 +2,7 @@
 
 <h2>盤内の制御用配線</h2>
 
-<img src="images/hiv1.jpg" style="width:200px;"><br><br>
+<img src="images/electric-work/hiv1.jpg" style="width:200px;"><br><br>
 
 キュービクル内部や盤内で、VT２次側、CT２次側、制御電源用ブレーカー、電圧計、電流計などの配線でよく見かける黄色い電線の正体とは？<br>
 

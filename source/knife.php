@@ -1,7 +1,7 @@
 <?php include("header.php"); ?>
 
 <h2>ナイフスイッチ</h2>
-<img src="images/knife1.jpg" style="max-width:400px;" alt=""><br><br>
+<img src="images/electric-work/knife1.jpg" style="max-width:400px;" alt=""><br><br>
 
 CKS（たぶん Cover Knife Switchの略）<br>
 カバー付ナイフスイッチの取付方向<br>
@@ -16,7 +16,7 @@ CKS（たぶん Cover Knife Switchの略）<br>
 刃切開閉器と呼ばれることもある。<br>
 
 <h2>ナイフスイッチの構造</h2>
-<img src="images/knife2.svg" style="max-width:700px;" alt=""><br><br>
+<img src="images/electric-work/knife2.svg" style="max-width:700px;" alt=""><br><br>
 
 ナイフスイッチの中央⇔下側には爪ヒューズが使われているものがある。<br>
 定格以上の電流が流れた場合に「可溶体」の部分が溶断する。<br>
@@ -26,14 +26,14 @@ CKS（たぶん Cover Knife Switchの略）<br>
 <h2>上下だけでなく左右から配線がある場合</h2>
 
 双投ナイフスイッチ（絶対に同時ONにならないダブルスロー）<br>
-<img src="images/knife1.svg" style="max-width:250px;" alt="">
+<img src="images/electric-work/knife1.svg" style="max-width:250px;" alt="">
 <br><br>
 
 使用例<br>
 商用電源と非常用電源のダブルスロー<br>
 配線図は予想<br><br>
 
-<img src="images/knife3.svg" style="max-width:600px;" alt=""><br><br>
+<img src="images/electric-work/knife3.svg" style="max-width:600px;" alt=""><br><br>
 
 配線<br>
 上の配線：商用電源からの配線<br>

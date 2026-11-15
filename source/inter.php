@@ -7,7 +7,7 @@
 玄関子機：VL-VH573L<br><br>
 
 インターホン用の配線<br>
-<img src="images/inter1.png" style="max-width:400px;"><br>
+<img src="images/electric-work/inter1.png" style="max-width:400px;"><br>
 配線材を挿入する場合<br>
 ・配線材の被ふくを9mmむく。<br>
 ・ドライバーの先などでボタンを押しながら配線材を確実に端子に挿入する。<br><br>
@@ -21,14 +21,14 @@
 ③TIVF	φ0.8（単芯）<br>
 
 AEVとは？<br>
-<img src="images/inter2.jpg" style="max-width:350px;"><br>
+<img src="images/electric-work/inter2.jpg" style="max-width:350px;"><br>
 JCS4396適合品<br>
 アラームケーブル（警報用電線）<br>
 警報用、インターホン用、ベル（ブザー）呼び出し用、その他弱電回路用に最適のケーブル。<br><br>
 
 TIVFとは？<br>
-<img src="images/tivf1.jpg" style="max-width:200px;"><br>
-<img src="images/tivf2.jpg" style="max-width:400px;"><br>
+<img src="images/electric-work/tivf1.jpg" style="max-width:200px;"><br>
+<img src="images/electric-work/tivf2.jpg" style="max-width:400px;"><br>
 準拠規格：ＪＣＳ ９０６８（屋内用通信電線）<br>
 通信用屋内ビニル平形電線<br>
 小勢力回路及び弱電回路用コード（60V以下）<br>
@@ -44,7 +44,7 @@ UPnP=Universal Plug and Play（ユニバーサル・プラグ・アンド・プ�
 ネットワークがハッキングされる恐れもある。<br>
 
 <h2>ドアホン背面～ドアホン親機背面</h2>
-<img src="images/inter3.jpg" style="max-width:300px;"><br>
+<img src="images/electric-work/inter3.jpg" style="max-width:300px;"><br>
 
 
 <h2>弱電配線工事の注意点</h2>
@@ -56,6 +56,6 @@ UPnP=Universal Plug and Play（ユニバーサル・プラグ・アンド・プ�
 
 弱電配線の結線方法。<br>
 ねじっただけではNG、ねじってハンダ付けすればOKらしい（弱電のみ？）<br>
-<img src="images/inter4.jpg" style="max-width:500px;">
+<img src="images/electric-work/inter4.jpg" style="max-width:500px;">
 
 <?php include("footer.php"); ?>
