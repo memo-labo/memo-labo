@@ -31,6 +31,20 @@ ErrorDocument 404 /404.php
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    # Former building-maintenance pages now live at the site root.
+    RewriteRule ^b/?$ / [R=301,L,NE]
+    RewriteRule ^b/index\.php$ / [R=301,L,NE]
+    RewriteRule ^b/air\.php$ /b-air.php [R=301,L,NE]
+    RewriteRule ^b/dokuritu\.php$ /b-dokuritu.php [R=301,L,NE]
+    RewriteRule ^b/gaishi\.php$ /b-gaishi.php [R=301,L,NE]
+    RewriteRule ^b/pomp\.php$ /b-pomp.php [R=301,L,NE]
+    RewriteRule ^b/suidou\.php$ /b-suidou.php [R=301,L,NE]
+    RewriteRule ^b/wh\.php$ /b-wh.php [R=301,L,NE]
+    RewriteRule ^b/([^/]+)\.php$ /$1.php [R=301,L,NE]
+    RewriteRule ^b/images/(.*)$ /images/building-maintenance/$1 [R=301,L,NE]
+    RewriteRule ^b/(gas[12]|mizumore[12])\.jpg$ /images/building-maintenance/$1.jpg [R=301,L,NE]
+
+
     # Redirect the former /j/ section to its new root-level URLs.
     RewriteRule ^j/?$ / [R=301,L,NE]
     RewriteRule ^j/index\.php$ / [R=301,L,NE]

@@ -114,7 +114,7 @@ class StaticSEO(unittest.TestCase):
                             ('full2', 'inter', 'rb', 'pomp', '61f', 'rousui', 'knife')],
             'draw2.html': ['sai.php'],
             'rdf.html': ['henatu.php'],
-            'b/boi.html': ['boiler.php'],
+            'boi.html': ['boiler.php'],
         }
         for page, links in cases.items():
             text = (self.out / page).read_text()
@@ -134,6 +134,18 @@ class StaticSEO(unittest.TestCase):
         self.assertNotIn('https://memo-labo.com/j/', (self.out / 'sitemap.xml').read_text())
         search = json.loads((self.out / 'search-index.json').read_text())
         self.assertTrue(any(x['url'] == 'tanshi1.php' for x in search))
+
+    def test_building_maintenance_is_integrated_at_root(self):
+        self.assertFalse((ROOT / 'source' / 'b').exists())
+        home = (self.out / 'index.html').read_text()
+        self.assertIn('ビルメン・設備管理メモ', home)
+        self.assertIn('href="boiler.php"', home)
+        for slug in ('boi', 'boiler', 'b-pomp', 'b-air', 'b-wh'):
+            self.assertTrue((self.out / (slug + '.html')).exists(), slug)
+        self.assertTrue((self.out / 'images' / 'building-maintenance' / 'boiler1.svg').exists())
+        self.assertNotIn('https://memo-labo.com/b/', (self.out / 'sitemap.xml').read_text())
+        search = json.loads((self.out / 'search-index.json').read_text())
+        self.assertTrue(any(x['url'] == 'boiler.php' for x in search))
 
     def test_root_overrides_do_not_leak_into_other_sections(self):
         rows = [['test', 'ocr', '別記事', '電気工事士の別記事']]

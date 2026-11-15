@@ -12,6 +12,8 @@ const LEGACY_REDIRECTS = new Map([
 
 const J_COLLISIONS = {"bou":"j-bou","denki-1":"j-denki-1","denki-2":"j-denki-2","kanki":"j-kanki","remote":"j-remote","timer":"j-timer","z1":"j-z1"};
 
+const B_COLLISIONS = {"air":"b-air","dokuritu":"b-dokuritu","gaishi":"b-gaishi","pomp":"b-pomp","suidou":"b-suidou","wh":"b-wh"};
+
 const LOGO_STYLE = `<style>
 header .site-logo {
   position: relative;
@@ -99,6 +101,23 @@ export default {
     }
 
     const path = url.pathname;
+    if (path === "/b/" || path === "/b/index.php" || path === "/b/index.html") {
+      url.pathname = "/";
+      return Response.redirect(url.toString(), 301);
+    }
+    const oldB = path.match(/^\/b\/([^/]+)\.php$/i);
+    if (oldB) {
+      url.pathname = "/" + (B_COLLISIONS[oldB[1]] || oldB[1]) + ".php";
+      return Response.redirect(url.toString(), 301);
+    }
+    if (path.startsWith("/b/images/")) {
+      url.pathname = "/images/building-maintenance/" + path.slice("/b/images/".length);
+      return Response.redirect(url.toString(), 301);
+    }
+    if (/^\/b\/(?:gas[12]|mizumore[12])\.jpg$/i.test(path)) {
+      url.pathname = "/images/building-maintenance/" + path.slice("/b/".length);
+      return Response.redirect(url.toString(), 301);
+    }
     if (path === "/j/" || path === "/j/index.php" || path === "/j/index.html") {
       url.pathname = "/";
       return Response.redirect(url.toString(), 301);

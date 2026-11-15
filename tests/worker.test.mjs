@@ -18,6 +18,13 @@ for (const [path, target] of [
   ['/j/tanshi1.php', '/tanshi1.php'],
   ['/j/remote.php', '/j-remote.php'],
   ['/j/images/remote1.jpg', '/images/electric-work/remote1.jpg'],
+  ['/b/', '/'],
+  ['/b/index.php', '/'],
+  ['/b/index.html', '/'],
+  ['/b/boi.php', '/boi.php'],
+  ['/b/pomp.php', '/b-pomp.php'],
+  ['/b/images/boiler1.svg', '/images/building-maintenance/boiler1.svg'],
+  ['/b/gas1.jpg', '/images/building-maintenance/gas1.jpg'],
   ['/dgr2.php', '/dgr.php'],
 ]) {
   test(`${path} redirects permanently to ${target}`, async () => {
