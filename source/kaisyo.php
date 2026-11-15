@@ -9,7 +9,7 @@
 配水管の曲点や合流部などの詰まり易い部位に蓋付の枡を埋設する。<br>
 ゴミや汚泥などが枡に溜まり、水だけが配水管を流れる。<br><br>
 
-<img src="images/haikan5.jpg" style="max-width:400px;"><br><br>
+<img src="images/building-maintenance/haikan5.jpg" style="max-width:400px;"><br><br>
 
 蓋を開けると、そこから溜まったゴミや汚泥を取り除くことができる。<br>
 コンクリート製のものが多かったが、老朽化や地震で破損したり継ぎ目が外れやすい。<br>

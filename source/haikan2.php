@@ -4,14 +4,14 @@
 
 床スラブ上配管<br>
 マンションの排水は床スラブの上を通って共有の排水管につなげるのが一般的らしい。<br>
-<img src="images/haikan2.png" style="max-width:600px;"><br>
+<img src="images/building-maintenance/haikan2.png" style="max-width:600px;"><br>
 
 
 床スラブ貫通配管<br>
 築年数の古いマンションに、たまにあるらしい。<br>
 水回りの移動は出来ない、下階の天井裏を一部解体しないと配管を交換できない。<br>
 
-<img src="images/haikan21.png" style="max-width:600px;"><br>
+<img src="images/building-maintenance/haikan21.png" style="max-width:600px;"><br>
 
 
 トイレは配管方式等に関係なく位置の変更はほとんどできないらしい。<br><br>

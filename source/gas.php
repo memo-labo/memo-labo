@@ -1,7 +1,7 @@
 <?php include("header.php"); ?>
 
 <h2>都市ガスとは？</h2>
-<img src="images/gas1.jpg" style="max-width:100px;" alt=""><br>
+<img src="images/building-maintenance/gas1.jpg" style="max-width:100px;" alt=""><br>
 主成分はメタン（CH4）<br>
 無色、無臭、空気より軽い、非常に引火性の強い気体。<br>
 空気より軽いので、ガス漏れ警報器の取り付け位置は天井。<br>
@@ -13,7 +13,7 @@
 地下の配管を通すので災害時に供給が途絶えてしまうと復旧が難しい。<br>
 
 <h2>LPガス（プロパンガス）とは？</h2>
-<img src="images/gas2.jpg" style="max-width:100px;" alt=""><br>
+<img src="images/building-maintenance/gas2.jpg" style="max-width:100px;" alt=""><br>
 
 LPガスの主成分はプロパン（C3H8）とブタン（C4H10）<br>
 常温で通常の気圧では気体だが圧力を加えたり冷却すると液体になる。<br><br>

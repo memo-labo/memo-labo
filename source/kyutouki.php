@@ -5,7 +5,7 @@
 42度以下にしていると、お風呂のサーモ水栓の寿命が半分になるらしい。<br>
 しかも、早いと5年で壊れるらしい。<br><br>
 
-<img src="images/kyutouki1.jpg" style="max-width:400px;" alt=""><br><br>
+<img src="images/building-maintenance/kyutouki1.jpg" style="max-width:400px;" alt=""><br><br>
 
 その壊れ方は「水しか出なくなる」という壊れ方。<br><br>
 
@@ -24,7 +24,7 @@
 自動温度調節機能が付いた水栓のこと。<br>
 片側にはシャワーかカラン（蛇口）のどちらから湯を出すか切り替えるハンドルがある。<br>
 もう片側には湯の温度を設定するハンドルが付いている。<br>
-<img src="images/kyutouki2.jpg" style="max-width:400px;" alt=""><br><br>
+<img src="images/building-maintenance/kyutouki2.jpg" style="max-width:400px;" alt=""><br><br>
 
 
 <h2>給湯器の注意</h2>

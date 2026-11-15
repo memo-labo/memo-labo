@@ -2,7 +2,7 @@
 
 <h2>給湯器の仕組み</h2>
 
-<img src="images/kt1.svg" style="max-width:600px;"><br>
+<img src="images/building-maintenance/kt1.svg" style="max-width:600px;"><br>
 
 電気で制御<br>
 ・ガスを着火する点火装置<br>
