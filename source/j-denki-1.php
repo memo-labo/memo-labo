@@ -2,13 +2,13 @@
   
 <h2>便利な工具「ワイヤーストリッパー」での失敗談</h2>
 
-<img src="images/denki-11.jpg" style="max-width:300px;"><br>
+<img src="images/electric-work/denki-11.jpg" style="max-width:300px;"><br>
 ホーザン(HOZAN) ワイヤーストリッパー<br>
 すごく使いやすい工具です。VVFを剥く、切る、曲げるが簡単に出来ます。<br>
 特に、第二種電気工事士試験の「実技」に最適です。作業時間が短縮できてミスも減ります。<br>
 なので、試験合格するための道具としては、最適です。<br><br>
 
-<img src="images/denki-12.jpg" style="max-width:300px;"><br>
+<img src="images/electric-work/denki-12.jpg" style="max-width:300px;"><br>
 ホーザン(HOZAN) VVFストリッパー<br>
 ワイヤーストリッパーのように、曲げる、切るなどは出来ない。<br>
 
@@ -16,7 +16,7 @@
 新人の電気工事士は、基本工具からスタートした方が絶対に良いです。<br>
 基本工具というのは、電工ナイフ、ペンチ、ニッパーなどです。<br><br>
 
-<img src="images/denki-13.jpg" style="max-width:300px;"><br>
+<img src="images/electric-work/denki-13.jpg" style="max-width:300px;"><br>
 
 なぜかというと、現場ではナイフ、ペンチ、ニッパーでしか対応できない場面が多数出てくるからです。<br>
 例えば、活線状態のVVFを断線する場合、途中で剥いて導線を１本ずつ切ってテープで絶縁しながら断線します。<br>

@@ -4,21 +4,21 @@
 
 
 木工用ドリル<br>
-<img src="images/drill1.jpg" style="max-width:400px;"><br>
+<img src="images/electric-work/drill1.jpg" style="max-width:400px;"><br>
 木工用ドリルの中心の先端は細く尖っている。<br>
 そして外周に刃がついているような形になっている。<br>
 中心部分で穴を空ける位置を決めて、外周の刃で穴の形を切っていく。<br>
 木工用で金属を削ると刃が磨り減ってしまって切れなくなる。<br><br>
 
 鉄工用ドリル<br>
-<img src="images/drill2.jpg" style="max-width:300px;"><br>
+<img src="images/electric-work/drill2.jpg" style="max-width:300px;"><br>
 先端の刃が三角の鈍角になっていて三角全体で削っていく。<br>
 金属用ドリルで木材に穴をあけると穴の周りがギザギザになって仕上がりが汚い。<br>
 <a href="ductor.php">ダクターチャンネル</a>を壁にビス止め、ボルト止めする際の穴空け用として使う。<br>
 
 
 <h2>ステップドリル</h2>
-<img src="images/drill3.jpg" style="max-width:400px;"><br>
+<img src="images/electric-work/drill3.jpg" style="max-width:400px;"><br>
 小さな穴から、大きな穴まで順に穴を広げていくことができる。<br>
 ドリルを取り替えることなく１本だけ複数の大きさの穴を開ける事ができる。<br>
 表面がチタンコート加工だと、ステン、薄い鉄板・木材・ビニル・樹脂など適用範囲が広い。<br>

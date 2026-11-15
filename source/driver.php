@@ -2,19 +2,19 @@
 
 <h2>ドライバーとマグキャッチ</h2>
 
-<img src="images/driver1.jpg" style="max-width:200px;"><br>
+<img src="images/electric-work/driver1.jpg" style="max-width:200px;"><br>
 ベッセル(VESSEL) ボールグリップドライバー。<br>
 ホームセンターでもよく見かけるベーシックなドライバー。<br>
 ドアの下の隙間に挟んでドアストッパーの代わりとしても使える。<br><br>
 
-<img src="images/driver2.jpg" style="max-width:150px;"><br>
+<img src="images/electric-work/driver2.jpg" style="max-width:150px;"><br>
 ネジやビスが落ちないように磁石をつけると便利。<br><br>
 
-<img src="images/driver3.jpg" style="max-width:200px;"><br>
+<img src="images/electric-work/driver3.jpg" style="max-width:200px;"><br>
 アネックス(ANEX) 絶縁仕様 1000V対応ドライバー。<br>
 ベッセルより先がちょっと細くなってて使いやすい？<br><br>
 
-<img src="images/driver4.jpg" style="max-width:500px;"><br>
+<img src="images/electric-work/driver4.jpg" style="max-width:500px;"><br>
 ベッセル(VESSEL) 電動 ボールグリップ ドライバー。<br>
 上部のスライドスイッチの上下で電動で動く。<br>
 BタイプのマイクロUSBケーブルで充電する。<br>

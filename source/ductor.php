@@ -8,17 +8,17 @@
 溶融亜鉛メッキ：屋内・屋外で使用。<br>
 ステンレス：水気に強い、屋外など錆の可能性がある場所で使用。<br>
 
-<img src="images/20211008-1.jpg"alt=""><br>
-<img src="images/20211008-2.jpg" style="max-width:500px;" alt=""><br>
+<img src="images/electric-work/20211008-1.jpg"alt=""><br>
+<img src="images/electric-work/20211008-2.jpg" style="max-width:500px;" alt=""><br>
 
 <h2>ダクターのサイズ</h2>
 この写真の例だとサイズは「D15」<br>
-<img src="images/20211008-5.jpg" style="max-width:400px;" alt="">
+<img src="images/electric-work/20211008-5.jpg" style="max-width:400px;" alt="">
 
 <h2>穴が空いたタイプ</h2>
 長穴と丸穴が空いていて、穴あけ加工をしなくても使えます。<br>
-<img src="images/20211008-3.jpg" style="max-width:500px;" alt=""><br>
-<img src="images/20211008-4.jpg" style="max-width:500px;" alt=""><br><br>
+<img src="images/electric-work/20211008-3.jpg" style="max-width:500px;" alt=""><br>
+<img src="images/electric-work/20211008-4.jpg" style="max-width:500px;" alt=""><br><br>
 
 <h2>ローバル（亜鉛塗料）</h2>
 錆止め（防錆）のために使われる亜鉛リッチペイント（高濃度亜鉛塗料）<br>
@@ -31,14 +31,14 @@
 ダクタークリップとは、ダクターチャンネルに電線管を固定する金物。<br><br>
 
 ねじ切りされていてナットが必要ないタイプ<br>
-<img src="images/ductor4.jpg" style="max-width:400px;" alt=""><br>
+<img src="images/electric-work/ductor4.jpg" style="max-width:400px;" alt=""><br>
 
 ねじ切りされておらずナットが必要なタイプ<br>
-<img src="images/ductor5.jpg" style="max-width:400px;" alt=""><br>
+<img src="images/electric-work/ductor5.jpg" style="max-width:400px;" alt=""><br>
 
 許容静荷重<br>
 ダクタークリップの取り付け方と荷重がかかる方向で値が変わる<br>
-<img src="images/ductor6.jpg" style="max-width:400px;" alt=""><br><br>
+<img src="images/electric-work/ductor6.jpg" style="max-width:400px;" alt=""><br><br>
 
 材質と用途<br>
 屋内：溶融亜鉛めっき鋼板<br>
@@ -51,27 +51,27 @@ DC13、DC15、DC19、DC22、などDC〇〇という呼び名になっている�
 
 <h2>鋼管用ポールバンド（Uボルトタイプ）</h2>
 ダクターを鋼管に固定する場合に使用する。<br>
-<img src="images/ductor2.jpg" style="max-width:400px;" alt=""><br>
+<img src="images/electric-work/ductor2.jpg" style="max-width:400px;" alt=""><br>
 
 呼び径(A)<br>
 このサイズが鋼管と合っていないと取り付けられない。<br>
-<img src="images/ductor3.jpg" style="max-width:400px;" alt=""><br>
+<img src="images/electric-work/ductor3.jpg" style="max-width:400px;" alt=""><br>
 
 
 
 <h2>ダクター使用例</h2>
 屋外照明器具の固定。折板屋根のボルトと一緒に止めている？<br>
-<img src="images/20211008-6.jpg" style="max-width:700px;" alt=""><br><br>
+<img src="images/electric-work/20211008-6.jpg" style="max-width:700px;" alt=""><br><br>
 
 立ち上げ配管の固定資材として使用<br>
 折板 金属 壁材にステンレスビスどめ？<br>
-<img src="images/20211008-7.jpg" style="max-width:500px;" alt=""><br>
+<img src="images/electric-work/20211008-7.jpg" style="max-width:500px;" alt=""><br>
 
 コチラはコンクリートにビスどめ？<br>
-<img src="images/ductor1.jpg" style="max-width:500px;" alt=""><br>
+<img src="images/electric-work/ductor1.jpg" style="max-width:500px;" alt=""><br>
 
 ハゼ式折板屋根用支持金具とPF管<br>
-<img src="images/dc1.jpg" style="max-width:800px;" alt=""><br>
+<img src="images/electric-work/dc1.jpg" style="max-width:800px;" alt=""><br>
 
 <h2>参考・引用</h2>
 <ul>

@@ -2,7 +2,7 @@
 
 <h2>フル2線式リモコンスイッチとは？</h2>
 
-<img src="images/full2/1.jpg" alt="" style="max-width:600px;"><br>
+<img src="images/electric-work/full2/1.jpg" alt="" style="max-width:600px;"><br>
 リレー制御盤と照明の間は通常通り、AC100Vのケーブル配線。<br>
 リレー制御盤と中央管理室の間は<a href="https://blog.memo-labo.com/?p=962" target="_blank">弱電線CPEV-2C</a>で対応可能。<br>
 また中央管理室から各フロアスイッチまでの配線も、２芯の弱電線で良い。<br><br>
@@ -16,19 +16,19 @@
 リモコン制御は、照明と電源の間にリモコンリレーを置き、スイッチはリレーに対して入切の命令を送る送信機の役割にする。
 
 <h2>ダイレクト制御の場合</h2>
-<img src="images/full2/2.jpg" alt="" style="width:250px;"><br>
+<img src="images/electric-work/full2/2.jpg" alt="" style="width:250px;"><br>
 集中制御部<br>
 ・入切スイッチの数：８個<br>
 ・配線：各照明用への電源線８本＋電源用１本
 
 <h2>ワンショットリモコン配線（リモコン制御）</h2>
-<img src="images/full2/3.jpg" alt="" style="width:250px;"><br>
+<img src="images/electric-work/full2/3.jpg" alt="" style="width:250px;"><br>
 集中制御部<br>
 ・リモコンスイッチの数：８個<br>
 ・配線：24V信号線９本<br>
 
 <h2>フル2線式リモコン配線(リモコン制御)</h2>
-<img src="images/full2/4.jpg" alt="" style="width:250px;"><br>
+<img src="images/electric-work/full2/4.jpg" alt="" style="width:250px;"><br>
 集中制御部<br>
 ・リモコンスイッチの数：８個<br>
 ・配線：24V信号線２本<br>
@@ -36,7 +36,7 @@
 
 
 <h2>フル2線式リモコンの負荷アドレスとは？</h2>
-<img src="images/full2/5.jpg" alt="" style="width:280px;"><br>
+<img src="images/electric-work/full2/5.jpg" alt="" style="width:280px;"><br>
 フル2線式リモコンは、あらかじめスイッチに負荷アドレスを書き込んでおく。<br>
 負荷アドレスとは、文字通りその照明回路の住所のこと。<br>
 負荷アドレスとは、負荷チャンネル（丁目）と負荷ナンバー（番地）の２つで出来ている。<br>
@@ -45,7 +45,7 @@
 
 <h2>リレー制御盤内</h2>
 
-<img src="images/202207061.png" style="max-width:900px;"><br>
+<img src="images/electric-work/202207061.png" style="max-width:900px;"><br>
 
 伝送ユニット<br>
 スイッチからの信号をフル２線信号線で受け取る。<br>
@@ -57,8 +57,8 @@ T/U（負荷チャンネル）<br>
 他の負荷チャンネルにフル２線信号線で接続され、15丁目、14丁目と、丁目が振られる。<br>
 各負荷チャンネルは、各リモコンリレーに対して、AC24V配線で接続される。<br><br>
 
-<img src="images/tu1.jpg" style="max-width:300px;"><br><br>
-<img src="images/tu2.jpg" style="max-width:500px;"><br><br>
+<img src="images/electric-work/tu1.jpg" style="max-width:300px;"><br><br>
+<img src="images/electric-work/tu2.jpg" style="max-width:500px;"><br><br>
 
 リモコンリレー<br>
 負荷ナンバー（番地）が割り付けられている。<br>
