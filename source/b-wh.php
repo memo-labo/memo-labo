@@ -8,7 +8,7 @@
 水がビンの底にぶつかる衝撃で、ビンの底が割れる。<br>
 
 <h2>サージタンク</h2>
-<img src="images/wh1.png" style="max-width:500px;" alt=""><br>
+<img src="images/building-maintenance/wh1.png" style="max-width:500px;" alt=""><br>
 流体の過剰な流入量を一時的に蓄えることで流量を緩和して増減を平準化する。<br>
 ダムや水力発電所、ため池に接続される用水路の末端に設けられる大型のタンクのこと。<br>
 容量に余裕を持たせたサージタンクの中に一定量の液体を満たしておく。<br>
