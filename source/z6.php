@@ -1,12 +1,12 @@
 <?php include("header.php"); ?>
 
 <h2>全ネジ・長ネジ</h2>
-<img src="images/20211021-1.jpg" style="max-width:300px;" alt=""><br>
+<img src="images/electric-work/20211021-1.jpg" style="max-width:300px;" alt=""><br>
 全ねじは、長ねじ、寸切りボルトとも呼ばれる。<br>
 形状は、頭部の無いねじ棒のこと。<br>
 
 <h2>スタッドボルト</h2>
-<img src="images/20211021-2.jpg" style="max-width:300px;" alt=""><br>
+<img src="images/electric-work/20211021-2.jpg" style="max-width:300px;" alt=""><br>
 スタッド、植込みボルトとも呼ばれている。<br>
 両側にねじ部をもつボルトのこと。<br>
 
@@ -17,7 +17,7 @@
 呼び方でサイズも単位も違う。<br>
 三分、四分、M10、M12など、色々ある。<br>
 
-<img src="images/z61.png" class="img-fluid" alt=""><br>
+<img src="images/electric-work/z61.png" class="img-fluid" alt=""><br>
 
 呼び名と単位<br>
 1[in]（１インチ）＝ 2.54[cm] = 25.4[mm]<br>
@@ -35,11 +35,11 @@ M10、3/8、２つのボルトとナットをサンプルとしてマジック�
 
 <h2>全ネジカッター（ネジの切断）</h2>
 ボルトクリッパー<br>
-<img src="images/20211021-3.jpg" style="max-width:300px;" alt=""><br>
+<img src="images/electric-work/20211021-3.jpg" style="max-width:300px;" alt=""><br>
 
 手動型の全ねじカッター<br>
-<img src="images/20211021-4.jpg" style="max-width:400px;" alt=""><br>
-<img src="images/20211021-5.jpg" style="max-width:500px;" alt=""><br>
+<img src="images/electric-work/20211021-4.jpg" style="max-width:400px;" alt=""><br>
+<img src="images/electric-work/20211021-5.jpg" style="max-width:500px;" alt=""><br>
 鉄工用の刃でディスクグラインダーや高速切断機でカットもできる。<br>
 ただ、カットした時に熱でネジ部分が溶けて潰れてしまうことがある。<br>
 するとナットを入れることができなくなる。<br>

@@ -2,7 +2,7 @@
 
 <h2>エフコテープ（自己融着テープ）とは？</h2>
 
-<img src="images/20211001-10.jpg" style="max-width:600px;" alt=""><br>
+<img src="images/electric-work/20211001-10.jpg" style="max-width:600px;" alt=""><br>
 
 <h2>エフコテープの性能</h2>
 100V〜33kVまでの電気絶縁用テープ<br>
@@ -34,7 +34,7 @@
 
 <h2>電気絶縁用ビニルテープとエフコテープとの違い</h2>
 
-<img src="images/20211001-11.jpg" style="max-width:300px;" alt=""><br>
+<img src="images/electric-work/20211001-11.jpg" style="max-width:300px;" alt=""><br>
 
 電気絶縁用ビニルテープとは？<br>
 優れた電気的諸特性、耐水耐湿性、耐オゾン、耐候性、耐化学薬品性、良好な耐寒性、耐老化性、機械的性質、長期保存可能。<br>

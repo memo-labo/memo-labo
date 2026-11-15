@@ -9,7 +9,7 @@
 
 <h2>公称断面積とは？</h2>
 A=公称断面積(mm2)<br>
-<img src="images/z8/1.jpg" alt="" style="max-width:300px;"><br>
+<img src="images/electric-work/z8/1.jpg" alt="" style="max-width:300px;"><br>
 
 <h2>幹線ケーブルの外径とは？</h2>
 14sq CVTの外径はD21mm。<br>

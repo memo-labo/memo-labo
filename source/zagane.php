@@ -3,9 +3,9 @@
 <h2>食い違い型ばね座金は効果なし？</h2>
 
 皿ばね座金<br>
-<img src="images/zagane1.jpg" style="max-width:250px;" alt=""><br><br>
+<img src="images/electric-work/zagane1.jpg" style="max-width:250px;" alt=""><br><br>
 食い違い型ばね座金<br>
-<img src="images/zagane2.jpg" style="max-width:200px;" alt=""><br>
+<img src="images/electric-work/zagane2.jpg" style="max-width:200px;" alt=""><br>
 
 ボルトを締めることでボルト本体には引張力が働く。<br>
 部材には圧縮力が働く。<br>

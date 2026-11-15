@@ -10,11 +10,11 @@
 建築基準法施行例により、不特定多数の人々が利用する特殊建築物及び一定規模以上の建築物の住居等に設置が義務付けられている。
 
 <h2>非常用照明 ダウンライトの外観</h2>
-<img src="images/z9/3.jpg" alt="" style="max-width:600px;"><br>
+<img src="images/electric-work/z9/3.jpg" alt="" style="max-width:600px;"><br>
 
 <h2>照明の種類</h2>
 
-<img src="images/z9/2.jpg" alt="" style="max-width:750px;"><br>
+<img src="images/electric-work/z9/2.jpg" alt="" style="max-width:750px;"><br>
 
 ■電池内蔵型<br>
 内部に電池が収納されている。<br>
@@ -28,7 +28,7 @@
 
 <h2>電源別置型のメリット</h2>
 
-<img src="images/z9/4.jpg" alt="" style="max-width:270px;"><br>
+<img src="images/electric-work/z9/4.jpg" alt="" style="max-width:270px;"><br>
 
 電池交換時の手間が軽減される。<br>
 照明本体に電池が内蔵されていないので、交換時は蓄電池のみに対応すれば良い。<br>
@@ -45,7 +45,7 @@
 これで、電池内蔵型、電源別置型、両方にLED照明が使えるようになった。<br>
 「LED」の消費電力は「白熱灯」と比較して、６分の１程度。<br>
 すると、蓄電池容量も大幅に少なくなり、電源別置型の非常用照明を取り入れやすくなった。<br><br>
-<img src="images/z9/1.jpg" alt=""><br>
+<img src="images/electric-work/z9/1.jpg" alt=""><br>
 
 
 <h2>値段の比較</h2>

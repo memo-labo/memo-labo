@@ -2,14 +2,14 @@
 
 <h2>ドブづけ（溶融亜鉛めっき）</h2>
 
-<p><img src="images/z3/1.jpg" class="img-fluid" alt=""></p>
+<p><img src="images/electric-work/z3/1.jpg" class="img-fluid" alt=""></p>
 
 めっき槽に浸ける様子から、そう呼ばれるようになった。<br>
 耐食性が高い（錆びにくい）<br>
 
 <h2>ユニクロメッキ</h2>
 
-<p><img src="images/z3/2.jpg" class="img-fluid" alt=""></p>
+<p><img src="images/electric-work/z3/2.jpg" class="img-fluid" alt=""></p>
 
 亜鉛メッキをしたあとになされる化成処理のこと。<br>
 光沢が強く、ピカピカと銀色に輝いた外観になる。<br><br>
@@ -18,7 +18,7 @@
 耐食性が低い（錆びやすい）ため、屋外での使用には向いていない。
 
 <h2>ステンレス（SUS / ステン）</h2>
-<p><img src="images/z3/3.jpg" class="img-fluid" alt=""></p>
+<p><img src="images/electric-work/z3/3.jpg" class="img-fluid" alt=""></p>
 ステンレス=Stain lessSteeI（さびない鉄）<br>
 磁石にくっつかない。<br>
 鉄やユニクロと比べて値段が高い。<br>
