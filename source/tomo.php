@@ -2,14 +2,14 @@
   
 <h2>圧着端子の背中合わせ</h2>
 通称：背中合わせ、共ばさみ、共締め<br>
-<img src="images/tomo1.jpg" style="width:600px;" alt=""><br><br>
+<img src="images/electric-work/tomo1.jpg" style="width:600px;" alt=""><br><br>
 
 ２本の圧着端子の場合、背中合わせにしなければならない理由。<br>
 端子の接触面に隙間が出来てしまい、しっかりと接着されない。<br>
 機器の動作不良や接触抵抗の増加による焼損などを引き起こす可能性。<br><br>
 
 単線の場合、２本をねじの両端に締める。片方だけに偏らせない。<br>
-<img src="images/tomo2.jpg" style="width:300px;" alt=""><br><br>
+<img src="images/electric-work/tomo2.jpg" style="width:300px;" alt=""><br><br>
 
 取扱説明書によくある注意文<br>
 「１つの端子に３本以上の電線を締め付けない。不完全接触による発熱、火災の原因となる。」<br>

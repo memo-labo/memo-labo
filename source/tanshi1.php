@@ -15,7 +15,7 @@ JSTの標準品種は「防蝕性のよい電気すずめっき」されてい�
 身近なものでは、五円硬貨の材質として使用されている。<br>
 
 <h2>丸端子サイズの見方</h2>
-<img src="images/tanshi1_1.jpg" style="max-width:500px;"><br>
+<img src="images/electric-work/tanshi1_1.jpg" style="max-width:500px;"><br>
 
 <h2>丸端子サイズと電線太さサイズ</h2>
 <table style="max-width:500px;text-align:center;">
@@ -73,14 +73,14 @@ JSTの標準品種は「防蝕性のよい電気すずめっき」されてい�
 
 
 <h2>Y端子</h2>
-<img src="images/tanshi1.jpg" style="max-width:200px;"><br>
+<img src="images/electric-work/tanshi1.jpg" style="max-width:200px;"><br>
 Y型の圧着端子は、穴の上部が空いているので、軽くネジを緩めるだけで、接続したり外したりすることができる。<br>
 丸型の端子に比べて、作業時間を短縮することができる。<br>
 ネジのサイズが小さい、締め込みが緩いなどの場合、端子が抜ける可能性がある。<br>
 抜けにくい「Ｙ型圧着端子（ツメあり）」という商品もある。<br>
-<img src="images/tanshi3.jpg" style="max-width:200px;"><br>
+<img src="images/electric-work/tanshi3.jpg" style="max-width:200px;"><br>
 <h2>丸端子</h2>
-<img src="images/tanshi2.jpg" style="max-width:200px;"><br>
+<img src="images/electric-work/tanshi2.jpg" style="max-width:200px;"><br>
 丸型の圧着端子は、ネジが多少緩んでも抜けることがない。<br>
 複数の端子を１箇所のネジに接続することもできる。<br>
 外したり接続したりする場合、一旦ネジを完全に外さないといけない。<br>
@@ -93,12 +93,12 @@ JIS規格に適合しなければならない場合、必ず丸型を使用す�
 JISの部品指定がない現場の場合、Y端子でも使用可能らしい。<br>
 
 <h2>してはいけない丸端子の加工</h2>
-<img src="images/20261115-1.jpg""><br>
+<img src="images/electric-work/20261115-1.jpg""><br>
 丸端子の穴の大きさが小さくてボルトに入らないので切断した<br>
 A種やB種の接地端子盤等でたまに見かける<br>
 接触面積が減り、また抜けやすくなるので非常に危険<br>
 
-<img src="images/20261115-2.jpg""><br>
+<img src="images/electric-work/20261115-2.jpg""><br>
 丸端子の横幅が広くて端子台に入らなかったので横を削った<br>
 これも接触面積が減るので正しい使い方ではないがたまに見かける<br>
 

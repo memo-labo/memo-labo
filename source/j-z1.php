@@ -28,7 +28,7 @@
 現場代理人の仕事をするにあたり、必要な資格というものはない。<br>
 
 <h2>１級と２級の違い</h2>
-<img src="images/z1/1.png" class="img-fluid"><br>
+<img src="images/electric-work/z1/1.png" class="img-fluid"><br>
 １級電気工事施工管理技士の方が、大きな工事現場の受け持ちが出来る。<br>
 １級電気工事施工管理技士の方が、建設業者としての評価点が高くなる。<br><br>
 

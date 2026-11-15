@@ -7,10 +7,10 @@
 手に持つ柄の部分は絶縁ではないタイプもあるので注意。<br><br>
 
 外観<br>
-<img src="images/wp1.jpg" style="max-width:500px;"><br>
-<img src="images/wp2.jpg" style="max-width:500px;"><br>
-<img src="images/wp3.jpg" style="max-width:500px;"><br>
-<img src="images/wp4.jpg" style="max-width:500px;"><br><br>
+<img src="images/electric-work/wp1.jpg" style="max-width:500px;"><br>
+<img src="images/electric-work/wp2.jpg" style="max-width:500px;"><br>
+<img src="images/electric-work/wp3.jpg" style="max-width:500px;"><br>
+<img src="images/electric-work/wp4.jpg" style="max-width:500px;"><br><br>
 
 <h2>注意点</h2>
 <img src="https://blog.memo-labo.com/wp-content/uploads/2022/03/image-16.png" style="max-width:700px;"><br>

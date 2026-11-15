@@ -3,7 +3,7 @@
 <h2>ワゴ（差込コネクタ）とは？</h2>
 
 外観<br>
-<img src="images/wago1.jpg" style="max-width:300px;"><br><br>
+<img src="images/electric-work/wago1.jpg" style="max-width:300px;"><br><br>
 
 特徴<br>
 屋内配線（単線）と機器等のより線接続の方法として使用できる。内線規程（JEAC 8001-2016）<br>
@@ -35,16 +35,16 @@
 
 
 <h2>ワゴ使用時の注意</h2>
-<img src="images/wago2.jpg" style="max-width:800px;"><br>
+<img src="images/electric-work/wago2.jpg" style="max-width:800px;"><br>
 
 ＱＬＳＱ・ＱＬＭＣシリーズ<br>
 一度接続した電線を抜いた場合、コネクタの再接続はできない。<br>
 これは知らずにやりがち。このせいで接触が甘くなり火災事故に繋がるのかも？<br>
-<img src="images/wago3.jpg" style="max-width:400px;"><br><br>
+<img src="images/electric-work/wago3.jpg" style="max-width:400px;"><br><br>
 
 引き抜いてワゴを再利用しても良いタイプもある。<br>
 ただし抜いた電線は傷ついているので切断して新しい部分を使用する。<br>
-<img src="images/wago4.jpg" style="max-width:800px;"><br>
+<img src="images/electric-work/wago4.jpg" style="max-width:800px;"><br>
 
 <h2>電気工事士の意見</h2>
 過去の事故事例を教訓に、会社自体でワゴの使用を禁止している場合もある。<br>
