@@ -154,6 +154,21 @@ eof;
 <h3>その他</h3>
 <?php cat_prev("j-3");?>
 
+
+<h2 id="building-maintenance">ビルメン・設備管理メモ</h2>
+<h3>エレベーター・電気設備</h3>
+<?php cat_prev("b-1");?>
+<h3>水・給水・設備の原理</h3>
+<?php cat_prev("b-4");?>
+<h3>給排水配管</h3>
+<?php cat_prev("b-haikan");?>
+<h3>清掃・掃除</h3>
+<?php cat_prev("b-3");?>
+<h3>ビルメンの規則・資格・法律</h3>
+<?php cat_prev("b-2");?>
+<h3>その他</h3>
+<?php cat_prev("b-5");?>
+
 <?php include("link.php"); ?>
 
 <?php include("footer.php"); ?>
