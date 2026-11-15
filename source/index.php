@@ -127,6 +127,33 @@ eof;
 <li><a href="ai_site.php">でんきメモ AI化の流れ｜GitHub＋Cloudflareへの移行とメリット</a></li>
 </ul>
 
+
+<h2 id="electrical-work">電気工事士・電気施工管理メモ</h2>
+<h3>圧着端子・接続</h3>
+<?php cat_prev("j-tanshi");?>
+<h3>ネジ・ボルト・ナット</h3>
+<?php cat_prev("j-neji");?>
+<h3>アンカー</h3>
+<?php cat_prev("j-ank");?>
+<h3>コンセント</h3>
+<?php cat_prev("j-con");?>
+<h3>配管</h3>
+<?php cat_prev("j-haikan");?>
+<h3>電材・支持部材</h3>
+<?php cat_prev("j-1");?>
+<h3>電灯・照明</h3>
+<?php cat_prev("j-light");?>
+<h3>電気器具</h3>
+<?php cat_prev("j-4");?>
+<h3>配線・ケーブル・コード</h3>
+<?php cat_prev("j-5");?>
+<h3>工具</h3>
+<?php cat_prev("j-kougu");?>
+<h3>技術・ノウハウ・体験談</h3>
+<?php cat_prev("j-skill");?>
+<h3>その他</h3>
+<?php cat_prev("j-3");?>
+
 <?php include("link.php"); ?>
 
 <?php include("footer.php"); ?>

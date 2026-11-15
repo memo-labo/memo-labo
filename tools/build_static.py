@@ -122,7 +122,7 @@ def render(rel,stem,b,rs,script,src,is_index=False):
     canonical=SITE+'/'+str(rel).replace('\\','/'); is_root=rel==Path('index.php'); is_404=rel==Path('404.php')
     if is_root:canonical=SITE+'/'
     full=index_title if is_index else title+' - '+site_title; og_title=index_title if is_index else title; description=index_title if is_index else page_description(b,full)
-    if is_root:description='高圧受電設備、保護継電器、測定器、電気主任技術者・電気管理技術者の点検、試験、保守に役立つ技術メモ。'
+    if is_root:description='高圧受電設備、保護継電器、測定器、電気主任技術者・電気管理技術者、電気工事士・施工管理に役立つ技術メモ。'
     description=seo_overrides(src,'description').get('/'+rel.as_posix(),description)
     logo='<h1 class="site-logo"><a href="https://memo-labo.com/">でんきメモ</a></h1>' if is_index else '<div class="site-logo"><a href="https://memo-labo.com/">でんきメモ</a></div>'; h1='' if is_index else f'<h1 class="article-title">{html.escape(title)}</h1>'
     icon_rel=Path(section,'icon',stem+'.jpg') if section in ('j','b') else Path('icon',stem+'.jpg'); image_meta=''

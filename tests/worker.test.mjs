@@ -12,6 +12,12 @@ for (const [path, target] of [
   ['/st.php/index.php', '/st.php'],
   ['/v0.php/zpd.php', '/zpd.php'],
   ['/j/ve.php/1000', '/j/ve.php'],
+  ['/j/', '/'],
+  ['/j/index.php', '/'],
+  ['/j/index.html', '/'],
+  ['/j/tanshi1.php', '/tanshi1.php'],
+  ['/j/remote.php', '/j-remote.php'],
+  ['/j/images/remote1.jpg', '/images/electric-work/remote1.jpg'],
   ['/dgr2.php', '/dgr.php'],
 ]) {
   test(`${path} redirects permanently to ${target}`, async () => {
@@ -58,8 +64,6 @@ function htmlAssets(canonical) {
 for (const [path, canonical, target] of [
   ['/dt.html?ref=test', '/dt.php', '/dt.php?ref=test'],
   ['/index.html', '/', '/'],
-  ['/j/', '/j/index.php', '/j/index.php'],
-  ['/j/index.html', '/j/index.php', '/j/index.php'],
 ]) {
   test(`static alias ${path} redirects to its declared canonical`, async () => {
     const response = await worker.fetch(new Request('https://memo-labo.com' + path),

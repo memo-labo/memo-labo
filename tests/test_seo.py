@@ -110,9 +110,9 @@ class StaticSEO(unittest.TestCase):
 
     def test_cross_section_article_links_resolve(self):
         cases = {
-            'remote.html': ['j/' + slug + '.php' for slug in
+            'remote.html': [slug + '.php' for slug in
                             ('full2', 'inter', 'rb', 'pomp', '61f', 'rousui', 'knife')],
-            'draw2.html': ['j/sai.php'],
+            'draw2.html': ['sai.php'],
             'rdf.html': ['henatu.php'],
             'b/boi.html': ['boiler.php'],
         }
@@ -122,6 +122,18 @@ class StaticSEO(unittest.TestCase):
                 self.assertIn('href="' + href + '"', text)
                 path = urlsplit(urljoin('/' + page, href)).path
                 self.assertTrue((self.out / path.lstrip('/')).with_suffix('.html').is_file())
+
+    def test_electrical_work_is_integrated_at_root(self):
+        self.assertFalse((ROOT / 'source' / 'j').exists())
+        home = (self.out / 'index.html').read_text()
+        self.assertIn('電気工事士・電気施工管理メモ', home)
+        self.assertIn('href="tanshi1.php"', home)
+        for slug in ('tanshi1', 'j-remote', 'j-bou', 'impact'):
+            self.assertTrue((self.out / (slug + '.html')).exists(), slug)
+        self.assertTrue((self.out / 'images' / 'electric-work' / 'remote1.jpg').exists())
+        self.assertNotIn('https://memo-labo.com/j/', (self.out / 'sitemap.xml').read_text())
+        search = json.loads((self.out / 'search-index.json').read_text())
+        self.assertTrue(any(x['url'] == 'tanshi1.php' for x in search))
 
     def test_root_overrides_do_not_leak_into_other_sections(self):
         rows = [['test', 'ocr', '別記事', '電気工事士の別記事']]
