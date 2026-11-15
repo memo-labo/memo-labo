@@ -92,4 +92,10 @@ Y型の圧着端子は、JIS規格を取っていない。<br>
 JIS規格に適合しなければならない場合、必ず丸型を使用する。<br>
 JISの部品指定がない現場の場合、Y端子でも使用可能らしい。<br>
 
+<h2>ヤッてはいけない加工</h2>
+<img src="images/20261115-1.jpg""><br>
+<img src="images/20261115-2.jpg""><br>
+
+
+
 <?php include("footer.php"); ?>
