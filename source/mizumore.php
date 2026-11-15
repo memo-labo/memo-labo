@@ -5,13 +5,13 @@
 洗面所、キッチン、風呂場の水道の蛇口からポタポタと水漏れがする。<br>
 この原因は「ゴムの劣化」である可能性が高い。<br><br>
 
-<img src="images/mizumore1.jpg" alt="" style="max-width:300px;"><br><br>
+<img src="images/building-maintenance/mizumore1.jpg" alt="" style="max-width:300px;"><br><br>
 
 ケレップ（ゴムパッキン）<br>
 ホームセンターで200円～300円くらいで購入できる。<br><br>
 
-<img src="images/mizumore4.jpg" alt="" style="max-width:300px;"><br>
-<img src="images/mizumore3.jpg" alt="" style="max-width:400px;"><br>
+<img src="images/building-maintenance/mizumore4.jpg" alt="" style="max-width:300px;"><br>
+<img src="images/building-maintenance/mizumore3.jpg" alt="" style="max-width:400px;"><br>
 
 
 <h2>修理方法</h2>
@@ -20,7 +20,7 @@
 
 業者に依頼せず、自分自身でホームセンターで道具を買って簡単に取り替え工事ができる。<br>
 ただし水道の修理を始める前に、水道の元栓を締めることを忘れないこと。<br>
-<img src="images/mizumore2.jpg"><br><br>
+<img src="images/building-maintenance/mizumore2.jpg"><br><br>
 
 <h2>カインズホームやセキチューで本体ごと交換も可能</h2>
 民間の修理業者に依頼せずとも、大手ホームセンターには出張リフォームサービスがある。<br>

@@ -41,7 +41,7 @@
 換気扇がついているマンホール地下の電気室でも、換気扇が動いてなければ危険？<br>
 電気管理技術者は酸素濃度測定器を持っている？<br>
 
-<img src="images/202206191.png" style="max-width:700px;"><br>
+<img src="images/building-maintenance/202206191.png" style="max-width:700px;"><br>
 
 <h2>事前確認</h2>
 

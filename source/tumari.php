@@ -11,7 +11,7 @@
 特にS字の部分（S字トラップ）で詰まりを起こしやすい。<br>
 トイレと同様、台所や洗面所などでも同じ。<br>
 
-<img src="images/trap4.jpg" style="max-width:200px;" alt=""><br>
+<img src="images/building-maintenance/trap4.jpg" style="max-width:200px;" alt=""><br>
 
 また配管ではなく、その先のマンホールの蓋を開けてみる。<br>
 排水管（下水管）の中に木の根が侵入し排水路に侵入しているケースも。<br>

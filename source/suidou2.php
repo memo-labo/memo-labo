@@ -5,7 +5,7 @@
 名称：自閉式水栓<br>
 水圧（差圧）で水栓内部弁機構が動作する。<br>
 吐水時間を調整が可能な製品もある。<br>
-<img src="images/suidou21.jpg" style="max-width:550px;" /><br>
+<img src="images/building-maintenance/suidou21.jpg" style="max-width:550px;" /><br>
 
 <h2>なぜ使用されるのか？</h2>
 お湯や水を出しっぱなしにする人がいる。<br>

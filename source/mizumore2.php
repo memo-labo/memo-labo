@@ -11,8 +11,8 @@
 ネットで調べると、ナット部分の中にあるゴムパッキンの劣化が原因とあったので交換することに。<br>
 だいたいのサイズを測り、ホームセンターで同じタイプを購入し、新しいものを取り付けた。<br><br>
 
-<img src="images/mizumore21.jpg" alt="" style="max-width:400px;"><br><br>
-<img src="images/mizumore22.jpg" alt="" style="max-width:500px;"><br><br>
+<img src="images/building-maintenance/mizumore21.jpg" alt="" style="max-width:400px;"><br><br>
+<img src="images/building-maintenance/mizumore22.jpg" alt="" style="max-width:500px;"><br><br>
 
 水漏れは直り、問題なく使用することができた。<br>
 数ヶ月経っても、全く問題ない。<br>

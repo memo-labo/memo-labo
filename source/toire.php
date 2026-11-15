@@ -2,7 +2,7 @@
 
 <h2>水洗トイレの仕組み・構造</h2>
 
-<img src="images/toire/1.jpg" alt="" style="max-width:500px;"><br><br>
+<img src="images/building-maintenance/toire/1.jpg" alt="" style="max-width:500px;"><br><br>
 
 レバーを引くとゴムフロートが浮く。<br>
 するとタンクに溜まっていた水が便器へ流れる。<br>
@@ -11,10 +11,10 @@
 タンクに水が溜まり、水位が上がり、浮き球が浮き、ボールタップが閉じる。<br>
 ボールタップと手洗い管からの水が止まる。<br><br>
 
-<img src="images/toire1.jpg" alt="" style="max-width:700px;"><br>
+<img src="images/building-maintenance/toire1.jpg" alt="" style="max-width:700px;"><br>
 
 <h2>オーバーフロー管とは？</h2>
-<img src="images/toire.png" style="max-width:250px;"><br>
+<img src="images/building-maintenance/toire.png" style="max-width:250px;"><br>
 ゴムフロートの脇には、オーバーフロー管というものがある。<br>
 これは便座（トイレタンク下部の排水口）につながっている。<br>
 タンク内の水位が高くなったとき、オーバーフロー管上部から水が入り込む。<br>
@@ -26,8 +26,8 @@
 トイレを流すために必要な水の量がタンクに貯まらないというトラブルに発展する。<br>
 
 <h2>ボールタップの構造</h2>
-<img src="images/toire/2.png" alt="" style="max-width:500px;"><br><br>
-<img src="images/toire/3.png" alt="" style="max-width:500px;"><br>
+<img src="images/building-maintenance/toire/2.png" alt="" style="max-width:500px;"><br><br>
+<img src="images/building-maintenance/toire/3.png" alt="" style="max-width:500px;"><br>
 
 ボールタップ自体が故障することもある。<br>
 長年の使用で劣化し、水を入れたり止めたりする機能がなくなってしまう。<br>
