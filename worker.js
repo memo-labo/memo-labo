@@ -99,7 +99,7 @@ export default {
     }
 
     const path = url.pathname;
-    if (path === "/j/" || path === "/j/index.php") {
+    if (path === "/j/" || path === "/j/index.php" || path === "/j/index.html") {
       url.pathname = "/";
       return Response.redirect(url.toString(), 301);
     }
