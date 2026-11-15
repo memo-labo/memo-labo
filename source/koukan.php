@@ -36,7 +36,7 @@ E25=ねじなしで外径が25.4mm<br><br>
 腐食性に強い。<br>
 化学薬品に強い。<br>
 一般的にポリエチレンは紫外線に弱い。<br>
-<img src="images/koukan1.jpg" style="max-width:400px;" alt=""><br><br>
+<img src="images/electric-work/koukan1.jpg" style="max-width:400px;" alt=""><br><br>
 
 アース線の取り付けの悪い例<br>
 アース端子がドリルビスで鋼管に打たれていた。<br>
@@ -45,7 +45,7 @@ E25=ねじなしで外径が25.4mm<br><br>
 
 鋼管の被覆を剥いてラジアスクランプなどでボンド線を固定する。<br>
 そして専用の補修塗料や防食テープ等で被覆をはがした部分の防食処理を行う。<br>
-<img src="images/koukan2.jpg" style="max-width:400px;" alt=""><br><br>
+<img src="images/electric-work/koukan2.jpg" style="max-width:400px;" alt=""><br><br>
 
 ⇒<a href="http://www.sotoyama.co.jp/products/supportmaterials/detail/supportmaterials01/">ラジアスクランプ - 外山電気株式会社</a>
 

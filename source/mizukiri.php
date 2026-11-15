@@ -1,9 +1,9 @@
 <?php include("header.php"); ?>
 
 <h2>接地線の水切り端子</h2>
-<img src="images/20220522_1.jpg" style="max-width:400px;"><br>
-<img src="images/20220522_2.jpg" style="max-width:400px;"><br>
-<img src="images/20220522_3.jpg" style="max-width:400px;"><br>
+<img src="images/electric-work/20220522_1.jpg" style="max-width:400px;"><br>
+<img src="images/electric-work/20220522_2.jpg" style="max-width:400px;"><br>
+<img src="images/electric-work/20220522_3.jpg" style="max-width:400px;"><br>
 
 接地線は銅線を撚り合わせた構造になっている。<br>
 接地線であるIVの撚り線は地中に埋まっており、地中には水分がある。<br><br>

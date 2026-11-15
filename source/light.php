@@ -17,9 +17,9 @@ LとN（ニュートラル）の線の両方をON/OFFするスイッチ。<br>
 スイッチを切れば負荷が完全に絶縁されて電圧が印可されることがない。<br>
 漏れ電流が流れることもない。<br><br>
 
-<img src="images/20211006-2.jpg" style="max-width:200px;" alt=""><br>
-<img src="images/20211006-1.jpg" style="max-width:400px;" alt=""><br>
-<img src="images/20211006-3.jpg" style="max-width:400px;" alt=""><br>
+<img src="images/electric-work/20211006-2.jpg" style="max-width:200px;" alt=""><br>
+<img src="images/electric-work/20211006-1.jpg" style="max-width:400px;" alt=""><br>
+<img src="images/electric-work/20211006-3.jpg" style="max-width:400px;" alt=""><br>
 
 <h2>屋外照明でフリッカを防止する方法</h2>
 <ul>

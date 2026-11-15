@@ -6,7 +6,7 @@
 ・CVTケーブルなどの「より線」<br>
 ・お風呂の湯沸かしモニターやインターホンの警報線<br>
 ・LANケーブルのカテゴリ5（Cat5e）<br>
-<img src="images/muki3-1.jpg" style="max-width:180px;" alt=""><br>
+<img src="images/electric-work/muki3-1.jpg" style="max-width:180px;" alt=""><br>
 
 ■剥き方<br>
 カッターで被覆の表面に少しだけ切り込みをつける。<br>

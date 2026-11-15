@@ -1,6 +1,6 @@
 <?php include("header.php"); ?>
 <h2>ネオシール</h2>
-<img src="images/neo1.jpg" style="max-width:400px;" /><br>
+<img src="images/electric-work/neo1.jpg" style="max-width:400px;" /><br>
 キュービクルの床や天井に空いた穴を塞ぎ動物や埃の侵入を防ぐ。<br>
 粘着性に優れ、伸びが良く、不乾性。<br>
 きめ細かく気密性に優れ、手にベトつかず、薄く延ばせる。<br>
@@ -25,7 +25,7 @@
 
 <h2>プラシール</h2>
 価格：1kg 2100円<br>
-<img src="images/neo2.jpg" style="max-width:400px;" /><br>
+<img src="images/electric-work/neo2.jpg" style="max-width:400px;" /><br>
 ケーブル防火区画貫通部の防火措置で使用する。<br>
 耐火パテ、不燃性、耐熱シール材。<br>
 ネオシールとの違いは不燃性であること。<br><br>
@@ -43,7 +43,7 @@
 
 <h2>キクネン</h2>
 価格：1kg 2150円<br>
-<img src="images/neo3.jpg" style="max-width:400px;" /><br>
+<img src="images/electric-work/neo3.jpg" style="max-width:400px;" /><br>
 ネズミ対策用パテ「キクネン」<br>
 トウガラシの辛味成分（カプサイシン）をマイクロカプセル化したものを含有。<br>
 皮膚や目に入ると痒み、痛みを伴うことがある。<br>

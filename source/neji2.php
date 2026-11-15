@@ -11,7 +11,7 @@
 この状態で無理やりねじ込むとどうなるか？<br>
 ネジ山が潰れたり、ネジ頭が切れてしまったりする。<br><br>
 
-<img src="images/20211005-2.jpg" style="width:300px;" alt=""><br><br>
+<img src="images/electric-work/20211005-2.jpg" style="width:300px;" alt=""><br><br>
 
 丸端子やY端子である場合、ネジの噛み違いがあると、しっかり接触していない可能性もある。<br>
 その場合、接触抵抗の増加で端子が焦げ付いたり、誤動作の原因となる。<br>

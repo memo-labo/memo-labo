@@ -8,7 +8,7 @@
 まずCVケーブルの被覆を電工ナイフで削る。<br>
 中の芯線に傷をつけないように慎重に。<br>
 
-<img src="../images/denki-1-5.jpg" style="max-width:800px;" alt=""><br>
+<img src="images/denki-1-5.jpg" style="max-width:800px;" alt=""><br>
 
 人によってはりんごの皮を剥くように、刃を被覆に対して平行に剥く人もいる。<br>
 VVFと違ってCVケーブルは刃を突き刺して貫通させて穴を広げることはできない。<br>

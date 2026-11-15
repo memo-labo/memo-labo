@@ -1,7 +1,7 @@
 <?php include("header.php"); ?>
 
 <h2>ねじなしボックスコネクタ</h2>
-<img src="images/nejinashi4.png" style="max-width:400px;" alt=""><br>
+<img src="images/electric-work/nejinashi4.png" style="max-width:400px;" alt=""><br>
 薄鋼管をボックスコネクタに接続した後、それを固定するためにネジを締める。<br>
 ドライバーで途中まで締めて、その後ペンチやプライヤーで締める。<br>
 ネジの頭はねじ切ることが出来るので、ねじ切れるまで締めていく。<br>
@@ -12,7 +12,7 @@ C管：薄鋼電線管<br>
 E管：ネジなし電線管<br>
 
 <h2>ねじなし電線管（E管）</h2>
-<img src="images/nejinashi2.png" style="max-width:500px;" alt=""><br>
+<img src="images/electric-work/nejinashi2.png" style="max-width:500px;" alt=""><br>
 
 ネジ切りして接合していたら手間がかかる。<br>
 E管はその場で任意の長さに容易に切断することができる。<br><br>
@@ -32,12 +32,12 @@ E管はその場で任意の長さに容易に切断することができる。<
 
 防爆の電線管はねじ切りが必要。<br>
 管同士の接続は、ねじ付きのカップリングが必要。<br>
-<img src="images/nejinashi3.png" style="max-width:300px;" alt=""><br>
+<img src="images/electric-work/nejinashi3.png" style="max-width:300px;" alt=""><br>
 
 またロックナットで緩み止めが必要。<br>
 
 <h2>現場写真</h2>
-<img src="images/nejinasi1.jpg" style="max-width:400px;" alt=""><br>
+<img src="images/electric-work/nejinasi1.jpg" style="max-width:400px;" alt=""><br>
 ダクターチャンネル<br>
 ダクタークリップ<br>
 E管（ねじなし電線管）<br>

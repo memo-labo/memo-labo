@@ -1,7 +1,7 @@
 <?php include("header.php"); ?>
 
 <h2>ネジがナメてしまう理由</h2>
-<img src="images/neji/1.jpg" style="width:200px;" alt=""><br>
+<img src="images/electric-work/neji/1.jpg" style="width:200px;" alt=""><br>
 <ul>
     <li>ドライバーを押し込む力が弱い状態で、ドライバーを回転させてしまった。
     <li>ネジ頭に対してドライバーを垂直にせず、斜めの状態で回転させた。
@@ -20,7 +20,7 @@
 </ul>
 
 
-<img src="images/20211005-1.jpg" style="width:500px;" alt=""><br>
+<img src="images/electric-work/20211005-1.jpg" style="width:500px;" alt=""><br>
 
 
 <h2>ナメてしまったネジの外し方</h2>
@@ -29,14 +29,14 @@
 
 太めの平ゴムを使って、ネジ頭とドライバーの間にゴムを噛ませ、摩擦力でネジを外す。<br>
 ゴムが無ければ、絶縁ビニルテープでもいけるかもしれない。<br>
-<img src="images/neji/3.jpg" style="max-width:300px;" alt=""><br><br>
+<img src="images/electric-work/neji/3.jpg" style="max-width:300px;" alt=""><br><br>
 
 ちなみに回して閉めるタイプのフタが固くて開かなくなってしまった時、フタの端に絶縁ビニルテープをぐるぐる巻きつけてフタの径を大きくすると簡単にフタを開けることが出来る。<br>
-<img src="images/neji1.png" style="max-width:400px;" alt=""><br><br>
+<img src="images/electric-work/neji1.png" style="max-width:400px;" alt=""><br><br>
 
 ネジザウルスという便利な道具もある。<br>
 潰れたネジ、錆びたネジを掴んで回すことができる。<br>
-<img src="images/neji2.jpg" style="max-width:400px;" alt=""><br><br>
+<img src="images/electric-work/neji2.jpg" style="max-width:400px;" alt=""><br><br>
 
 
 <?php include("footer.php"); ?>
