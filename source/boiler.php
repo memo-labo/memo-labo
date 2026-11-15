@@ -5,7 +5,7 @@
 水道水がフレキの中を通りドラム缶内の温水によって温められる。<br>
 上部は密閉されていないので爆発する心配がない。<br>
 <br>
-<img src="images/boiler1.svg" style="max-width:500px;" /><br>
+<img src="images/building-maintenance/boiler1.svg" style="max-width:500px;" /><br>
 
 
 <h2>小型貫流ボイラー</h2>
@@ -14,7 +14,7 @@
 保有水量が少なく、早く蒸気を発生させることができる。<br>
 コンパクトでボイラの設置スペースが少なくて済む。<br>
 
-<img src="images/boiler2.jpg" style="max-width:300px;" /><br>
+<img src="images/building-maintenance/boiler2.jpg" style="max-width:300px;" /><br>
 
 メーカー名：三浦工業 《MIURA》<br>
 機種名：ボイラー 蒸気ボイラー<br>
@@ -32,7 +32,7 @@
 ガスは管理面においても効率化を図っており燃料貯蔵スペースの有効利用も可能。<br>
 
 <h2>油焚きボイラのデメリット</h2>
-<img src="images/boiler3.jpg" style="max-width:400px;" /><br>
+<img src="images/building-maintenance/boiler3.jpg" style="max-width:400px;" /><br>
 タンク貯蔵所を地下に埋めた場合、タンク上面には「保安空地」が必要。<br>
 またタンクローリー駐車スペース「受入用空地」が必要。<br>
 

@@ -1,7 +1,7 @@
 <?php include("header.php"); ?>
 
 <h2>クロスコネクションとは？</h2>
-<img src="images/closs1.png" style="max-width:500px;"><br>
+<img src="images/building-maintenance/closs1.png" style="max-width:500px;"><br>
 
 水道管（給水装置）とその他の目的の管とが直接連結されていること。<br>
 水道水と井戸水等を必要に応じてバルブで切り替えて使用することも同様。<br><br>

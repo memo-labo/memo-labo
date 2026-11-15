@@ -29,7 +29,7 @@
 
 
 <h2>高置水槽とは？</h2>
-<img src="images/chosui/2.jpg" alt="" style="max-width:300px;"><br>
+<img src="images/building-maintenance/chosui/2.jpg" alt="" style="max-width:300px;"><br>
 
 高置水槽方式は、必要とされる圧力を得るため、給水の箇所よりも高い位置の水槽にポンプで揚水し、重力で給水するものである。
 <h2>高置水槽のメリット</h2>
