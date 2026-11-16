@@ -7,7 +7,7 @@
 <img src="images/kagi8.jpg" style="max-width:500px;"><br><br>
 <img src="images/kagi9.jpg" style="max-width:500px;"><br><br>
 
-<h2>ハセガワ キュービクル H-6</h2>
+<h2>ハギワラ キュービクル H-6</h2>
 <img src="images/kagi10.jpg" style="max-width:500px;"><br><br>
 <img src="images/kagi11.jpg" style="max-width:500px;"><br><br>
 <img src="images/kagi12.jpg" style="max-width:500px;"><br><br>
